@@ -44,21 +44,16 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
-        ],
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
         ],
 
         'player' => [
             'driver' => 'session',
             'provider' => 'players',
         ],
- 
-        'player-api' => [
-            'driver' => 'token',
-            'provider' => 'players',
+        
+        'coach' => [
+            'driver' => 'session',
+            'provider' => 'coachs',
         ],
     ],
 
@@ -84,14 +79,16 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
         'players' => [
             'driver' => 'eloquent',
             'model' => App\Player::class,
         ],
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+
+        'coachs' => [
+            'driver' => 'eloquent',
+            'model' => App\Coach::class,
+        ],
     ],
 
     /*
@@ -115,11 +112,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'players' => [
-            'provider' => 'players',
-            'table' => 'password_resets', //here I have considered password resets time same for both the users and admin. If you have different than change this accordingly.
-            'expire' => 60, // you can change the expire time as your requirement
-        ],
+        // 'players' => [
+        //     'provider' => 'players',
+        //     'table' => 'password_resets', //here I have considered password resets time same for both the users and admin. If you have different than change this accordingly.
+        //     'expire' => 60, // you can change the expire time as your requirement
+        // ],
     ],
 
     /*

@@ -1,695 +1,673 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-    
-<!-- Mirrored from demo.webpixels.io/purpose-website-ui-kit-v2.0.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 11:37:41 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/home/classic-business.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2020 19:36:42 GMT -->
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Sabikick.. Africa to the world">
-        <meta name="author" content="Habib">
-        @section('title','|{{$user->username}}')
-        <!-- Favicon -->
-        @laravelPWA
+  <!-- Title -->
+  <title>Scout54</title>
 
-        <!--  -->
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
-        <!-- Font Awesome 5 -->
-        <link rel="stylesheet"  href="{{asset('libs/@fortawesome/fontawesome-pro/css/all.min.css')}}"><!-- Page CSS -->
-        <link rel="stylesheet"  href="{{asset('libs/swiper/dist/css/swiper.min.css')}}">
-        <!-- Purpose CSS -->
-        <link rel="stylesheet" href="{{asset('css/purpose.css')}}" id="stylesheet">
-        <script src="{{asset('libs/typed.js/lib/typed.min.js')}}"></script>
+  @laravelPWA
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://htmlstream.com/preview/front-v2.9.4/favicon.ico">
 
-        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-      <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-    </head>
+  <!-- Google Fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
-    <body>
-   
-        <!-- <div class="alert alert-danger bg-gradient-danger text-white fixed-top alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
-            <div class="container">
-                The heat of the summer comes with a <strong>35% discount</strong>. Use the <strong>SUMMER35</strong> code until June 15h and get started with this UI Kit to build your next amazing website.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span class="text-white opacity-10" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div> -->
-        <header class="header header-transparent" id="header-main">
-            <!-- Topbar -->
-            <div id="navbar-top-main" class="navbar-top  navbar-dark bg-dark border-bottom">
-                <div class="container px-0">
-                    <div class="navbar-nav align-items-center">
-                        <div class="d-none d-lg-inline-block">
-                    
-                        </div>
-                   
-                        <div class="ml-auto">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" data-action="omnisearch-open" data-target="#omnisearch"><i class="far fa-search"></i></a>
-                                </li>
-                               
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link pr-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="far fa-user-circle"></i>
-                                    </a>
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../../assets/vendor/fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="../../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-                                    @guest
-                             
-                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                        <h6 class="dropdown-header">User menu</h6>
-                                        <a class="dropdown-item" href="/login">
-                                            <i class="far fa-user"></i>Login
-                                        </a>
-                                        @if (Route::has('register'))
-                                        <a class="dropdown-item" href="/register">
-                                            <i class="far fa-user"></i>Register
-                                        </a>
-                                        @endif
-                                    </div>
-                                @else
-                                   
-                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                                        <h6 class="dropdown-header">{{ Auth::user()->username}}</h6>
-                                        <a class="dropdown-item" href="/{{Auth::user()->username}}">
-                                            <i class="far fa-user"></i>Account
-                                        </a>
-                                
-                                        <div class="dropdown-divider" role="presentation"></div>
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"> 
-                                            <i class="far fa-sign-out-alt"></i>Sign out
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+</head>
+<body >
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="u-header u-header-center-aligned-nav u-header--bg-transparent u-header--white-nav-links-md u-header--sub-menu-dark-bg-md u-header--abs-top"
+          data-header-fix-moment="500"
+          data-header-fix-effect="slide">
+    <div class="u-header__section">
+      <div id="logoAndNav" class="container">
+        <!-- Nav -->
+  
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #ffffff;">
+          <a class="navbar-brand" href="#" style="height: 50px;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+              <path fill="#000000" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"/>
+              <path class="fill-white" opacity=".5" d="M28,36L28,36c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3C43,0.1,46,3.1,46,6.7v11.4C46,28,38,36,28,36z"/>
+              <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"/>
+              <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
+            </svg>
+
+    
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto smallers" >
+              <li class="nav-item myactive">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Players </a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Scouts </a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Coaches</a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Clubs</a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Market</a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal" >Our Blog</a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">About Us</a>
+              </li>
+              <li class="nav-item willows">
+                <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal" >Contact Us</a>
+              </li>
+          
+           
+           
+            </ul>
+<div class="mt-2"></div>
+<button type="button" class="bt"> <a
+  class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
+  href="#" style="font-family:'Cera Pro New'"><i class="fa fa-user"></i> My Dashboard</a></button>
+
+            <button type="button" class="bt" > <a
+              class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
+              href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" style="font-family:'Cera Pro New'"> <i class="fa fa-sign-out"></i>Logout </a>
+                                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
-                                    </div>
-                                    @endguest
+                                    </form> 
+                                                    </button>
 
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+          </div>
+        </nav>
+
+        <!-- End Nav -->
+      </div>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero v1 Section -->
+    <div class="u-hero-v1">
+      <!-- Hero Carousel Main -->
+      <div id="heroNav" class="js-slick-carousel u-slick"
+           data-autoplay="true"
+           data-speed="10000"
+           data-adaptive-height="true"
+           data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+           data-arrow-left-classes="fa fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
+           data-arrow-right-classes="fa fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
+           data-numbered-pagination="#slickPaging"
+           data-nav-for="#heroNavThumb">
+        <div class="js-slide">
+          <!-- Slide #1 -->
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url(../../assets/img/1920x800/fancy.jpg);">
+            <div class="container space-3 space-top-md-5 space-top-lg-3">
+              <div class="row">
+                <div class="col-md-8 col-lg-6 position-relative">
+                  <span class="d-block h4 text-white font-weight-light mb-2"
+                        data-scs-animation-in="fadeInUp">
+                    Scout54 is 
+                  </span>
+                  <h5 class="text-white display-4 font-size-md-down-5 mb-0"
+                      data-scs-animation-in="fadeInUp"
+                      data-scs-animation-delay="200">
+                    <span class="font-weight-semi-bold">A soccer recruiting </span> cum social platform.
+                  </h5>
                 </div>
+              </div>
             </div>
-            <!-- Main navbar -->
-            <nav class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-dark" id="navbar-main">
-                <div class="container px-lg-0">
-                    <!-- Logo -->
-                    <a class="navbar-brand mr-lg-5" href="/">
-                     <img alt="Image placeholder" src="{{asset('img/newlogo.png')}}" id="navbar-logo" style="height: 50px;">
-                
-                  <!-- <p style="padding-top:15px;font-family: 'Shadows Into Light', cursive;font-size:30px">Sabikick</p> -->
-                      <!-- <h6 id="navbar-logo" style="height: 50px;padding-top:7px;color:#ffffff;font-size:30px">Sabikick</h6> -->
-                    </a>
-                    <!-- Navbar collapse trigger -->
-                    <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navbar nav -->
-                    <div class="collapse navbar-collapse" id="navbar-main-collapse">
-                        <ul class="navbar-nav align-items-lg-center">
-                            <!-- Home - Overview  -->
-                           
-                            <!-- Pages menu -->
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link" href="/listplayers" >Players</a>
-                            </li>
+          </div>
+          <!-- End Slide #1 -->
+        </div>
 
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link" href="/listscouts" >Scouts</a>
-                            </li>
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link" href="/listcoaches" >Coaches</a>
-                            </li>
-
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link" href="/listagents" >Agents</a>
-                            </li>
-
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link" href="/listclubs" >Clubs</a>
-                            </li>
-                            <!-- Sections menu -->
-                          
-                           
-                        </ul>
-                        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-                            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm dropdown-menu-arrow p-0">
-                                    <ul class="list-group list-group-flush">
-                                    <li>
-                                            <a href="/contactus" class="list-group-item list-group-item-action" role="button">
-                                                <div class="media d-flex align-items-center">
-                                                    <!-- SVG icon -->
-                                                    
-                                                    <!-- Media body -->
-                                                    <div class="media-body">
-                                                  <p class="mb-0">Contact us</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/aboutus" class="list-group-item list-group-item-action" role="button">
-                                                <div class="media d-flex align-items-center">
-                                                    <!-- SVG icon -->
-                                        
-                                                    <!-- Media body -->
-                                             
-                                                        <p class="mb-0">About Us</p>
-                                      
-                                                </div>
-                                            </a>
-
-                                            <a href="/faqs" class="list-group-item list-group-item-action" role="button">
-                                                <div class="media d-flex align-items-center">
-                                                    <!-- SVG icon -->
-                                        
-                                                    <!-- Media body -->
-                                            
-                                                        <p class="mb-0">Faqs</p>
-                                              
-                                                </div>
-                                            </a>
-                                            <a href="/showallposts" class="list-group-item list-group-item-action" role="button">
-                                                <div class="media d-flex align-items-center">
-                                                    <!-- SVG icon -->
-                                        
-                                                    <!-- Media body -->
-                                            
-                                                        <p class="mb-0">News & Events</p>
-                                              
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                 
-                                </div>
-                            </li>
-                          
-                         
-                        </ul>
-                    </div>
+        <div class="js-slide">
+          <!-- Slide #2 -->
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url(../../assets/img/1920x800/newvv.jpg);">
+            <div class="container space-3 space-top-md-5 space-top-lg-3">
+              <div class="row">
+                <div class="col-md-8 col-lg-6">
+                  <span class="d-block h4 text-white font-weight-light mb-2"
+                        data-scs-animation-in="fadeInUp">
+                  Scout54
+                  </span>
+                  <h6 class="text-white display-4 font-size-md-down-5 mb-0"
+                      data-scs-animation-in="fadeInUp"
+                      data-scs-animation-delay="200">
+                    <span class="font-weight-semi-bold">showcase players </span> based on excellence and integrity
+                  </h6>
                 </div>
-            </nav>
-        </header>
-        <!-- Omnisearch -->
-        <div id="omnisearch" class="omnisearch">
-            <div class="container">
-                <!-- Search form -->
-                <form class="omnisearch-form">
-                    <div class="form-group">
-                        <div class="input-group input-group-merge input-group-flush">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="far fa-search"></i></span>
-                            </div>
-                            <input type="text" name="country_name" id="country_name"  class="form-control" value="Type and hit enter ...">
-                        </div>
-                    </div>
-                </form>
-                <div class="omnisearch-suggestions">
-                    <h6 class="heading">Search Suggestions</h6>
-                    <div class="row">
-                        <div class="col-sm-6">
-                        <div id="countryList">
+              </div>
+            </div>
+          </div>
+          <!-- End Slide #2 -->
+        </div>
+
+      </div>
+      <!-- End Hero Carousel Main -->
+
+      <!-- Slick Paging -->
+      <div class="container position-relative">
+        <div id="slickPaging" class="u-slick__paging"></div>
+      </div>
+      <!-- End Slick Paging -->
+
+      <!-- Hero Carousel Secondary -->
+      <div id="heroNavThumb" class="js-slick-carousel u-slick"
+           data-autoplay="true"
+           data-speed="10000"
+           data-is-thumbs="true"
+           data-nav-for="#heroNav">
+        <div class="js-slide">
+          <!-- Slide #1 -->
+      
+          <!-- End Slide #1 -->
+        </div>
+
+        <div class="js-slide">
+          <!-- Slide #2 -->
+       
+          </div>
+          <!-- End Slide #2 -->
+        </div>
+      </div>
+      <!-- End Hero Carousel Secondary -->
+    </div>
+    <!-- End Hero v1 Section -->
+
+    <hr class="my-0">
+
+    <!-- Front in Frames Section -->
+    <div class="container position-relative">
+      <div id="slickPaging" class="u-slick__paging"></div>
+    </div>
+    <!-- End Slick Paging -->
+
+    <!-- Hero Carousel Secondary -->
+    <div id="heroNavThumb" class="js-slick-carousel u-slick"
+         data-autoplay="true"
+         data-speed="10000"
+         data-is-thumbs="true"
+         data-nav-for="#heroNav">
+      <div class="js-slide">
+        <!-- Slide #1 -->
+        <div class="d-flex align-items-center bg-dark u-hero-v1__secondary" style="font-family: 'Cera Pro New';color: #ffffff;">
+          <div class="container space-2">
+            <div class="row">
+              <div class="col-lg-4">
+                <h3 class="h5 text-muted">
+                  <strong class="d-block" style="color: #ffffff;"></strong>
+                  <span class="d-block" style="color: #ffffff;">Our Vision</span>
+                </h3>
+                <p class="mb-0" style="color: #ffffff;">Bridging the gap in the way scouting is done in order to be the biggest online football scouting network in Africa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100 h-100 d-none d-lg-inline-block bg-white u-hero-v1__last">
+            <div class="u-hero-v1__last-inner">
+              <h3 class="h5 text-white">
+                <strong class="u-hero-v1__last-next">Our Mission</strong> 
+              </h3>
+              <p class="text-white-70 mb-0" style="color: #381bbb;">1. Connect you to world class players,scouts,agents,coaches and clubs.</p>
+            </div>
+          </div>
+        </div>
+        <!-- End Slide #1 -->
+      </div>
+
+      <div class="js-slide">
+        <!-- Slide #2 -->
+        <div class="d-flex align-items-center bg-white u-hero-v1__secondary" style="font-family: 'Cera Pro New';">
+          <div class="container space-2">
+            <div class="row">
+              <div class="col-lg-4">
+                <h3 class="h5 text-muted">
+                
+                  <strong class="u-hero-v1__last-next">Our Mission</strong> 
+                </h3>
+                <p class="mb-0"  style="color: #381bbb;" >2. To provide platform to showcase the glory of African players globally.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100 h-100 d-none d-lg-inline-block bg-dark u-hero-v1__last">
+            <div class="u-hero-v1__last-inner">
+              <h3 class="h5 text-white">
+                <strong class="u-hero-v1__last-prev" style="color: #ffffff;">Our Mision:</strong>
+              </h3>
+              <p class="mb-0"  style="color: #ffffff;" >3. To see hope in players and help them realise their dreams</p>
+              <p class="mb-0"  style="color: #ffffff;" >4. To showcase players based on talent,excellence and integrity</p>
+         
+            </div>
+          </div>
+        </div>
+        <!-- End Slide #2 -->
+      </div>
+    </div>
+    <!-- End Hero Carousel Secondary -->
+  </div>
+
+<!-- For players -->
+<div id="featuresSection" class="container space-2 space-lg-2" style="font-family:'Cera Pro New';">
+  <!-- Title -->
+  <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+  <h2 style="color:#381bbb">Who is Scout54 for? </h2>
+  </div>
+  <!-- End Title -->
+
+  <div class="row mx-n2">
+    <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+      <!-- Icon Blocks -->
+      <a class="card h-100 transition-3d-hover" href="#">
+        <div class="card-body">
+          <figure class="w-100 max-w-8rem mb-4">
+            <img class="img-fluid" src="../../assets/illustrators/junior.png" alt="SVG">
+          </figure>
+          <h4>Players</h4>
+          <p class="font-size-1 text-body mb-0">Front is an incredibly beautiful, fully responsive, and mobile-first projects on the web.</p>
+        </div>
+        <div class="card-footer border-0 pt-0">
+          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+        </div>
+      </a>
+      <!-- End Icon Blocks -->
     </div>
 
-                        </div>
-
-                    </div>
-                    {{ csrf_field() }}
-                </div>
-            </div>
+    <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+      <!-- Icon Blocks -->
+      <a class="card h-100 transition-3d-hover" href="#">
+        <div class="card-body">
+          <figure class="w-100 max-w-8rem mb-4">
+            <img class="img-fluid" src="../../assets/illustrators/agent.png" alt="SVG">
+          </figure>
+          <h4>Scout & Agents</h4>
+          <p class="font-size-1 text-body mb-0">Front template can be easily customized with its cutting-edge components and features.</p>
         </div>
-        <div class="main-content">
-            <!-- Header (v1) -->
-   <section class="slice slice-lg bg-cover bg-size--cover" data-offset-top="#header-main" style="background-image: url({{asset('img/slide-3.jpg')}});height:90vh">
-      <span class="mask bg-gradient-dark opacity-7"></span>
-      <div class="container pt-5 pt-lg-9 pb-lg-7">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-      
-          <h2 class="h1 text-white mb-4">We <span class="text-info typed" id="type-example-1" data-type-this="Restore the glory of African players..,  find hope in players., showcase players based on excellence and integrity., are the best football networking agent in Africa."></span></h2>
-             
-          </div>
+        <div class="card-footer border-0 pt-0">
+          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
         </div>
-      </div>
-      <a href="#sct-topics" class="tongue tongue-bottom tongue-section-primary scroll-me">
-        <i class="far fa-angle-down"></i>
       </a>
-    </section>
-            <!-- Features (v1) -->
-            <section class="slice slice-xl" data-offset-top="#header-main">
-            <div class="container">
-     
-     <div class="row row-grid  delimiter-top">
-       <div class="col-lg-4">
-         <div class="d-flex align-items-center">
-         <img alt="Image placeholder" src="{{asset('img/analyseee.png')}}" class="svg-inject" style="width: 90px; height: 90px;">
-            <div class="icon-text px-4">
-             <h5 class="mb-1">Agents & Scouts</h5>
-             <p class="mb-0">You bring your passion. We take care of the rest.</p>
-           </div>
-         </div>
-       </div>
-       <div class="col-lg-4">
-         <div class="d-flex align-items-center">
-           <img alt="Image placeholder" src="{{asset('img/realsearch.png')}}" class="svg-inject" style="width: 90px; height: 90px;">
-           <div class="icon-text px-4">
-             <h5 class="mb-1">Search</h5>
-             <p class="mb-0">We give all ...</p>
-           </div>
-         </div>
-       </div>
-       <div class="col-lg-4">
-         <div class="d-flex align-items-start">
-           <img alt="Image placeholder" src="{{asset('img/portfolio.png')}}" class="svg-inject" style="width: 90px; height: 90px;">
-           <div class="icon-text px-4">
-             <h5 class="mb-1">Players & Coaches</h5>
-             <p class="mb-0">We have collections of world class players and coaches ready to explore on Sabikick </p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-    </section>
-            <!-- Features (v2) -->
-            <section class="slice slice-lg">
-                <div class="container">
-                    <div class="row row-grid justify-content-around align-items-center">
-                        <div class="col-lg-5 order-lg-2">
-                            <div class=" pr-lg-4">
-                                <h5 class=" h3">Get Connected to the best football network now.</h5>
-                              </div>
-                        </div>
-                        <div class="col-lg-6 order-lg-1">
-                            <img alt="Image placeholder" src="{{asset('img/2.jpg')}}" class="img-fluid img-center">
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- End Icon Blocks -->
+    </div>
 
-            <!-- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
-</iframe> -->
-            <!-- Features (v3) -->
-          
-            <!-- Features (v4) -->
-            <section class="slice slice-lg bg-section-secondary overflow-hidden">
-                <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
-                    <figure class="w-100">
-                        <img alt="Image placeholder" src="{{asset('img/svg/backgrounds/bg-2.svg')}}" class="svg-inject" style="height: 1000px;">
-                    </figure>
-                </div>
-                <div class="container position-relative zindex-100">
-                    <div class="mb-5 px-3 text-center">
-                        <span class="badge badge-soft-success badge-pill badge-lg">
-                          Our Values
-                        </span>
-                        <h3 class=" mt-4">Sabikick... Africa to the world!!</h3>
-                       
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card px-3">
-                                <div class="card-body py-5">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary">
-                                           1
-                                            </div>
-                                        <div class="icon-text pl-4">
-                                           
-                                        </div>
-                                    </div>
-                                    <h4 class="mt-4 mb-0" style="color:#000000">Restoring the glory of African players</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card px-3">
-                                <div class="card-body py-5">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon bg-gradient-warning text-white rounded-circle icon-shape shadow-warning">
-                                         2
-                                        </div>
-                                        <div class="icon-text pl-4">
-                                           </div>
-                                    </div>
-                                    <h4 class="mt-4 mb-0" style="color:#000000">We find hope in players</h4>
-                               
-                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card px-3">
-                                <div class="card-body py-5">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon bg-gradient-info text-white rounded-circle icon-shape shadow-info">
-                                           3
-                                        </div>
-                                        <div class="icon-text pl-4">
-                                 
-                                        </div>
-                                    </div>
-                                    <h4 class="mt-4 mb-0" style="color:#000000">We showcase players based on excellence and integrity</h4>
-                               
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Features (v5) -->
-            <section class="slice slice-sm bg-section-secondary" id="sct-faq">
-      <div class="container">
-        <div class="row row-grid">
-    
-          <div class="col-lg-10 ml-lg-auto">
-            <!-- Theme integration -->
-            <div class="mb-5">
-              <h4 class="mb-4" id="theme-integration">Our Faqs</h4>
-              <!-- Accordion -->
-              <div id="accordion-1" class="accordion accordion-spaced">
-                <!-- Accordion card 1 -->
+    <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-sm-0">
+      <!-- Icon Blocks -->
+      <a class="card h-100 transition-3d-hover" href="#">
+        <div class="card-body">
+          <figure class="w-100 max-w-8rem mb-4">
+            <img class="img-fluid" src="../../assets/illustrators/portfolio.png" alt="SVG">
+          </figure>
+          <h4>Clubs <span class="badge badge-success badge-pill ml-1">New</span></h4>
+          <p class="font-size-1 text-body mb-0">Front is not only for developers but also for designers, and includes a Sketch file.</p>
+        </div>
+        <div class="card-footer border-0 pt-0">
+          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+        </div>
+      </a>
+      <!-- End Icon Blocks -->
+    </div>
 
-                @foreach($faq as $fq)
-                <div class="card">
-                  <div class="card-header py-4" id="heading-1-1" data-toggle="collapse" role="button" data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                    <h6 class="mb-0"><i class="far fa-file-pdf mr-3"></i>{{$fq->header ?? 'No header'}}</h6>
-                  </div>
-                  <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1" data-parent="#accordion-1">
-                    <div class="card-body">
-                     <p>{{$fq->body ?? 'N/A'}}</p>
-                      </div>
-                  </div>
-                </div>
-               @endforeach
+    <div class="col-sm-6 col-lg-3 px-2">
+      <!-- Icon Blocks -->
+      <a class="card h-100 transition-3d-hover" href="#">
+        <div class="card-body">
+          <figure class="w-100 max-w-8rem mb-4">
+            <img class="img-fluid" src="../../assets/illustrators/coachie.png" alt="SVG">
+          </figure>
+          <h4>Coaches</h4>
+          <p class="font-size-1 text-body mb-0">Every component and plugin is well documented with live examples.</p>
+        </div>
+        <div class="card-footer border-0 pt-0">
+          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+        </div>
+      </a>
+      <!-- End Icon Blocks -->
+    </div>
+  </div>
+</div>
 
-                <!-- Accordion card 2 -->
-             
-              </div>
-              <!-- Scroll to top -->
-              <div class="text-right py-4">
-                <a href="#theme-integration" data-scroll-to data-scroll-to-offset="50" class="text-sm font-weight-bold">Back to top<i class="far fa-long-arrow-alt-up ml-2"></i></a>
-              </div>
-            </div>
-            <!-- Customization  -->
-           
-          </div>
+<!-- End of for players -->
+
+    <!-- Team Section -->
+   
+    <!-- End Team Section -->
+<!-- How it works section -->
+<div class="container space-top-2 space-top-lg-1 space-bottom-lg-1" >
+  <!-- Title -->
+  <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+    <h2 class="text-primary" style="font-family: 'Cera Pro New';font-style:normal;color: #130c33;">3 simple steps to greatness</h2>
+  </div>
+  <!-- End Title -->
+
+  <!-- Step -->
+  <ul class="step step-md step-centered">
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-soft-primary">1</span>
+        <div class="step-content">
+          <h3 style="font-family: 'Cera Pro New';font-style:normal;">Register for free</h3>
+          <p style="font-family: 'Cera Pro New';font-style:normal;"> Achieve virtually any design and layout from within the one template.</p>
         </div>
       </div>
-    </section>
-            <!-- Testimonials (v1) -->
-            <section class="slice slice-lg bg-section-secondary">
-                <div class="container">
-                    <div class="mb-5 text-center">
-                        <h3 class=" mt-4">What our users say</h3>
-                        <div class="fluid-paragraph mt-3">
-                            <p class="lead lh-180">We have served them better than others, here are lists of feedbacks from our users.</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-11">
-                            <div class="swiper-js-container overflow-hidden">
-                                <div class="swiper-container" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" data-swiper-xl-items="3">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide p-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <img alt="Image placeholder" src="{{asset('img/theme/light/team-1-800x800.jpg')}}" class="avatar  rounded-circle">
-                                                        </div>
-                                                        <div class="pl-3">
-                                                            <h5 class="h6 mb-0">Oloye Bukoye</h5>
-                                                            <small class="d-block text-muted">Agent</small>
-                                                        </div>
-                                                    </div>
-                                                    <p class="mt-4 lh-180">I used to have tough time searching for players to boost my business, but since i joined sabikick, i get all best players at my fingertips in the comfort of my room.</p>
-                                                 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide p-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <img alt="Image placeholder" src="{{asset('img/theme/light/team-1-800x800.jpg')}}" class="avatar  rounded-circle">
-                                                        </div>
-                                                        <div class="pl-3">
-                                                            <h5 class="h6 mb-0">Habib Oladosu</h5>
-                                                            <small class="d-block text-muted">Footballer</small>
-                                                        </div>
-                                                    </div>
-                                                    <p class="mt-4 lh-180">I really love this platform, i got connected to my first scout after registering on sabikick by posting my videos daily </p>
-                                                 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide p-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <img alt="Image placeholder" src="{{asset('img/theme/light/team-1-800x800.jpg')}}" class="avatar  rounded-circle">
-                                                        </div>
-                                                        <div class="pl-3">
-                                                            <h5 class="h6 mb-0">Olamide Hamed</h5>
-                                                            <small class="d-block text-muted">Coach</small>
-                                                        </div>
-                                                    </div>
-                                                    <p class="mt-4 lh-180">This platform is first of it's kind in Africa, now i can connect to all my players and disseminate information easily to them. Thanks to Sabikick</p>
-                                                 
-                                                </div>
-                                            </div>
-                                        </div>
+    </li>
 
-                                        <div class="swiper-slide p-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <img alt="Image placeholder" src="{{asset('img/theme/light/team-1-800x800.jpg')}}" class="avatar  rounded-circle">
-                                                        </div>
-                                                        <div class="pl-3">
-                                                            <h5 class="h6 mb-0">X-Pillars</h5>
-                                                            <small class="d-block text-muted">Club</small>
-                                                        </div>
-                                                    </div>
-                                                    <p class="mt-4 lh-180">Great job done, all thanks to Sabikick,i got my players and coach with all on this platform easily...We going places soon</p>
-                                                 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Add Pagination -->
-                                <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Features (v7) -->
-            <section class="slice slice-lg bg-section-secondary">
-                <div class="container">
-                    <div class="mb-5 text-center">
-                        <h3 class=" mt-4">Our News and event</h3>
-                        <div class="fluid-paragraph mt-3">
-                            <p class="lead lh-180">See trending updates posted by our world class users</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-11">
-                            <div class="swiper-js-container overflow-hidden">
-                                <div class="swiper-container" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" data-swiper-xl-items="3">
-                                    <div class="swiper-wrapper">
-              @if(count($post) == 0)
-
-
-@else
-        @foreach($post as $pos)
-                                        <div class="swiper-slide p-4">
-                                        <div class="card hover-shadow-lg hover-translate-y-n10">
-              <a href="#">
-                <img alt="Image placeholder" src="/storage/{{$pos->image}}" class="card-img-top">
-              </a>
-              <div class="card-body py-5 text-center">
-                <a href="#" class="d-block h5 lh-150">{{$pos->title}}</a>
-                <h6 class="text-muted mt-4 mb-0">{{date('M j, Y h:ia',strtotime($pos->created_at))}}</h6>
-              <span>Posted by </span> <a href="/{{$pos->user->username}}" target="_blank" class="d-block h5 lh-150">{{$pos->user->username}}</a>
-              </div>
-             
-            </div>
-                                        </div>
-@endforeach
-
-
-@endif
-                                    </div>
-                                </div>
-                                <!-- Add Pagination -->
-                                <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Call to action (v10) -->
-            <section class="slice slice-lg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card bg-gradient-dark shadow hover-shadow-lg border-0 position-relative zindex-100">
-                                <div class="card-body py-5">
-                                    <div class="d-flex align-items-start">
-                                        <div class="icon">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                        <div class="icon-text">
-                                            <h3 class="text-white h4">Our Mission</h3>
-                                            <p class="text-white mb-0">Creating the right platform that connects young African football players with scouts, agents, coaches, clubs and fellow players to enable them showcase their talent and get the right career opportunity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card bg-primary shadow hover-shadow-lg border-0 position-relative zindex-100">
-                                <div class="card-body py-5">
-                                    <div class="d-flex align-items-start">
-                                        <div class="icon text-white">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                        <div class="icon-text">
-                                            <h5 class="h4 text-white">Our Values</h5>
-                                            <p class="mb-0 text-white">Restoring the glory of African players. <br> we find hope in players <br> We showcase players based on excellence and integrity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-soft-primary">2</span>
+        <div class="step-content">
+          <h3 style="font-family: 'Cera Pro New';font-style:normal;">Connect to soccer world</h3>
+          <p style="font-family: 'Cera Pro New';font-style:normal;">Whether you're a startup or a global enterprise, learn how to integrate with Front.</p>
         </div>
-        <footer id="footer-main">
-            <div class="footer footer-dark bg-gradient-primary footer-rotate">
-                <div class="container">
-                    <div class="row pt-md">
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <a href="#">
-                            <img alt="Image placeholder" src="{{asset('img/newlogo.png')}}" id="navbar-logo" style="height: 50px;">
-                    </a>
-                            <p>Restoring the glory of African players. <br> we find hope in players <br> We showcase players based on excellence and integrity</p>
-                        </div>
-                        <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-            <h6 class="heading mb-3">More</h6>
-            <ul class="list-unstyled">
-              <li><a href="/contactus">Contact Us</a></li>
-              <li><a href="/aboutus">About Us</a></li>
-              <li><a href="/faqs">Faq</a></li>
-              <li><a href="/showallposts">News & Events</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-            <h6 class="heading mb-3">Menu</h6>
-            <ul class="list-unstyled text-small">
-              <li><a href="/listplayers">Players</a></li>
-              <li><a href="/listagents">Agents</a></li>
-              <li><a href="/listscouts">Scouts</a></li>
-              <li><a href="/listcoaches">Coaches</a></li>
-              <li><a href="/listclubs">Clubs</a></li>
-            </ul>
-          </div>
-       
-                    </div>
-                    <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-                        <div class="col-md-6">
-                            <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                                &copy; 2018-2019 <a href="https://webpixels.io/" class="font-weight-bold" target="_blank"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://dribbble.com/webpixels" target="_blank">
-                                        <i class="fab fa-dribbble"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.instagram.com/webpixelsofficial" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://github.com/webpixels" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    
-        <!-- Customizer modal -->
-        <script src="{{ asset('js/app.js') }}"></script>
-        <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
-      <script  src="{{asset('js/purpose.core.js')}}"></script>
-      
-        <script src="{{asset('libs/swiper/dist/js/swiper.min.js')}}"></script>
-      
-        <script src="{{asset('js/purpose.js')}}"></script>
-       
-        <script src="{{asset('js/demo.js')}}"></script>
-     
-        <script>
-$(document).ready(function(){
+      </div>
+    </li>
 
- $('#country_name').keyup(function(){ 
-        var query = $(this).val();
-        if(query != '')
-        {
-         var _token = $('input[name="_token"]').val();
-         $.ajax({
-          url:"{{ route('autocomplete.fetch') }}",
-          method:"POST",
-          data:{query:query, _token:_token},
-          success:function(data){
-           $('#countryList').fadeIn();  
-                    $('#countryList').html(data);
-          }
-         });
-        }
+    <li class="step-item">
+      <div class="step-content-wrapper">
+        <span class="step-icon step-icon-soft-primary">3</span>
+        <div class="step-content">
+          <h3 style="font-family: 'Cera Pro New';font-style:normal;">Explore unending opportunies</h3>
+          <p style="font-family: 'Cera Pro New';font-style:normal;">We help power millions of businesses to built and run smoothly.</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- End Step -->
+</div>
+
+<!-- End of how it works -->
+<!-- for players -->
+ 
+        </div>
+      </div>
+    </div>
+<!-- End of players -->
+
+
+<div class="container" align="center">
+  <!-- Title -->
+  <div class="w-md-80 w-lg-50 text-center">
+    
+    <h2 class="text-primary"><span class="font-weight-semi-bold">Our Statistics</span></h2>
+ 
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Coaches</p></div>
+      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Players</p></div>
+      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Clubs</p></div>
+      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Agents</p></div>
+     
+    </div>
+  </div>
+
+
+  
+  <!-- End Slick Carousel -->
+</div>
+
+    <!-- Blog Grid Section -->
+    <div class="bg-light">
+      <div class="container space-2 space-md-2">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        
+          <h2 class="text-primary">Scout54 <span class="font-weight-semi-bold">Market</span></h2>
+          <p style="font-family: 'Cera Pro New'; font-weight: 30;font-style: normal; font-size: 16px;">Based on requests from registered clubs,coaches and agents on our platform.</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- News Carousel -->
+        <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-2"
+             data-slides-show="4"
+             data-slides-scroll="1"
+             data-pagi-classes="text-center u-slick__pagination mt-7 mb-0"
+             data-responsive='[{
+               "breakpoint": 1200,
+               "settings": {
+                 "slidesToShow": 3
+               }
+             }, {
+               "breakpoint": 992,
+               "settings": {
+                 "slidesToShow": 2
+               }
+             }, {
+               "breakpoint": 768,
+               "settings": {
+                 "slidesToShow": 2
+               }
+             }, {
+               "breakpoint": 554,
+               "settings": {
+                 "slidesToShow": 1
+               }
+             }]'>
+          <!-- Blog Grid -->
+          <div class="js-slide card border-0 mb-3">
+            <div class="card-body p-5">
+              <small class="d-block text-muted mb-2">May 15, 2018</small>
+              <h2 class="h5">
+                <a href="https://htmlstream.com/preview/front-v2.9.4/html/blog/single-article-classic.html">Right-Winger</a>
+              </h2>
+              <p class="mb-0">Lorem impsum dolor sit amet, this is a ...read more.</p>
+            </div>
+
+            <div class="card-footer pb-5 px-0 mx-5">
+              <div class="media align-items-center">
+                <div class="u-sm-avatar mr-3">
+                  <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                </div>
+                <div class="media-body">
+                  <h4 class="small mb-0"><a href="https://htmlstream.com/preview/front-v2.9.4/html/blog/single-article-classic.html">View Offer</a></h4>
+                </div>
+              </div>
+            </div>
+            <!-- End Blog Grid -->
+          </div>
+
+        </div>
+        <!-- End News Carousel -->
+      </div>
+    </div>
+    <!-- End Blog Grid Section -->
+
+    <div class="container space-top-2 space-top-lg-3" style="font-family: 'Cera Pro New';">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2 class="h1">Read our latest news</h2>
+        <p>We've helped some great companies brand, design and get to market.</p>
+      </div>
+      <!-- End Title -->
+
+      <div class="row mx-n2 mb-5 mb-md-9">
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <img class="card-img-top" src="../../assets/img/500x280/img11.jpg" alt="Image Description">
+            <div class="card-body">
+              <span class="d-block small font-weight-bold text-cap mb-2">Product</span>
+              <h5 class="mb-0">Better is when everything works together</h5>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <img class="card-img-top" src="../../assets/img/500x280/img11.jpg" alt="Image Description">
+            <div class="card-body">
+              <span class="d-block small font-weight-bold text-cap mb-2">Business</span>
+              <h5 class="mb-0">What CFR really is about</h5>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-sm-0">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <img class="card-img-top" src="../../assets/img/500x280/img11.jpg" alt="Image Description">
+            <div class="card-body">
+              <span class="d-block small font-weight-bold text-cap mb-2">Business</span>
+              <h5 class="mb-0">Should Product Owners think like entrepreneurs?</h5>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+
+        <div class="col-sm-6 col-lg-3 px-2">
+          <!-- Card -->
+          <a class="card h-100 transition-3d-hover" href="#">
+            <img class="card-img-top" src="../../assets/img/500x280/img11.jpg" alt="Image Description">
+            <div class="card-body">
+              <span class="d-block small font-weight-bold text-cap mb-2">Facilitate</span>
+              <h5 class="mb-0">Announcing Front Strategies: Ready-to-use rules</h5>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="position-relative z-index-2 text-center">
+        <div class="d-inline-block font-size-1 border bg-white text-center rounded-pill py-3 px-4">
+          Want to read more? <a class="font-weight-bold ml-3" href="#">Go here <span class="fas fa-angle-right ml-1"></span></a>
+        </div>
+      </div>
+      <!-- End Info -->
+    </div>
+    <!-- End Articles Section -->
+<br><br>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="refoot space-top-2 space-top-md-3" style="background-image: url(../../assets/img/1920x800/ben.jpg);">
+  <div class="overlay"></div>
+ 
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fa fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+  <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="../../assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../../assets/js/hs.core.js"></script>
+  <script src="../../assets/js/mycustom.js"></script>
+  <script src="../../assets/js/components/hs.header.js"></script>
+  <script src="../../assets/js/components/hs.unfold.js"></script>
+  <script src="../../assets/js/components/hs.fancybox.js"></script>
+  <script src="../../assets/js/components/hs.slick-carousel.js"></script>
+  <script src="../../assets/js/components/hs.validation.js"></script>
+  <script src="../../assets/js/components/hs.focus-state.js"></script>
+  <script src="../../assets/js/components/hs.cubeportfolio.js"></script>
+  <script src="../../assets/js/components/hs.svg-injector.js"></script>
+  <script src="../../assets/js/components/hs.go-to.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+ 
+  <link rel="stylesheet" href="">
+ 
+  <!-- JS Plugins Init. -->
+<script type="text/javascript">
+
+$('.count').counterUp({
+delay:10,
+time:3000
+}
+
+);
+</script>
+
+
+  <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
     });
 
-    $(document).on('click', 'li', function(){  
-        $('#country_name').val($(this).text());  
-        $('#countryList').fadeOut();  
-    });  
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
 
-});
-</script>
-    </body>
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
 
+      // initialization of fancybox
+      $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
-<!-- Mirrored from demo.webpixels.io/purpose-website-ui-kit-v2.0.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 11:38:16 GMT -->
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate');
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of cubeportfolio
+      $.HSCore.components.HSCubeportfolio.init('.cbp');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+
+<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/home/classic-business.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2020 19:38:01 GMT -->
 </html>

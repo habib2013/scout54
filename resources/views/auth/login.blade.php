@@ -32,7 +32,7 @@
   <main id="content" role="main" >
     <!-- Form -->
     <div class="d-flex align-items-center position-relative vh-lg-100" >
-      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-top bg-navy vh-lg-100 px-0 relogin" style="background-image: url(../../assets/img/1920x800/01.jpg);background-size: 100% 100%;">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-navy vh-lg-100 px-0 relogin" style="background-image: url(../../assets/img/1920x800/01.jpg);background-size: 100% 100%;">
          <div class="overlay"></div>
          <div class="w-100 p-5" style="position: absolute;">
      
@@ -40,6 +40,8 @@
      
        <br>
        <br>  <br>
+
+       <h1> Scout54 players</h1>
        <br>
   
             </div>
@@ -186,21 +188,36 @@
                </div>
              </nav>
         
+
+             @isset($url)
+                    <form class="js-validate" method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    @else
+                    <form class="js-validate" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    @endisset
+                        @csrf
         
-            <!-- Form -->
-            <form class="js-validate">
+        
               <!-- Title -->
               <div class="mb-5 mb-md-7" >
+                
                 <h1>Welcome back</h1>
                 <p>Login to manage your account.</p>
+                <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
               </div>
               <!-- End Title -->
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Email address</label>
-                <input type="email" class="form-control" name="email" id="signinSrEmail" tabindex="1" placeholder="Email address" aria-label="Email address" required
-                       data-msg="Please enter a valid email address.">
+                <input type="email" name="email" id="email" tabindex="1" placeholder="Email address" aria-label="Email address" 
+                       data-msg="Please enter a valid email address." class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus >
+          
+          
+                @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
               </div>
               <!-- End Form Group -->
 
@@ -212,8 +229,14 @@
                     <a class="link-underline text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a>
                   </span>
                 </label>
-                <input type="password" class="form-control" name="password" id="signinSrPassword" tabindex="2" placeholder="********" aria-label="********" required
-                       data-msg="Your password is invalid. Please try again.">
+                <input type="password"  name="password" id="password" tabindex="2" placeholder="********" aria-label="********" 
+                       data-msg="Your password field is invalid. Please try again."  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+             
+                       @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
               </div>
               <!-- End Form Group -->
 

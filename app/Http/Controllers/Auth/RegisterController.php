@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Player;
+use App\Coach;
+use App\Mail\HelloThere;
 use App\Incomplete;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -39,6 +42,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:player');
+        $this->middleware('guest:coach');
     }
 
     /**
@@ -50,10 +55,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'name' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255','unique:users'],
-            'usertype' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'fullname' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'status' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -68,23 +73,60 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user =  User::create([
-            'name' => $data['name'],
-            'is_admin'=>0,
-            'status' => $data['status'],
-            'usertype' => $data['usertype'],
             'username' => $data['username'],
+            'fullname' => $data['fullname'],
+            'phone' => $data['phone'],
+            'status' => $data['status'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
+  
+      
+        session()->flash('message', '<b>Hi there!</b> Thanks for signing up!');
+        session()->flash('type', 'success');
+        \Mail::to($user)->send(new HelloThere($user));
         
-            $incomplete = Incomplete::create([
-                'user_id' => $user->id,
-                'expires_at'=>$user->created_at->addMinutes(5)
-            ]);
-
         return $user;
-        return $incomplete;
-        
     }
+
+    public function showPlayerRegisterForm()
+    {
+        return view('auth.register', ['url' => 'player']);
+    }
+
+    public function showCoachRegisterForm()
+    {
+        return view('auth.register', ['url' => 'coach']);
+    }
+
+    protected function createPlayer(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        Player::create([
+          
+            'username' => $request->username,
+            'fullname' => $request->fullname,
+            'phone' => $request->phone,
+            'status' => $request->status,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect()->intended('login/admin');
+    }
+
+    protected function createCoach(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        Coach::create([
+            'username' => $request->username,
+            'fullname' => $request->fullname,
+            'phone' => $request->phone,
+            'status' => $request->status,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect()->intended('login/blogger');
+    }
+
+
 }

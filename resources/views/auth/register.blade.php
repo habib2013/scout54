@@ -43,7 +43,8 @@
      
        <br>
      <h2>Join scout54' players</h2>
-         
+     <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Register') }}</div>
+
        
             </div>
 
@@ -189,9 +190,14 @@
                </div>
              </nav>
         
-        
-            <!-- Form -->
-            <form class="js-validate">
+             @isset($url)
+                    <form class="js-validate" method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
+                    @else
+                    <form class="js-validate" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    @endisset
+                        @csrf
+
+          
               <!-- Title -->
               <div class="mb-5 mb-md-5" >
               </div>
@@ -202,47 +208,77 @@
               <!-- Form Group -->
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Username</label>
-                <input type="text" class="form-control" name="username" id="username" tabindex="1" placeholder="Username" aria-label="Username" required
-                       data-msg="Please enter a valid Username.">
+                <input type="text"  id="username" tabindex="1" aria-label="Username"
+                       data-msg="Please enter a valid Username." class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+            
+                       @error('username')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+
               </div>
 
               <div class="js-form-message form-group">
 <div class="row">
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Full Name</label>
-    <input type="text" class="form-control" name="fullname" id="fullname" tabindex="1" placeholder="Fullname" aria-label="Full name" required
-           data-msg="Please enter a valid Fullname.">
+    <input type="text"  id="fullname" tabindex="1"  aria-label="Full name" 
+           data-msg="Please enter a valid Fullname." class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
+           @error('username')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+ 
   </div>
+
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-  
-
-  <label class="input-label">Birthday</label>
-
-<div id="datepickerWrapperFrom" class="js-focus-state u-datepicker input-group">
-  <div class="input-group-prepend">
-  
+    <label class="input-label" for="signinSrEmail">Email Address</label>
+    <input type="email"  id="email" tabindex="1"  aria-label="Email address" 
+           data-msg="Pleasemaile enter a valid email." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
+           @error('email')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+ 
   </div>
-  <input class="js-range-datepicker form-control bg-white rounded-right" type="date" placeholder="From" aria-label="From" aria-describedby="calendarFromLabel"
-         data-rp-wrapper="#datepickerWrapperFrom"
-         data-rp-date-format="d/m/Y">
-</div>
-
-
-     </div>
+ 
 </div>
 
               
               </div>
             <div class="row">
               <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Phone nummber</label>
               <div class="js-form-message form-group">            
-                <input type="tel" class="form-control" name="tel" id="phone" tabindex="1" required
-                       data-msg="Please enter a valid Phone number.">
-
+                <input type="tel"   id="phone" tabindex="1" required
+                       data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                       @error('phone')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
               </div>
 
 
               </div>
+              <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Status as professional</label>
+  
+<select name="status" id="status" class="form-control">
+
+<option value="never had a contract">Never had a contract</option>
+<option value="My last contract has expired">My last contract has expired</option>
+<option value="My current contract has been terminated">My current contract has been terminated</option>
+<option value="Still on Contract">Still on Contract</option>
+
+
+</select>
+
+              </div>
+
             </div>
 
             
@@ -256,11 +292,16 @@
     <div class="js-form-message form-group">
       <label class="input-label" for="signinSrPassword" tabindex="0">
         <span class="d-flex justify-content-between align-items-center">
-          Confirm password
+           password
             </span>
       </label>
-      <input type="password" class="form-control" name="password" id="signinSrPassword" tabindex="2" placeholder="********" aria-label="********" required
+      <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  id="signinSrPassword" tabindex="2"  aria-label="********" 
              data-msg="Your password is invalid. Please try again.">
+             @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
     </div>
   </div>
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -271,9 +312,10 @@
           Confirm password
         </span>
       </label>
-      <input type="password" class="form-control" name="password" id="signinSrPassword" tabindex="2" placeholder="********" aria-label="********" required
-             data-msg="Your password is invalid. Please try again.">
-    </div>
+    
+      <input  id="input-password-confirm" placeholder="confirm password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+     
+       </div>
   </div>
 </div>
 

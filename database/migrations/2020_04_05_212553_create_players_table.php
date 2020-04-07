@@ -18,12 +18,10 @@ class CreatePlayersTable extends Migration
             $table->string('username')->unique();
             $table->text('fullname');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->text('birthday');
-            $table->string('nationality');
+            $table->timestamp('email_verified_at')->nullable(); 
+            $table->boolean('is_player')->default(false);    
             $table->string('phone');
             $table->string('status');
-            $table->string('passport');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
