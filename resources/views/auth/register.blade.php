@@ -204,6 +204,7 @@
               <div class="mb-3 mb-md-3" >
            </div>
               <!-- End Title -->
+       
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
@@ -247,8 +248,28 @@
  
 </div>
 
+
+
               
               </div>
+
+              @if( $url == 'player')
+<div class="js-form-message form-group">
+  
+                <label class="input-label" for="signinSrEmail">Player experience</label>
+                <input type="text"  id="username" tabindex="1" aria-label="Username"
+                       data-msg="Please enter a valid Username." class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+            
+                       @error('username')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+
+              </div>
+@endif
+       
+
             <div class="row">
               <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Phone nummber</label>

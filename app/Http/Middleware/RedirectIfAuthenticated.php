@@ -17,9 +17,19 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // if (Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
+        if ($guard == "player" && Auth::guard($guard)->check()) {
+            return redirect('/player');
+        }
+        if ($guard == "coach" && Auth::guard($guard)->check()) {
+            return redirect('/coach');
+        }
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
+
 
         return $next($request);
     }

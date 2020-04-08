@@ -11,6 +11,7 @@ use App\Incomplete;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -111,7 +112,7 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return redirect()->intended('login/admin');
+        return redirect()->intended('login/player');
     }
 
     protected function createCoach(Request $request)
@@ -125,7 +126,9 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return redirect()->intended('login/blogger');
+        session()->flash('message', '<b>Hi there!</b> Thanks for signing up!');
+        session()->flash('type', 'success');
+        return redirect()->intended('login/coach');
     }
 
 

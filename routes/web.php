@@ -22,7 +22,7 @@ Auth::routes(['verify' => true]);
 
  Route::get('/', 'NotSignedInController@welcome');
 
- Route::get('/home', 'HomeController@index')->name('home');
+//  Route::get('/home', 'HomeController@index')->name('home');
  
  $user = \Auth::loginUsingId(1);
  
@@ -30,17 +30,23 @@ Auth::routes(['verify' => true]);
      \Mail::to($user)->send(new HelloThere($user));
  });
  
-//  Route::get('/player/login', 'Auth\PlayersAuthController@showLoginForm')->name('player.login');
-//  Route::post('/login', 'Auth\PlayersAuthController@login')->name('player.login.submit');
- 
-//  Route::get('/player/register', 'Auth\PlayersRegisterController@showRegisterForm')->name('player.register');
-//  Route::post('/register', 'Auth\PlayersRegisterController@register')->name('player.register.submit');
-
-//  Route::get('/player/dashboard', 'PlayerController@index')->name('player.dashboard');
-//  Route::get('/players/register','NotSignedInController@playerregister');
-//  Route::get('/players/login','NotSignedInController@playerlogin');
- 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::get('/login/player', 'Auth\LoginController@showPlayerLoginForm');
+Route::get('/login/coach', 'Auth\LoginController@showCoachLoginForm');
+Route::get('/register/player', 'Auth\RegisterController@showPlayerRegisterForm');
+Route::get('/register/coach', 'Auth\RegisterController@showCoachRegisterForm');
+
+Route::post('/login/player', 'Auth\LoginController@playerLogin');
+Route::post('/login/coach', 'Auth\LoginController@CoachLogin');
+Route::post('/register/player', 'Auth\RegisterController@createPlayer');
+Route::post('/register/coach', 'Auth\RegisterController@createCoach');
+
+Route::view('/home', 'home')->middleware('auth');
+Route::view('/player', 'player');
+Route::view('/coach', 'coach');
