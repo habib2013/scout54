@@ -25,9 +25,10 @@
   <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="../../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+  CSS Front Template
   <link rel="stylesheet" href="../../assets/css/theme.css">
+ 
 </head>
 <body >
   <!-- ========== HEADER ========== -->
@@ -110,14 +111,14 @@
                           <div class="pop_iner">
       
                               <ul>
-                                  <li><a href="#">
+                                  <li><a href="/register/coach">
                                           <div class="imgg"><img
                                             src="../../assets/illustrators/newcoach.png"
                                                   class="img-fluid"></div>
                                           <p>Coach</p>
                                       </a></li>
                                       <li>
-                                      <a href="/players/register">
+                                      <a href="/register/player">
                                         <div class="imgg"><img
                                               
                                                 src="../../assets/illustrators/rener.png"
@@ -125,13 +126,13 @@
                                         <p>Player</p>
                                     </a></li>
                                   
-                                  <li><a href="#">
+                                  <li><a href="/register/club">
                                           <div class="imgg"><img
                                                   src="../../assets/illustrators/realfc.png"
                                                   class="img-fluid"></div>
                                           <p>CLub</p>
                                       </a></li>
-                                  <li><a href="#">
+                                  <li><a href="/register/agent">
                                           <div class="imgg"><img
                                             src="../../assets/illustrators/newagent.png"
                                                   class="img-fluid"></div>
@@ -161,13 +162,14 @@
                     <div class="modal-body" style="padding-right: 34px;">
                         <div class="pop_iner">
                           <ul>
-                            <li><a href="#">
+                            <li><a href="/login/coach">
                                     <div class="imgg"><img
                                       src="../../assets/illustrators/newcoach.png"
                                             class="img-fluid"></div>
                                     <p>Coach</p>
                                 </a></li>
-                                <li><a href="#">
+
+                                <li><a href="/login/player">
                                   <div class="imgg"><img
                                         
                                           src="../../assets/illustrators/rener.png"
@@ -175,13 +177,13 @@
                                   <p>Player</p>
                               </a></li>
                             
-                            <li><a href="#">
+                            <li><a href="/login/club">
                                     <div class="imgg"><img
                                             src="../../assets/illustrators/realfc.png"
                                             class="img-fluid"></div>
                                     <p>CLub</p>
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="/login/agent">
                                     <div class="imgg"><img
                                       src="../../assets/illustrators/newagent.png"
                                             class="img-fluid"></div>
@@ -196,6 +198,7 @@
                 </div>
             </div>
         </div>
+
           </div>
         </nav>
 
@@ -763,6 +766,10 @@ time:3000
       $.HSCore.components.HSGoTo.init('.js-go-to');
     });
   </script>
+
+
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
 </body>
 
 <!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/home/classic-business.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Mar 2020 19:38:01 GMT -->

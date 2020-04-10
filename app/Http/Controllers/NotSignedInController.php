@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
+
 
 class NotSignedInController extends Controller
 {
     public function welcome(){
+       
+        Toastr::error('Welcomes you ⚽ ⚽','Scout54');
         return view('welcome');
     }
 

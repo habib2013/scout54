@@ -4,7 +4,7 @@
 <!-- Mirrored from htmlstream.com/front/html/pages/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:16:23 GMT -->
 <head>
   <!-- Title -->
-  <title>Login Simple | Front - Responsive Website Template</title>
+  <title>Login | {{ isset($url) ? ucwords($url) : ""}}</title>
   @laravelPWA
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -22,6 +22,13 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body style="font-family: 'Cera Pro New';">
   <!-- ========== HEADER ========== -->
@@ -32,7 +39,7 @@
   <main id="content" role="main" >
     <!-- Form -->
     <div class="d-flex align-items-center position-relative vh-lg-100" >
-      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-navy vh-lg-100 px-0 relogin" style="background-image: url(../../assets/img/1920x800/01.jpg);background-size: 100% 100%;">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-navy vh-lg-100 px-0 relogin"  style="background-image: url(../../assets/img/1920x800/01.jpg);background-size: 100% 100%;">
          <div class="overlay"></div>
          <div class="w-100 p-5" style="position: absolute;">
      
@@ -41,7 +48,8 @@
        <br>
        <br>  <br>
 
-       <h1> Scout54 players</h1>
+       <h1> Scout54 {{ isset($url) ? ucwords($url) : "Admin"}}</h1>
+       
        <br>
   
             </div>
@@ -70,7 +78,7 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav mr-auto smallers" >
                    <li class="nav-item myactive">
-                     <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
+                     <a class="nav-link" href="/" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
                    </li>
                
                 
@@ -85,114 +93,119 @@
                    class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
                    href="#">Register</a></button>
      
-                 <div class="modal fade" id="registerModal">
-                   <div class="modal-dialog">
-                       <div class="modal-content">
-     
-                           <!-- Modal Header -->
-                           <div class="modal-header">
-     
-                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           </div>
-     
-                           <!-- Modal body -->
-                           <div class="modal-body" style="padding-right: 34px;">
-                               <div class="pop_iner">
-           
-                                   <ul>
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                 src="../../assets/illustrators/newcoach.png"
-                                                       class="img-fluid"></div>
-                                               <p>Coach</p>
-                                           </a></li>
-                                           <li><a href="#">
-                                             <div class="imgg"><img
-                                                   
-                                                     src="../../assets/illustrators/rener.png"
-                                                     class="img-fluid"></div>
-                                             <p>Player</p>
-                                         </a></li>
-                                       
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                       src="../../assets/illustrators/realfc.png"
-                                                       class="img-fluid"></div>
-                                               <p>CLub</p>
-                                           </a></li>
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                 src="../../assets/illustrators/newagent.png"
-                                                       class="img-fluid"></div>
-                                               <p>Agent</p>
-                                           </a></li>
-                                   </ul>
-                               </div>
-                           </div>
-     
-              
-     
-                       </div>
-                   </div>
-               </div>
-     
-               <div class="modal fade" id="loginModal">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-     
-                         <!-- Modal Header -->
-                         <div class="modal-header">
-     
-                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         </div>
-     
-                         <!-- Modal body -->
-                         <div class="modal-body" style="padding-right: 34px;">
-                             <div class="pop_iner">
-                               <ul>
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                           src="../../assets/illustrators/newcoach.png"
-                                                 class="img-fluid"></div>
-                                         <p>Coach</p>
-                                     </a></li>
-                                     <li><a href="#">
-                                       <div class="imgg"><img
-                                             
-                                               src="../../assets/illustrators/rener.png"
-                                               class="img-fluid"></div>
-                                       <p>Player</p>
-                                   </a></li>
-                                 
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                                 src="../../assets/illustrators/realfc.png"
-                                                 class="img-fluid"></div>
-                                         <p>CLub</p>
-                                     </a></li>
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                           src="../../assets/illustrators/newagent.png"
-                                                 class="img-fluid"></div>
-                                         <p>Agent</p>
-                                     </a></li>
-                             </ul>
-                             </div>
-                         </div>
-     
-            
-     
-                     </div>
-                 </div>
-             </div>
+                   <div class="modal fade" id="registerModal">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-right: 34px;">
+                          <div class="pop_iner">
+      
+                              <ul>
+                                  <li><a href="/register/coach">
+                                          <div class="imgg"><img
+                                            src="../../assets/illustrators/newcoach.png"
+                                                  class="img-fluid"></div>
+                                          <p>Coach</p>
+                                      </a></li>
+                                      <li>
+                                      <a href="/register/player">
+                                        <div class="imgg"><img
+                                              
+                                                src="../../assets/illustrators/rener.png"
+                                                class="img-fluid"></div>
+                                        <p>Player</p>
+                                    </a></li>
+                                  
+                                  <li><a href="/register/club">
+                                          <div class="imgg"><img
+                                                  src="../../assets/illustrators/realfc.png"
+                                                  class="img-fluid"></div>
+                                          <p>CLub</p>
+                                      </a></li>
+                                  <li><a href="/register/agent">
+                                          <div class="imgg"><img
+                                            src="../../assets/illustrators/newagent.png"
+                                                  class="img-fluid"></div>
+                                          <p>Agent</p>
+                                      </a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+         
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" style="padding-right: 34px;">
+                        <div class="pop_iner">
+                          <ul>
+                            <li><a href="/login/coach">
+                                    <div class="imgg"><img
+                                      src="../../assets/illustrators/newcoach.png"
+                                            class="img-fluid"></div>
+                                    <p>Coach</p>
+                                </a></li>
+
+                                <li><a href="/login/player">
+                                  <div class="imgg"><img
+                                        
+                                          src="../../assets/illustrators/rener.png"
+                                          class="img-fluid"></div>
+                                  <p>Player</p>
+                              </a></li>
+                            
+                            <li><a href="/login/club">
+                                    <div class="imgg"><img
+                                            src="../../assets/illustrators/realfc.png"
+                                            class="img-fluid"></div>
+                                    <p>CLub</p>
+                                </a></li>
+                            <li><a href="/login/agent">
+                                    <div class="imgg"><img
+                                      src="../../assets/illustrators/newagent.png"
+                                            class="img-fluid"></div>
+                                    <p>Agent</p>
+                                </a></li>
+                        </ul>
+                        </div>
+                    </div>
+
+       
+
+                </div>
+            </div>
+        </div>
                </div>
              </nav>
         
 
              @isset($url)
-                    <form class="js-validate" method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    <form  method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
                     @else
-                    <form class="js-validate" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <!-- <form class="js-validate" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}" onsubmit="return LoginUser()">
+                    -->
+                    <form id="login-form" method="post" onsubmit="return LoginUser()" role="form" style="display: block;">
+                                    
                     @endisset
                         @csrf
         
@@ -201,15 +214,14 @@
               <div class="mb-5 mb-md-7" >
                 
                 <h1>Welcome back</h1>
-                <p>Login to manage your account.</p>
-                <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
-              </div>
+                <p>Login to manage your {{ isset($url) ? ucwords($url) : "Admin"}}'s account.</p>
+                 </div>
               <!-- End Title -->
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Email address</label>
-                <input type="email" name="email" id="email" tabindex="1" placeholder="Email address" aria-label="Email address" 
+                <input type="email" name="email" id="login_email" tabindex="1" placeholder="Email address" aria-label="Email address" 
                        data-msg="Please enter a valid email address." class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus >
           
           
@@ -247,8 +259,12 @@
                   <a class="font-size-1 font-weight-bold" href="signup.html">Signup</a>
                 </div>
 
+                <div id="login_email_error" class="font-size-1 font-weight-bold"></div>
                 <div class="col-sm-6 text-sm-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                  <button type="submit" class="btn btn-primary transition-3d-hover" id="login_button">Get Started</button>
+
+                  <!-- <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="btn btn-primary btn-login" value="Log In">
+                                              -->
                 </div>
               </div>
               <!-- End Button -->
@@ -291,10 +307,117 @@
     });
   </script>
 
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+  $('#login_email').on('blur',function(event){
+      event.preventDefault();
+      var url = '/validation-login-email';
+      var email = $(this).val();
+      $ajax({
+        type:'POST',
+        url: url,
+        data: {'email':email},
+        success:function(data){
+          if(data){
+            alert(data);
+            $('#login_email_error').html(data);
+            $('#login_button').prop('disabled',true);
+          }
+          else{
+            $('#login_button').prop('disabled',false);
+          }
+        }
+      });
+
+  });
+});
+    </script> -->
+
+
+    <script type="text/javascript">
+        function LoginUser()
+        {
+            var token    = $("input[name=_token]").val();
+            var email    = $("input[name=email]").val();
+            var password = $("input[name=password]").val();
+            var data = {
+                _token:token,
+                email:email,
+                password:password
+            };
+            // Ajax Post 
+            $.ajax({
+                type: "post",
+                url: "/login",
+                data: data,
+                cache: false,
+                beforeSend:function(){
+                  $("#login_button").attr("disabled", "disabled");
+                        $("#login_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+                  
+                },
+      
+                success: function (data)
+                {
+      
+    
+
+  
+
+                    console.log('login request sent !');
+if(data.status == 'success'){
+  swal({
+        title: "Login Successful",
+        text: "You will be redirected to your dahsboard!",
+        type: "success",
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'OK!',
+    });
+}
+else {
+  swal({
+        title: "Incorrect credentials",
+        text: "Please check your input and try again",
+        type: "error",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'ERROR!',
+    });
+}
+
+
+                    // console.log('status: ' +data.status);
+                    // alert('message: ' +data.message);
+                    // console.log('message: ' +data.message);
+                    $("#login_button").removeAttr("disabled");
+                        $("#login_button").html('Register');
+                   
+                },
+
+                error: function (data){
+                  console.log('Fail to run Login..');
+                    // alert("Fail to run Login..");
+
+              
+                }
+            });
+            return false;
+        }
+</script>
+
+
   <!-- IE Support -->
   <script>
     if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../../assets/vendor/polifills.js"><\/script>');
   </script>
+
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
+
 </body>
 
 <!-- Mirrored from htmlstream.com/front/html/pages/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:16:23 GMT -->

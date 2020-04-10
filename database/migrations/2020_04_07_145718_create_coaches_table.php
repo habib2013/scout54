@@ -21,6 +21,7 @@ class CreateCoachesTable extends Migration
             $table->timestamp('email_verified_at')->nullable(); 
             $table->boolean('is_coach')->default(false);    
             $table->string('phone');
+            $table->string('nationality');
             $table->string('status');
             $table->string('password');
             $table->rememberToken();

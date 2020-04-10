@@ -6,6 +6,7 @@
   <!-- Title -->
   <title>Scout54 | Register</title>
   @laravelPWA
+  {!! NoCaptcha::renderJs() !!}
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +24,7 @@
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
   <link rel="stylesheet" href="../../assets/css/intlTelInput.css">
-
+  <link rel="stylesheet" href="../../assets/css/countrySelect.css">
   <link rel="stylesheet" href="path/to/intlTelInput.css">
 </head>
 <body style="font-family: 'Cera Pro New';">
@@ -72,7 +73,7 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav mr-auto smallers" >
                    <li class="nav-item myactive">
-                     <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
+                     <a class="nav-link" href="/" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
                    </li>
                
                 
@@ -87,106 +88,108 @@
                    class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
                    href="#">Register</a></button>
      
-                 <div class="modal fade" id="registerModal">
-                   <div class="modal-dialog">
-                       <div class="modal-content">
-     
-                           <!-- Modal Header -->
-                           <div class="modal-header">
-     
-                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           </div>
-     
-                           <!-- Modal body -->
-                           <div class="modal-body" style="padding-right: 34px;">
-                               <div class="pop_iner">
-           
-                                   <ul>
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                 src="../../assets/illustrators/newcoach.png"
-                                                       class="img-fluid"></div>
-                                               <p>Coach</p>
-                                           </a></li>
-                                           <li><a href="#">
-                                             <div class="imgg"><img
-                                                   
-                                                     src="../../assets/illustrators/rener.png"
-                                                     class="img-fluid"></div>
-                                             <p>Player</p>
-                                         </a></li>
-                                       
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                       src="../../assets/illustrators/realfc.png"
-                                                       class="img-fluid"></div>
-                                               <p>CLub</p>
-                                           </a></li>
-                                       <li><a href="#">
-                                               <div class="imgg"><img
-                                                 src="../../assets/illustrators/newagent.png"
-                                                       class="img-fluid"></div>
-                                               <p>Agent</p>
-                                           </a></li>
-                                   </ul>
-                               </div>
-                           </div>
-     
-              
-     
-                       </div>
-                   </div>
-               </div>
-     
-               <div class="modal fade" id="loginModal">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-     
-                         <!-- Modal Header -->
-                         <div class="modal-header">
-     
-                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         </div>
-     
-                         <!-- Modal body -->
-                         <div class="modal-body" style="padding-right: 34px;">
-                             <div class="pop_iner">
-                               <ul>
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                           src="../../assets/illustrators/newcoach.png"
-                                                 class="img-fluid"></div>
-                                         <p>Coach</p>
-                                     </a></li>
-                                     <li><a href="#">
-                                       <div class="imgg"><img
-                                             
-                                               src="../../assets/illustrators/rener.png"
-                                               class="img-fluid"></div>
-                                       <p>Player</p>
-                                   </a></li>
-                                 
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                                 src="../../assets/illustrators/realfc.png"
-                                                 class="img-fluid"></div>
-                                         <p>CLub</p>
-                                     </a></li>
-                                 <li><a href="#">
-                                         <div class="imgg"><img
-                                           src="../../assets/illustrators/newagent.png"
-                                                 class="img-fluid"></div>
-                                         <p>Agent</p>
-                                     </a></li>
-                             </ul>
-                             </div>
-                         </div>
-     
-            
-     
-                     </div>
-                 </div>
-             </div>
+                   <div class="modal fade" id="registerModal">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-right: 34px;">
+                          <div class="pop_iner">
+      
+                              <ul>
+                                  <li><a href="/register/coach">
+                                          <div class="imgg"><img
+                                            src="../../assets/illustrators/newcoach.png"
+                                                  class="img-fluid"></div>
+                                          <p>Coach</p>
+                                      </a></li>
+                                      <li>
+                                      <a href="/register/player">
+                                        <div class="imgg"><img
+                                              
+                                                src="../../assets/illustrators/rener.png"
+                                                class="img-fluid"></div>
+                                        <p>Player</p>
+                                    </a></li>
+                                  
+                                  <li><a href="/register/club">
+                                          <div class="imgg"><img
+                                                  src="../../assets/illustrators/realfc.png"
+                                                  class="img-fluid"></div>
+                                          <p>CLub</p>
+                                      </a></li>
+                                  <li><a href="/register/agent">
+                                          <div class="imgg"><img
+                                            src="../../assets/illustrators/newagent.png"
+                                                  class="img-fluid"></div>
+                                          <p>Agent</p>
+                                      </a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+         
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" style="padding-right: 34px;">
+                        <div class="pop_iner">
+                          <ul>
+                            <li><a href="/login/coach">
+                                    <div class="imgg"><img
+                                      src="../../assets/illustrators/newcoach.png"
+                                            class="img-fluid"></div>
+                                    <p>Coach</p>
+                                </a></li>
+
+                                <li><a href="/login/player">
+                                  <div class="imgg"><img
+                                        
+                                          src="../../assets/illustrators/rener.png"
+                                          class="img-fluid"></div>
+                                  <p>Player</p>
+                              </a></li>
+                            
+                            <li><a href="/login/club">
+                                    <div class="imgg"><img
+                                            src="../../assets/illustrators/realfc.png"
+                                            class="img-fluid"></div>
+                                    <p>CLub</p>
+                                </a></li>
+                            <li><a href="/login/agent">
+                                    <div class="imgg"><img
+                                      src="../../assets/illustrators/newagent.png"
+                                            class="img-fluid"></div>
+                                    <p>Agent</p>
+                                </a></li>
+                        </ul>
+                        </div>
+                    </div>
+
+       
+
+                </div>
+            </div>
+        </div>
                </div>
              </nav>
         
@@ -207,6 +210,10 @@
        
 
               <!-- Form Group -->
+              <div class="row">
+
+              
+  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Username</label>
                 <input type="text"  id="username" tabindex="1" aria-label="Username"
@@ -220,12 +227,14 @@
 
               </div>
 
-              <div class="js-form-message form-group">
-<div class="row">
-  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-    <label class="input-label" for="signinSrEmail">Full Name</label>
-    <input type="text"  id="fullname" tabindex="1"  aria-label="Full name" 
-           data-msg="Please enter a valid Fullname." class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
+</div>
+
+@if(isset($url) && $url == 'club')
+
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+    <label class="input-label" for="signinSrEmail">Club Name</label>
+    <input type="text"  id="clubname" tabindex="1"  aria-label="Full name" 
+           data-msg="Please enter a valid Club name." class="form-control @error('clubname') is-invalid @enderror" name="clubname" value="{{ old('clubname') }}" required autocomplete="clubname" autofocus>
            @error('username')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
@@ -233,6 +242,24 @@
 @enderror
  
   </div>
+@else
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+    <label class="input-label" for="signinSrEmail">Full Name</label>
+    <input type="text"  id="fullname" tabindex="1"  aria-label="Full name" 
+           data-msg="Please enter a valid Full name." class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
+           @error('username')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+ 
+  </div>
+
+@endif
+</div>
+
+              <div class="js-form-message form-group">
+<div class="row">
 
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Email Address</label>
@@ -246,31 +273,23 @@
  
   </div>
  
-</div>
-
-
-
-              
-              </div>
-
-  
-
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-              <label class="input-label">Phone nummber</label>
+  @if(isset($url) && $url == 'club')
+  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Date Of Establishment </label>
               <div class="js-form-message form-group">            
-                <input type="tel"   id="phone" tabindex="1" required
-                       data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                <input type="date"   id="date" tabindex="1" required
+                       data-msg="Please enter a valid date." class="form-control @error('phone') is-invalid @enderror" name="date_est" value="{{ old('date') }}" required autocomplete="date">
                        @error('phone')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
 @enderror
-              </div>
+          </div>
+              </div>  
 
+@else
 
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Status as professional</label>
   
 <select name="status" id="status" class="form-control">
@@ -284,6 +303,67 @@
 </select>
 
               </div>
+
+
+</div>
+
+@endif
+              
+              </div>
+
+  
+
+            <div class="row">
+
+
+
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Country</label>
+              <div class="js-form-message form-group">            
+             
+
+              <div>
+				<input id="country_selector" type="text" class="form-control">
+				<label for="country_selector" style="display:none;">Select a country here...</label>
+			</div>
+			<div class="form-item" style="display:none;">
+				<input type="text" id="country_selector_code" class="form-control" name="nationality" data-countrycodeinput="1" readonly />
+			</div>
+		
+              </div>
+              </div>
+
+@if(isset($url) && $url == 'player')
+
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Date Of Birth</label>
+              <div class="js-form-message form-group">            
+                <input type="date"   id="date" tabindex="1" required
+                       data-msg="Please enter a valid date." class="form-control @error('phone') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday">
+                       @error('phone')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+          </div>
+              </div>     
+
+@else
+
+<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+              <label class="input-label">Phone number</label>
+              <div class="js-form-message form-group">            
+                <input type="tel"   id="phone" tabindex="1" required
+                       data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                       @error('phone')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+          </div>
+              </div> 
+
+     @endif 
 
             </div>
 
@@ -325,6 +405,18 @@
   </div>
 </div>
 
+
+<div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                           
+                            <div class="col-md-6">
+                                {!! app('captcha')->display() !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
            
               <!-- End Form Group -->
               <div class="js-form-message mb-5">
@@ -376,6 +468,7 @@
   <script src="../../assets/js/hs.validation.js"></script>
   <script src="../../assets/js/hs.slick-carousel.js"></script>
   <script src="../../assets/js/intlTelInput.js"></script>
+  <script src="../../assets/js/countrySelect.js"></script>
   <!-- <script src="../../assets/js/utils.js"></script> -->
 
   <script>
@@ -404,6 +497,11 @@
       utilsScript: "../../assets/js/utils.js",
     });
   </script>
+  		<script>
+			$("#country_selector").countrySelect({
+				preferredCountries: ['ng','gh']
+			});
+		</script>
   <!-- JS Plugins Init. -->
 
 

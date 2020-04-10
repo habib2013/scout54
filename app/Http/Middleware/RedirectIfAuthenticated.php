@@ -26,6 +26,12 @@ class RedirectIfAuthenticated
         if ($guard == "coach" && Auth::guard($guard)->check()) {
             return redirect('/coach');
         }
+        if ($guard == "club" && Auth::guard($guard)->check()) {
+            return redirect('/club');
+        }
+        if ($guard == "agent" && Auth::guard($guard)->check()) {
+            return redirect('/agent');
+        }
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }

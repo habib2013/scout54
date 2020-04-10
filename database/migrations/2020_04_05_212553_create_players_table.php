@@ -22,6 +22,8 @@ class CreatePlayersTable extends Migration
             $table->boolean('is_player')->default(false);    
             $table->string('phone');
             $table->string('status');
+            $table->string('birthday');
+            $table->string('nationality');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

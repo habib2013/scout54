@@ -21,7 +21,8 @@ class Player extends Authenticatable implements MustVerifyEmail
     //     'name', 'username','email', 'password','usertype','status','is_admin'
     // ];
 
-    protected $fillable = ['username','fullname','email','phone','status','password'];
+
+    protected $fillable = ['username','fullname','email','phone','status','password','nationality','birthday'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -42,7 +43,7 @@ class Player extends Authenticatable implements MustVerifyEmail
     ];
 
     // protected static function boot(){
-    //     parent::boot();
+    // parent::boot();
     //     static::created(function($user){
     //         $user->profile()->create([
     //             'title'=>$user->username,

@@ -82,6 +82,13 @@ class Handler extends ExceptionHandler
         if ($request->is('coach') || $request->is('coach/*')) {
             return redirect()->guest('/login/coach');
         }
+        if ($request->is('club') || $request->is('club/*')) {
+            return redirect()->guest('/login/club');
+        }
+        if ($request->is('agent') || $request->is('agent/*')) {
+            return redirect()->guest('/login/agent');
+        }
+
         return redirect()->guest(route('login'));
     }
 }

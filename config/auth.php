@@ -55,6 +55,15 @@ return [
             'driver' => 'session',
             'provider' => 'coachs',
         ],
+        'club' => [
+            'driver' => 'session',
+            'provider' => 'clubs',
+        ],
+        
+        'agent' => [
+            'driver' => 'session',
+            'provider' => 'agents',
+        ],
     ],
 
     /*
@@ -88,6 +97,15 @@ return [
         'coachs' => [
             'driver' => 'eloquent',
             'model' => App\Coach::class,
+        ],
+        'clubs' => [
+            'driver' => 'eloquent',
+            'model' => App\Club::class,
+        ],
+
+        'agents' => [
+            'driver' => 'eloquent',
+            'model' => App\Agent::class,
         ],
     ],
 

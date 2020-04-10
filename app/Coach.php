@@ -21,7 +21,7 @@ class Coach extends Authenticatable implements MustVerifyEmail
     //     'name', 'username','email', 'password','usertype','status','is_admin'
     // ];
 
-    protected $fillable = ['username','fullname','email','phone','status','password'];
+    protected $fillable = ['username','fullname','email','phone','status','password','nationality'];
 
     /**
      * The attributes that should be hidden for arrays.
