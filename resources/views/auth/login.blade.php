@@ -213,7 +213,7 @@
               <!-- Title -->
               <div class="mb-5 mb-md-7" >
                 
-    @if(isset($url) & $url != '')
+    @if(isset($url))
     <input type="hidden" id="txt_url" name="txt_url" value="{{$url}}"/>
     @endif
 

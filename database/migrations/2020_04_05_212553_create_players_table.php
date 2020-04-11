@@ -27,6 +27,7 @@ class CreatePlayersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('verified')->default(false);
         });
     }
 

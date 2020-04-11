@@ -7,8 +7,10 @@ use App\User;
 use App\Player;
 use App\Coach;
 use App\Agent;
+use App\VerifyUser;
 use App\Club;
 use App\Mail\HelloThere;
+use App\Mail\VerifyMail;
 use App\Incomplete;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -158,10 +160,22 @@ class RegisterController extends Controller
           ]);
     
           if($validator->passes()){
+            
               $input = $request->all();
+              $player = $input['email'];
+            
               $input['password'] = Hash::make($request->password);
-              Player::create($input);
-              return response()->json(['success'=>'done']);
+            $players =  Player::create($input);
+          
+            $verifyUser = VerifyUser::create([
+                'player_id' => $players->id,
+                'token' => sha1(time())
+              ]);
+              \Mail::to($players->email)->send(new VerifyMail($players));
+
+            
+               return response()->json(['success'=>'done']);
+               return $players;
           }
 
         // return redirect()->intended('login/player');

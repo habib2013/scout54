@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\verifyUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,5 +57,8 @@ class Player extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Profile::class);
     }
   
-
+    public function verifyUser()
+{
+  return $this->hasOne('App\VerifyUser');
+}
 }

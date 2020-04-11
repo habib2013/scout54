@@ -31,7 +31,7 @@ Auth::routes(['verify' => true]);
  });
  
 
-Auth::routes();
+ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -65,7 +65,7 @@ Route::post('/register/agent', 'Auth\RegisterController@createAgent');
 Route::post('/register/club', 'Auth\RegisterController@createClub');
 
 
-Route::view('/home', 'home')->middleware('auth');
+Route::view('/home', 'home')->middleware('auth','verified');
 Route::view('/player', 'player')->name('player');
 Route::view('/coach', 'coach');
 Route::view('/agent', 'agent');

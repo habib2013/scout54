@@ -385,7 +385,7 @@
             </span>
       </label>
       <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  id="signinSrPassword" tabindex="2"  aria-label="********" 
-             data-msg="Your password is invalid. Please try again.">
+             data-msg="Your password is invalid. Please try again." value="password">
              @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -402,7 +402,7 @@
         </span>
       </label>
     
-      <input  id="input-password-confirm" placeholder="confirm password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+      <input value="password"  id="input-password-confirm" placeholder="confirm password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
      
        </div>
   </div>
