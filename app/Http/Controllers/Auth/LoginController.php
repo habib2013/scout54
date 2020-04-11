@@ -67,18 +67,24 @@ class LoginController extends Controller
         return view('auth.login', ['url' => 'agent']);
     }
 
-    public function validateLoginEmail(Request $request){
-$email = $request->email;
-$count = DB::table('users')->select('email')->where('email',$email)->first();
-        if($email != null){
-            if(count($count <= 0)){
-                echo "This email doesn't exist in Scout54 database";
+    public function validatePlayerLoginEmail(Request $request){
+// $email = $request->email;
+// $count = DB::table('users')->select('email')->where('email',$email)->first();
+//         if($email != null){
+//             if(count($count <= 0)){
+//                 echo "This email doesn't exist in Scout54 database";
 
-            }
-            else {
-              echo  "email field is required";
-            }
-        }
+//             }
+//             else {
+//               echo  "email field is required";
+//             }
+//         }
+
+        $msg = array(
+            'message' => "Hello Here",
+            'status' => "Error"
+        );
+return response()->json($msg);
 
     }
 
@@ -95,18 +101,28 @@ $count = DB::table('users')->select('email')->where('email',$email)->first();
     
     public function ClubLogin(Request $request)
     {
+        $input = $request->all();
+   
         $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-
+   
         if (Auth::guard('club')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-           
-
-            // return redirect()->intended('/club');
-        }
-        return back()->withInput($request->only('email', 'remember'));
+            $msg = array(
+				'status'  => 'success',
+				'message' => 'Login Successful'
+			);
+			return response()->json($msg);
+            
+        }else{
+       $msg = array(
+				'status'  => 'error',
+				'message' => 'Invalid login requests, check your credentials and try again !'
+			);
+			return response()->json($msg );
+            }
     }
 
 
@@ -114,33 +130,59 @@ $count = DB::table('users')->select('email')->where('email',$email)->first();
   
     public function playerLogin(Request $request)
     {
+        $input = $request->all();
+   
         $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-
+   
         if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/player');
-        }
-        return back()->withInput($request->only('email', 'remember'));
+            $msg = array(
+				'status'  => 'success',
+				'message' => 'Login Successful'
+			);
+			return response()->json($msg);
+            
+        }else{
+       $msg = array(
+				'status'  => 'error',
+				'message' => 'Invalid login requests, check your credentials and try again !'
+			);
+			return response()->json($msg );
+            }
+          
     }
+    
 
  
 
 
     public function AgentLogin(Request $request)
     {
+        $input = $request->all();
+   
         $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-
+   
         if (Auth::guard('agent')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/agent');
-        }
-        return back()->withInput($request->only('email', 'remember'));
+            $msg = array(
+				'status'  => 'success',
+				'message' => 'Login Successful'
+			);
+			return response()->json($msg);
+            
+        }else{
+       $msg = array(
+				'status'  => 'error',
+				'message' => 'Invalid login requests, check your credentials and try again !'
+			);
+			return response()->json($msg );
+            }
     }
 
 
@@ -149,19 +191,30 @@ $count = DB::table('users')->select('email')->where('email',$email)->first();
   
     public function CoachLogin(Request $request)
     {
+        $input = $request->all();
+   
         $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
+   
+        if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-        if (Auth::guard('coach')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            $msg = array(
+				'status'  => 'success',
+				'message' => 'Login Successful'
+			);
+			return response()->json($msg);
+            
+        }else{
+       $msg = array(
+				'status'  => 'error',
+				'message' => 'Invalid login requests, check your credentials and try again !'
+			);
+			return response()->json($msg );
+            }
 
-            return redirect()->intended('/coach');
-        }
-        return back()->withInput($request->only('email', 'remember'));
     }
-
-
 
     public function login(Request $request)
     {   
@@ -184,7 +237,7 @@ $count = DB::table('users')->select('email')->where('email',$email)->first();
         }else{
        $msg = array(
 				'status'  => 'error',
-				'message' => 'Credential does not exist on Scout54 database !'
+                'message' => 'Invalid login requests, check your credentials and try again !'
 			);
 			return response()->json($msg );
             }

@@ -57,12 +57,40 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    protected function createCoach(Request $request)
+    {
+
+    $validator = Validator::make($request->all(), [
+        'username' => ['required','string','unique:agents'] ,
+        'fullname' => 'required',
+        'status' => 'required',
+        'email' => ['required','string', 'email', 'max:255','unique:agents'],
+        'status' => 'required',
+        'phone' => ['required','min:11','max:11'],
+        'nationality' => 'required',
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+      
+      ]);
+
+      if($validator->passes()){
+          $input = $request->all();
+          $input['password'] = Hash::make($request->password);
+          Coach::create($input);
+          return response()->json(['success'=>'done']);
+      }
+
+    // return redirect()->intended('login/player');
+    return response()->json(['error'=>$validator->errors()->all()]);  
+
+
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'username' => ['required', 'string', 'max:255'],
             'fullname' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:255'],
+            'phone' => [ 'string', 'max:255'],
             'status' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -84,7 +112,7 @@ class RegisterController extends Controller
             'status' => $data['status'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'g-recaptcha-response' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
   
       
@@ -117,76 +145,83 @@ class RegisterController extends Controller
 
     protected function createPlayer(Request $request)
     {
-        $this->validator($request->all())->validate();
-       $player =  Player::create([
+        $validator = Validator::make($request->all(), [
+            'username' => ['required','string','unique:players'] ,
+            'fullname' => 'required',
+            'status' => 'required',
+            'email' => ['required','string', 'email', 'max:255', 'unique:players'],
+            'status' => 'required',
+            'birthday' => 'required',
+            'nationality' => 'required',
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
           
-            'username' => $request->username,
-            'fullname' => $request->fullname,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        \Mail::to($player)->send(new HelloThere($player));
-        return redirect()->intended('login/player');
-        return $player;
+          ]);
+    
+          if($validator->passes()){
+              $input = $request->all();
+              $input['password'] = Hash::make($request->password);
+              Player::create($input);
+              return response()->json(['success'=>'done']);
+          }
 
+        // return redirect()->intended('login/player');
+        return response()->json(['error'=>$validator->errors()->all()]);    
     }
+
+
 
     protected function createAgent(Request $request)
     {
-        $this->validator($request->all())->validate();
-       $agent =  Agent::create([
+        $validator = Validator::make($request->all(), [
+            'username' => ['required','string','unique:agents'] ,
+            'fullname' => 'required',
+            'status' => 'required',
+            'email' => ['required','string', 'email', 'max:255', 'unique:agents'],
+            'status' => 'required',
+            'phone' => ['required','min:11','max:11','unique:agents'],
+            'nationality' => 'required',
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
           
-            'username' => $request->username,
-            'fullname' => $request->fullname,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        \Mail::to($agent)->send(new HelloThere($agent));
-        return redirect()->intended('login/agent');
-        return $agent;
+          ]);
+    
+          if($validator->passes()){
+              $input = $request->all();
+              $input['password'] = Hash::make($request->password);
+              Agent::create($input);
+              return response()->json(['success'=>'done']);
+          }
+
+        // return redirect()->intended('login/player');
+        return response()->json(['error'=>$validator->errors()->all()]);  
     }
 
     protected function createClub(Request $request)
     {
-        $this->validator($request->all())->validate();
-       $club =  Club::create([
-          
-            'username' => $request->username,
-            'fullname' => $request->fullname,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        \Mail::to($club)->send(new HelloThere($club));
+ 
+    $validator = Validator::make($request->all(), [
+        'username' => ['required','string','unique:agents'] ,
+        'clubname' => 'required',
+        'email' => ['required','string', 'email', 'max:255', 'unique:agents'],
+       
+        'date_est' => 'required',
+        'phone' => ['required','min:11','max:11','unique:agents'],
+        'nationality' => 'required',
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
       
-        return redirect()->intended('login/club');
-        return $club;
+      ]);
+
+      if($validator->passes()){
+          $input = $request->all();
+          $input['password'] = Hash::make($request->password);
+          Club::create($input);
+          return response()->json(['success'=>'done']);
+      }
+
+    // return redirect()->intended('login/player');
+    return response()->json(['error'=>$validator->errors()->all()]);  
 
     }
 
-    protected function createCoach(Request $request)
-    {
-        $this->validator($request->all())->validate();
-     $coach =    Coach::create([
-            'username' => $request->username,
-            'fullname' => $request->fullname,
-            'phone' => $request->phone,
-            'status' => $request->status,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-   
-        \Mail::to($coach)->send(new HelloThere($coach));
-        return redirect()->intended('login/coach');
-        return $coach;
-
-     
-    }
 
 
 }

@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="../../assets/css/intlTelInput.css">
   <link rel="stylesheet" href="../../assets/css/countrySelect.css">
   <link rel="stylesheet" href="path/to/intlTelInput.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 </head>
 <body style="font-family: 'Cera Pro New';">
   <!-- ========== HEADER ========== -->
@@ -194,9 +197,9 @@
              </nav>
         
              @isset($url)
-                    <form class="js-validate" method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
+                    <form  method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
                     @else
-                    <form class="js-validate" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    <form  method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                     @endisset
                         @csrf
 
@@ -264,7 +267,7 @@
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Email Address</label>
     <input type="email"  id="email" tabindex="1"  aria-label="Email address" 
-           data-msg="Pleasemaile enter a valid email." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
+           data-msg="Please enter a valid email." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
            @error('email')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
@@ -353,8 +356,8 @@
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Phone number</label>
               <div class="js-form-message form-group">            
-                <input type="tel"   id="phone" tabindex="1" required
-                       data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                <input type="tel"   id="phone" tabindex="1" 
+                       data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}"  autocomplete="phone">
                        @error('phone')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
@@ -406,7 +409,7 @@
 </div>
 
 
-<div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+<!-- <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                            
                             <div class="col-md-6">
                                 {!! app('captcha')->display() !!}
@@ -417,7 +420,7 @@
                                 @endif
                             </div>
                         </div>
-           
+            -->
               <!-- End Form Group -->
               <div class="js-form-message mb-5">
                 <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
@@ -432,6 +435,10 @@
                 </div>
               </div>
               <!-- Button -->
+              <!-- <div class="alert alert-danger print-error-msg" style="display:none">
+        <ul></ul>
+    </div> -->
+
               <div class="row align-items-center mb-5">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <span class="font-size-1 text-muted">Don't have an account?</span>
@@ -439,7 +446,7 @@
                 </div>
 
                 <div class="col-sm-6 text-sm-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                  <button type="submit" id="register_button" class="btn btn-primary transition-3d-hover register_button">Get Started</button>
                 </div>
               </div>
               <!-- End Button -->
@@ -469,7 +476,7 @@
   <script src="../../assets/js/hs.slick-carousel.js"></script>
   <script src="../../assets/js/intlTelInput.js"></script>
   <script src="../../assets/js/countrySelect.js"></script>
-  <!-- <script src="../../assets/js/utils.js"></script> -->
+  <script src="../../assets/js/holders.js"></script>
 
   <script>
     var input = document.querySelector("#phone");
@@ -502,6 +509,60 @@
 				preferredCountries: ['ng','gh']
 			});
 		</script>
+
+
+
+    
+<script type="text/javascript">
+  $("body").on("click",".register_button",function(e){
+    $(this).parents("form").ajaxForm(options);
+  });
+
+  var options = { 
+    complete: function(response) 
+    {
+    	if($.isEmptyObject(response.responseJSON.error)){
+        swal({
+        title: "Registeration Successful",
+        text: "You have successfully Registered",
+        type: "success",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'SUCCESS ⚽!',
+    }
+    );
+
+    	}else{
+    		printErrorMsg(response.responseJSON.error);
+    	}
+    }
+  };
+
+
+  function printErrorMsg (msg) {
+	// $(".print-error-msg").find("ul").html('');
+	// $(".print-error-msg").css('display','block');
+	$.each( msg, function( key, value ) {
+    // $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+   
+    swal({
+        title: "Login Error",
+        text: value,
+        type: "error",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'ERROR!',
+    }
+    );
+
+	});
+  }
+</script>
+
   <!-- JS Plugins Init. -->
 
 

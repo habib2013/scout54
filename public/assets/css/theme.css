@@ -7015,8 +7015,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #4a23f5 !important;
-  /*411fd8 background-color:381bbb transparent !important; 130c33*/
+  background-color: #2571e2 !important;
+  /*4a23f5 411fd8 background-color:381bbb transparent !important; 130c33*/
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -14348,7 +14348,7 @@ button:focus {
 }
 
 .fixed-top.scrolled {
-  background-color: rgb(10, 27, 121) !important;
+  background-color: #2571e2 !important;
   transition: background-color 200ms linear;
   color:#338feb !important;
 }

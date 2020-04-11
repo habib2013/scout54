@@ -200,7 +200,7 @@
         
 
              @isset($url)
-                    <form  method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    <form  method="POST"  onsubmit="return LoginOtherUser()"  aria-label="{{ __('Login') }}">
                     @else
                     <!-- <form class="js-validate" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}" onsubmit="return LoginUser()">
                     -->
@@ -213,6 +213,10 @@
               <!-- Title -->
               <div class="mb-5 mb-md-7" >
                 
+    @if(isset($url) & $url != '')
+    <input type="hidden" id="txt_url" name="txt_url" value="{{$url}}"/>
+    @endif
+
                 <h1>Welcome back</h1>
                 <p>Login to manage your {{ isset($url) ? ucwords($url) : "Admin"}}'s account.</p>
                  </div>
@@ -261,7 +265,7 @@
 
                 <div id="login_email_error" class="font-size-1 font-weight-bold"></div>
                 <div class="col-sm-6 text-sm-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover" id="login_button">Get Started</button>
+                  <button type="submit" class="btn btn-primary transition-3d-hover" id="login_button">LOGIN</button>
 
                   <!-- <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="btn btn-primary btn-login" value="Log In">
                                               -->
@@ -359,11 +363,6 @@ $(document).ready(function(){
       
                 success: function (data)
                 {
-      
-    
-
-  
-
                     console.log('login request sent !');
 if(data.status == 'success'){
   swal({
@@ -374,19 +373,24 @@ if(data.status == 'success'){
         dangerMode: false,
      
         confirmButtonText: 'OK!',
-    });
+    }
+    
+    );
 }
 else {
+ 
   swal({
-        title: "Incorrect credentials",
-        text: "Please check your input and try again",
+        title: data.status,
+        text: data.message,
         type: "error",
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
      
         confirmButtonText: 'ERROR!',
-    });
+    }
+    );
+  
 }
 
 
@@ -394,7 +398,7 @@ else {
                     // alert('message: ' +data.message);
                     // console.log('message: ' +data.message);
                     $("#login_button").removeAttr("disabled");
-                        $("#login_button").html('Register');
+                        $("#login_button").html('LOGIN');
                    
                 },
 
@@ -408,6 +412,86 @@ else {
             return false;
         }
 </script>
+
+
+<script type="text/javascript">
+        function LoginOtherUser()
+        {
+            var token    = $("input[name=_token]").val();
+            var email    = $("input[name=email]").val();
+            var password = $("input[name=password]").val();
+            var txt_url = $('#txt_url').val();
+            var data = {
+                _token:token,
+                email:email,
+                password:password
+            };
+            // Ajax Post 
+      //  if(txt_url == 'player'){
+            $.ajax({
+                type: "post",
+                url: "/login/"+txt_url ,
+                data: data,
+                cache: false,
+                beforeSend:function(){
+                  $("#login_button").attr("disabled", "disabled");
+                        $("#login_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+                  
+                },
+      
+                success: function (data)
+                {
+                    console.log('login request sent !');
+if(data.status == 'success'){
+  swal({
+        title: "Login Successful",
+        text: "You will be redirected to your dahsboard!",
+        type: "success",
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'OK!',
+    }
+    
+    );
+}
+else {
+ 
+  swal({
+        title: data.status,
+        text: data.message,
+        type: "error",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'ERROR!',
+    }
+    );
+  
+}
+
+                    $("#login_button").removeAttr("disabled");
+                        $("#login_button").html('LOGIN');
+                   
+                },
+
+                error: function (data){
+                  console.log('Fail to run Login..');
+                    // alert("Fail to run Login..");
+
+              
+                }
+            });
+
+          // }
+            //End ajax Post
+
+
+            return false;
+        }
+</script>
+
 
 
   <!-- IE Support -->

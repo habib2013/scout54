@@ -6,12 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Player extends Authenticatable implements MustVerifyEmail
+class Agent extends Authenticatable implements MustVerifyEmail
 {
   
     use Notifiable;
 
-    protected $guard = 'player';
+    protected $guard = 'agent';
     /**
      * The attributes that are mass assignable.
      *
@@ -20,9 +20,10 @@ class Player extends Authenticatable implements MustVerifyEmail
     // protected $fillable = [
     //     'name', 'username','email', 'password','usertype','status','is_admin'
     // ];
+    // protected $fillable = ['username','fullname','email','phone','status','password','nationality'];
 
 
-    protected $fillable = ['username','fullname','email','status','password','nationality','birthday'];
+    protected $fillable = ['username','fullname','email','phone','status','password','nationality'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -43,7 +44,7 @@ class Player extends Authenticatable implements MustVerifyEmail
     ];
 
     // protected static function boot(){
-    // parent::boot();
+    //     parent::boot();
     //     static::created(function($user){
     //         $user->profile()->create([
     //             'title'=>$user->username,

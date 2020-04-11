@@ -55,6 +55,7 @@ Route::post('/login/coach', 'Auth\LoginController@CoachLogin');
 Route::post('/login/agent', 'Auth\LoginController@AgentLogin');
 Route::post('/login/club', 'Auth\LoginController@ClubLogin');
 // Route::post('/validation-login-email', 'Auth\LoginController@validateLoginEmail')->name('validation-login-email');
+ Route::post('/validateplayer', 'Auth\RegisterController@validatePlayerLoginEmail')->name('validate-email');
 
 
 
@@ -65,7 +66,7 @@ Route::post('/register/club', 'Auth\RegisterController@createClub');
 
 
 Route::view('/home', 'home')->middleware('auth');
-Route::view('/player', 'player');
+Route::view('/player', 'player')->name('player');
 Route::view('/coach', 'coach');
 Route::view('/agent', 'agent');
 Route::view('/club', 'club');
