@@ -37,6 +37,7 @@ public $players;
      */
     public function build()
     {
+        
         return $this->view('emails.verifyplayer');
     }
 }

@@ -10,7 +10,7 @@ class NotSignedInController extends Controller
 {
     public function welcome(){
        
-        Toastr::error('Welcomes you ⚽ ⚽','Scout54');
+
         return view('welcome');
     }
 

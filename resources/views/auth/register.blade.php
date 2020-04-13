@@ -515,7 +515,15 @@
     
 <script type="text/javascript">
   $("body").on("click",".register_button",function(e){
+           
     $(this).parents("form").ajaxForm(options);
+
+setTimeout(() => {
+  $(".register_button").attr("disabled", "disabled");
+    $(".register_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+       
+}, 1000);
+
   });
 
   var options = { 
@@ -533,6 +541,11 @@
         confirmButtonText: 'SUCCESS ⚽!',
     }
     );
+
+    $(".register_button").removeAttr("disabled");
+    $(".register_button").html('GET STARTED');
+
+       window.location.href = '/player';           
 
     	}else{
     		printErrorMsg(response.responseJSON.error);

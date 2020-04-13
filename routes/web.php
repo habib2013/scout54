@@ -65,9 +65,10 @@ Route::post('/register/agent', 'Auth\RegisterController@createAgent');
 Route::post('/register/club', 'Auth\RegisterController@createClub');
 
 
-Route::view('/home', 'home')->middleware('auth','verified');
+Route::view('/home', 'home');
 Route::view('/player', 'player')->name('player');
 Route::view('/coach', 'coach');
 Route::view('/agent', 'agent');
 Route::view('/club', 'club');
 
+// Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');

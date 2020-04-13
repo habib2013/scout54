@@ -145,6 +145,7 @@ return response()->json($msg);
 			);
 			return response()->json($msg);
             
+            return redirect()->intended('/login/player');
         }else{
        $msg = array(
 				'status'  => 'error',

@@ -23659,8 +23659,8 @@ font-size: 21px;
   color: black;
   margin-left: 5px;
   margin-top: 3px;
-  border-bottom-width: 7px solid #ffffff;
 
+  /* border-bottom: 1px solid  #ffffff ;  */
 
   
 }
@@ -23670,10 +23670,7 @@ font-size: 21px;
   color: black;
   margin-left: 5px;
   margin-top: 3px;
-  font-size: 21px;
-
-  
-  /* border-bottom: 1px solid  rgb(72, 37, 168) ; */
+   border-bottom: 1px solid  #ffffff ; 
 }
 
 .smallers {
@@ -23730,6 +23727,7 @@ font-size: 21px;
   width: 100%;
   background: rgba(13, 44, 82, 0.93)
 }
+
 
 /*------------------------------------
   File for Steps style
@@ -24066,6 +24064,10 @@ font-size: 21px;
 }
 
 @media (min-width: 768px) {
+  .smallers {
+    margin-left: 180px;
+  }
+
   .step-md.step-centered {
     text-align: center;
   }

@@ -38,8 +38,8 @@
     <div class="u-header__section">
       <div id="logoAndNav" class="container">
         <!-- Nav -->
-  
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #ffffff;">
+ 
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #ffffff">
           <a class="navbar-brand" href="#" style="height: 50px;">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
               <path fill="#000000" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"/>

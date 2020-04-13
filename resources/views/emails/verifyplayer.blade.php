@@ -11,3 +11,5 @@
     <a href="{{url('user/verify', $players->verifyUser->token)}}">Verify Email</a>
   </body>
 </html>
+
+
