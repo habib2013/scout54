@@ -68,18 +68,6 @@ class LoginController extends Controller
     }
 
     public function validatePlayerLoginEmail(Request $request){
-// $email = $request->email;
-// $count = DB::table('users')->select('email')->where('email',$email)->first();
-//         if($email != null){
-//             if(count($count <= 0)){
-//                 echo "This email doesn't exist in Scout54 database";
-
-//             }
-//             else {
-//               echo  "email field is required";
-//             }
-//         }
-
         $msg = array(
             'message' => "Hello Here",
             'status' => "Error"
@@ -139,13 +127,23 @@ return response()->json($msg);
    
         if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
+            $collected = $request->email;
+        
+            $username = DB::select( DB::raw("SELECT username FROM players WHERE email = '$collected'") );
+
+
+
             $msg = array(
 				'status'  => 'success',
-				'message' => 'Login Successful'
-			);
-			return response()->json($msg);
-            
-            return redirect()->intended('/login/player');
+                'message' => 'Login Successful',
+            );
+
+
+
+            // dd($msg);
+
+            return response()->json($msg    );
+
         }else{
        $msg = array(
 				'status'  => 'error',
@@ -244,4 +242,17 @@ return response()->json($msg);
             }
           
     }
+
+
+    public function authenticated(Request $request, $user)
+{
+  if (!$players->verified) {
+    auth()->logout();
+    return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
+  }
+  return redirect()->intended($this->redirectPath());
 }
+
+}
+
+

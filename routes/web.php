@@ -36,8 +36,12 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::view('/player', 'player')->name('player')->middleware('player_auth');
+Route::view('/coach', 'coach');
+Route::view('/agent', 'agent');
+Route::view('/club', 'club');
 
-Route::get('/login/player', 'Auth\LoginController@showPlayerLoginForm');
+Route::get('/login/player', 'Auth\LoginController@showPlayerLoginForm')->name('playerlogin');
 Route::get('/login/coach', 'Auth\LoginController@showCoachLoginForm');
 Route::get('/login/agent', 'Auth\LoginController@showAgentLoginForm');
 Route::get('/login/club', 'Auth\LoginController@showClubLoginForm');
@@ -64,11 +68,15 @@ Route::post('/register/coach', 'Auth\RegisterController@createCoach');
 Route::post('/register/agent', 'Auth\RegisterController@createAgent');
 Route::post('/register/club', 'Auth\RegisterController@createClub');
 
+Route::get('/success/email', 'Auth\RegisterController@successemail');
+Route::post('/uploadimage','ProfilesController@uploadimage')->name('uploadimage');
+Route::post('/updateuserprofile','ProfilesController@updateuserprofile')->name('updateuserprofile');
+// Route::view('/home', 'home');
 
-Route::view('/home', 'home');
-Route::view('/player', 'player')->name('player');
-Route::view('/coach', 'coach');
-Route::view('/agent', 'agent');
-Route::view('/club', 'club');
 
-// Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+//End route view
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+
+Route::get('/{username}',['as'=>'profile.single','uses'=>'ProfilesController@user'])->where('username','[\w\d\-\_]+');
+Route::get('/settings/{username}',['as'=>'profile.single','uses'=>'ProfilesController@settings'])->where('username','[\w\d\-\_]+');

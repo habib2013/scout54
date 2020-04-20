@@ -14,25 +14,25 @@ class CreatePlayerProfilesTable extends Migration
     public function up()
     {
         Schema::create('player_profiles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('player_id');
-             $table->string('passport');
-             $table->string('description');
-             $table->string('style_of_play');
-             $table->string('place_of_birth');
-             $table->string('currnt_tournamnt');
-             $table->string('height');
-             $table->string('current_club');
-             $table->string('squad_number');
-             $table->string('position');
-             $table->string('prefered_foot');
-             $table->string('market_value');
-             $table->string('players_agent');
+             $table->bigIncrements('id');
+             $table->integer('player_id');
+             $table->string('passport')->nullable();
+             $table->string('description')->nullable();
+             $table->string('gender')->nullable();
+             $table->string('weight')->nullable();
+             $table->string('phone')->nullable();
+             $table->string('height')->nullable();
+             $table->string('address')->nullable();
+             $table->string('currnt_tournamnt')->nullable();
+             $table->string('current_club')->nullable();
+             $table->string('squad_number')->nullable();
+             $table->string('position')->nullable();
+             $table->string('prefered_foot')->nullable();
+             $table->string('players_agent')->nullable();
              
             $table->timestamps();
 
 
-            $table->index('player_id');
         });
     }
 

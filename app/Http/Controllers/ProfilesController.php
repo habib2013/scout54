@@ -5,40 +5,108 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
+use App\Player;
 use App\Incomplete;
 use Auth;       
 use Intervention\Image\Facades\Image;
 use Webpatser\Uuid\Uuid;
+use Illuminate\Support\Facades\Validator;
+use DB;
 
 class ProfilesController extends Controller
 {
                 public function __construct(){
 
-                        return $this->middleware('auth');
+                         return $this->middleware('player_auth');
+                         $this->middleware('guest')->except('logout');
+                        $this->middleware('guest:coach')->except('logout');
+                        $this->middleware('guest:club')->except('logout');
+                        $this->middleware('guest:agent')->except('logout');
+                        $this->middleware('guest:player')->except('logout');
                 }
 
               
 
-        public function user($username){
-         
-                $user = User::where('username','=',$username)->firstorFail();
-                $follows =(auth()->user())? auth()->user()->following->contains($user->id):false;
-                return view('profiles.index',compact('user','follows'));
+        public function user($username){   
+        $players = Player::where('username','=',$username)->firstorFail();
+
+        return view('players.index',compact('players'));
         }
 
         public function settings($username){
-
-       // $this->authorize('update',$user->profile);
-
-        $user = User::where('username','=',$username)->firstorFail();
-        return view('profiles.edit')->withUser($user);
-
-      //  return view('profiles.edit',['user'=>$user]);
-
+        $players = Player::where('username','=',$username)->firstorFail();
+        return view('players.settings',compact('players'));
         }
 
+public function uploadimage(Request $request){
+     $validator = Validator::make($request->all(),[
+             'passport'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+     ]);
+
+     if($validator->passes()){
+            
+$input = $request->all();
+$passport = $input['passport'];
+$passport = time().'.'.$request->passport->extension();
+        $request->passport->move(public_path('images'),$passport);
+  
+        $result = DB::update(DB::raw("update player_profiles set passport=:passport"),array('passport'=>$passport));
+
+         return response()->json(['success'=>'done']);
+
+              }
+              else{
+                return response()->json(['error'=>$validator->errors()->all()]);   
+              }
+
+        // $imgs = $request->passport;
+ 
+}
+
+public function updateuserprofile(Request $request){
+  
+   $validator = Validator::make($request->all(),[
+      'fullname'=>'required',
+        'username'=>'required',
+        'birthday'=>'',
+        'status'=>'',
+        'nationality'=>'',
+        'user_id'=>''
+   ]);
+
+   if($validator->passes()){
+$input = $request->all();
+$fullname = $input['fullname'];
+$username = $input['username'];
+$birthday = $input['birthday'];
+$status = $input['status'];
+$nationality = $input['nationality'];
+$id = $input['user_id'];
+
+if($birthday == ''){
+        $result = DB::update(DB::raw("update players set fullname=:fullname,username=:username,status=:status,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'username'=>$username,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
+
+}
+elseif($status == ''){
+        $result = DB::update(DB::raw("update players set fullname=:fullname,username=:username,birthday=:birthday,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'username'=>$username,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
+
+} 
+
+else{
+
+}
+
+return response()->json(['success'=>'done']);
+   }
+   else{
+        return response()->json(['error'=>$validator->errors()->all()]);   
+
+   }
+}
+
+
+
         public function download($file){
-//  $filepath = public_path('cv/'.$file);
 
 $filepath = storage_path('app/'.$file);
  return response()->download($filepath);

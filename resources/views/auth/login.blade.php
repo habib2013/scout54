@@ -226,7 +226,7 @@
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Email address</label>
                 <input type="email" name="email" id="login_email" tabindex="1" placeholder="Email address" aria-label="Email address" 
-                       data-msg="Please enter a valid email address." class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus >
+                       data-msg="Please enter a valid email address." class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="tayo.oladosu@yahoo.com" required autofocus >
           
           
                 @if ($errors->has('email'))
@@ -245,7 +245,7 @@
                     <a class="link-underline text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a>
                   </span>
                 </label>
-                <input type="password"  name="password" id="password" tabindex="2" placeholder="********" aria-label="********" 
+                <input type="password" value="password"  name="password" id="password" tabindex="2" placeholder="********" aria-label="********" 
                        data-msg="Your password field is invalid. Please try again."  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
              
                        @if ($errors->has('password'))
@@ -393,10 +393,6 @@ else {
   
 }
 
-
-                    // console.log('status: ' +data.status);
-                    // alert('message: ' +data.message);
-                    // console.log('message: ' +data.message);
                     $("#login_button").removeAttr("disabled");
                         $("#login_button").html('LOGIN');
                    
@@ -426,8 +422,7 @@ else {
                 email:email,
                 password:password
             };
-            // Ajax Post 
-      //  if(txt_url == 'player'){
+
             $.ajax({
                 type: "post",
                 url: "/login/"+txt_url ,
@@ -443,6 +438,9 @@ else {
                 {
                     console.log('login request sent !');
 if(data.status == 'success'){
+
+ window.location.href = '/'+txt_url;
+
   swal({
         title: "Login Successful",
         text: "You will be redirected to your dahsboard!",

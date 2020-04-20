@@ -281,7 +281,7 @@
               <label class="input-label">Date Of Establishment </label>
               <div class="js-form-message form-group">            
                 <input type="date"   id="date" tabindex="1" required
-                       data-msg="Please enter a valid date." class="form-control @error('phone') is-invalid @enderror" name="date_est" value="{{ old('date') }}" required autocomplete="date">
+                       data-msg="Please enter a valid date." class="form-control @error('date') is-invalid @enderror" name="date_est" value="<?php echo date("Y-m-d"); ?>" required autocomplete="date">
                        @error('phone')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
@@ -515,14 +515,23 @@
     
 <script type="text/javascript">
   $("body").on("click",".register_button",function(e){
-           
-    $(this).parents("form").ajaxForm(options);
+   var date = $('#date').val();
+  
+   if(date == ''){
+     alert('Date cannot be empty');
+     $(".register_button").removeAttr("disabled");
+    $(".register_button").html('GET STARTED');
 
-setTimeout(() => {
-  $(".register_button").attr("disabled", "disabled");
-    $(".register_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+   }
+    
+
+    $(this).parents("form").ajaxForm(options);
+  
+// setTimeout(() => {
+//   $(".register_button").attr("disabled", "disabled");
+//     $(".register_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
        
-}, 1000);
+// }, 1000);
 
   });
 
@@ -545,21 +554,15 @@ setTimeout(() => {
     $(".register_button").removeAttr("disabled");
     $(".register_button").html('GET STARTED');
 
-       window.location.href = '/player';           
+       window.location.href = '/success/email';           
 
     	}else{
     		printErrorMsg(response.responseJSON.error);
     	}
     }
   };
-
-
   function printErrorMsg (msg) {
-	// $(".print-error-msg").find("ul").html('');
-	// $(".print-error-msg").css('display','block');
 	$.each( msg, function( key, value ) {
-    // $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
-   
     swal({
         title: "Login Error",
         text: value,
@@ -573,6 +576,10 @@ setTimeout(() => {
     );
 
 	});
+  $(".register_button").removeAttr("disabled");
+    $(".register_button").html('GET STARTED');
+
+
   }
 </script>
 
@@ -583,6 +590,7 @@ setTimeout(() => {
   <script>
     $(document).on('ready', function () {
       // initialization of slick carousel
+
       $('.js-slick-carousel').each(function() {
         var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
       });

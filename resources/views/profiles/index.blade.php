@@ -139,140 +139,7 @@
 
     <div class="u-header__section">
       <!-- Topbar -->
-      <div class="container u-header__hide-content pt-2">
-        <div class="d-flex align-items-center">
-          <!-- Language -->
-          <div class="position-relative">
-            <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
-               aria-controls="languageDropdown"
-               aria-haspopup="true"
-               aria-expanded="false"
-               data-unfold-event="hover"
-               data-unfold-target="#languageDropdown"
-               data-unfold-type="css-animation"
-               data-unfold-duration="300"
-               data-unfold-delay="300"
-               data-unfold-hide-on-scroll="true"
-               data-unfold-animation-in="slideInUp"
-               data-unfold-animation-out="fadeOut">
-               <img class="dropdown-item-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="SVG">
-              <span class="d-inline-block d-sm-none">US</span>
-              <span class="d-none d-sm-inline-block">United States</span>
-            </a>
-
-            <div id="languageDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="languageDropdownInvoker">
-              <a class="dropdown-item active" href="#">English</a>
-              <a class="dropdown-item" href="#">Deutsch</a>
-              <a class="dropdown-item" href="#">Español‎</a>
-            </div>
-          </div>
-          <!-- End Language -->
-
-          <div class="ml-auto">
-            <!-- Jump To -->
-            <div class="d-inline-block d-sm-none position-relative mr-2">
-              <a id="jumpToDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center" href="javascript:;" role="button"
-                 aria-controls="jumpToDropdown"
-                 aria-haspopup="true"
-                 aria-expanded="false"
-                 data-unfold-event="hover"
-                 data-unfold-target="#jumpToDropdown"
-                 data-unfold-type="css-animation"
-                 data-unfold-duration="300"
-                 data-unfold-delay="300"
-                 data-unfold-hide-on-scroll="true"
-                 data-unfold-animation-in="slideInUp"
-                 data-unfold-animation-out="fadeOut">
-                Jump to
-              </a>
-
-              <div id="jumpToDropdown" class="dropdown-menu dropdown-unfold" aria-labelledby="jumpToDropdownInvoker">
-                <a class="dropdown-item" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/faq.html">Help</a>
-                <a class="dropdown-item" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/contacts-agency.html">Contacts</a>
-              </div>
-            </div>
-            <!-- End Jump To -->
-
-            <!-- Links -->
-            <div class="d-none d-sm-inline-block ml-sm-auto">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item mr-0">
-                  <a class="u-header__navbar-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/faq.html">Help</a>
-                </li>
-                <li class="list-inline-item mr-0">
-                  <a class="u-header__navbar-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/contacts-agency.html">Contacts</a>
-                </li>
-              </ul>
-            </div>
-            <!-- End Links -->
-          </div>
-
-          <ul class="list-inline ml-2 mb-0">
-            <!-- Search -->
-            <li class="list-inline-item">
-              <a class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      aria-controls="searchPushTop"
-                      data-unfold-type="jquery-slide"
-                      data-unfold-target="#searchPushTop">
-                <span class="fas fa-search btn-icon__inner"></span>
-              </a>
-            </li>
-            <!-- End Search -->
-
-            <!-- Shopping Cart -->
-            <li class="list-inline-item position-relative">
-              <a id="shoppingCartDropdownInvoker" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
-                      aria-controls="shoppingCartDropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      data-unfold-event="hover"
-                      data-unfold-target="#shoppingCartDropdown"
-                      data-unfold-type="css-animation"
-                      data-unfold-duration="300"
-                      data-unfold-delay="300"
-                      data-unfold-hide-on-scroll="true"
-                      data-unfold-animation-in="slideInUp"
-                      data-unfold-animation-out="fadeOut">
-                <span class="fas fa-shopping-cart btn-icon__inner"></span>
-              </a>
-
-              <div id="shoppingCartDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right text-center p-7" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
-                <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-                  <span class="fas fa-shopping-basket btn-icon__inner"></span>
-                </span>
-                <span class="d-block">Your Cart is Empty</span>
-              </div>
-            </li>
-            <!-- End Shopping Cart -->
-
-            <!-- Account Login -->
-            <li class="list-inline-item">
-              <!-- Account Sidebar Toggle Button -->
-              <a id="sidebarNavToggler" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg ml-1" href="javascript:;" role="button"
-                 aria-controls="sidebarContent"
-                 aria-haspopup="true"
-                 aria-expanded="false"
-                 data-unfold-event="click"
-                 data-unfold-hide-on-scroll="false"
-                 data-unfold-target="#sidebarContent"
-                 data-unfold-type="css-animation"
-                 data-unfold-animation-in="fadeInRight"
-                 data-unfold-animation-out="fadeOutRight"
-                 data-unfold-duration="500">
-                <span class="position-relative">
-                  <span class="u-sidebar--account__toggle-text">Natalie Curtis</span>
-                  <img class="u-sidebar--account__toggle-img" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
-                  <span class="badge badge-sm badge-success badge-pos rounded-circle">3</span>
-                </span>
-              </a>
-              <!-- End Account Sidebar Toggle Button -->
-            </li>
-            <!-- End Account Login -->
-          </ul>
-        </div>
-      </div>
+     
       <!-- End Topbar -->
 
       <div id="logoAndNav" class="container">
@@ -307,85 +174,15 @@
           <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
             <ul class="navbar-nav u-header__navbar-nav">
               <!-- Home -->
-              <li class="nav-item hs-has-mega-menu u-header__nav-item"
+              <li class="nav-item"
                   data-event="hover"
                   data-animation-in="slideInUp"
                   data-animation-out="fadeOut"
                   data-position="left">
-                <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Home</a>
+                <a  class="nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Home</a>
 
                 <!-- Home - Mega Menu -->
-                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
-                  <div class="row no-gutters">
-                    <div class="col-lg-6">
-                      <!-- Banner Image -->
-                      <div class="u-header__banner" style="background-image: url(../../assets/img/750x750/img1.jpg);">
-                        <div class="u-header__banner-content">
-                          <div class="mb-4">
-                            <span class="u-header__banner-title">Branding Works</span>
-                            <p class="u-header__banner-text">Experience a level of our quality in both design &amp; customization works.</p>
-                          </div>
-                          <a class="btn btn-primary btn-sm transition-3d-hover" href="#">Learn More <span class="fas fa-angle-right ml-2"></span></a>
-                        </div>
-                      </div>
-                      <!-- End Banner Image -->
-                    </div>
-
-                    <div class="col-lg-6">
-                      <div class="row u-header__mega-menu-wrapper">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <span class="u-header__sub-menu-title">Classic</span>
-                          <ul class="u-header__sub-menu-nav-group mb-3">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/index.html">Classic Agency</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/classic-business.html">Classic Business</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/classic-marketing.html">Classic Marketing</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/classic-consulting.html">Classic Consulting</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/classic-start-up.html">Classic Start-up</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/classic-studio.html">Classic Studio <span class="badge badge-success badge-pill ml-1">New</span></a></li>
-                          </ul>
-
-                          <span class="u-header__sub-menu-title">Corporate</span>
-                          <ul class="u-header__sub-menu-nav-group mb-3">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/corporate-agency.html">Corporate Agency</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/corporate-start-up.html">Corporate Start-Up</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/corporate-business.html">Corporate Business</a></li>
-                          </ul>
-
-                          <span class="u-header__sub-menu-title">Portfolio</span>
-                          <ul class="u-header__sub-menu-nav-group">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/portfolio-agency.html">Portfolio Agency</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/portfolio-profile.html">Portfolio Profile</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="col-sm-6">
-                          <span class="u-header__sub-menu-title">App</span>
-                          <ul class="u-header__sub-menu-nav-group mb-3">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/app-ui-kit.html">App UI kit</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/app-saas.html">App SaaS</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/app-workflow.html">App Workflow</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/app-payment.html">App Payment</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/app-software.html">App Software</a></li>
-                          </ul>
-
-                          <span class="u-header__sub-menu-title">Onepages</span>
-                          <ul class="u-header__sub-menu-nav-group mb-3">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/onepage-corporate.html">Corporate <span class="badge badge-success badge-pill ml-1">New</span></a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/onepage-creative.html">Creative</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/onepage-saas.html">SaaS</a></li>
-                          </ul>
-
-                          <span class="u-header__sub-menu-title">Blog</span>
-                          <ul class="u-header__sub-menu-nav-group">
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/blog-agency.html">Blog Agency</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/blog-start-up.html">Blog Start-Up</a></li>
-                            <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/home/blog-business.html">Blog Business</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+           
                 <!-- End Home - Mega Menu -->
               </li>
               <!-- End Home -->
@@ -395,120 +192,11 @@
                   data-event="hover"
                   data-animation-in="slideInUp"
                   data-animation-out="fadeOut">
-                <a id="pagesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Pages</a>
+                <a id="pagesMegaMenu" class="nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Pages</a>
 
                 <!-- Pages - Submenu -->
-                <ul id="pagesSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="pagesMegaMenu" style="min-width: 230px;">
-                  <!-- Account -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesAccount" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesAccount">Account</a>
-
-                    <ul id="navSubmenuPagesAccount" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesAccount" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="dashboard.html">Dashboard</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="profile.html">Profile</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="my-tasks.html">My tasks</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="projects.html">Projects</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="members.html">Members</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Edit profile</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Change password</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="notifications.html">Notifications</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="activity.html">Activity</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="payment-methods.html">Payment methods</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">Invite friends</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="plans.html">Plans</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="api-token.html">API Token</a></li>
-                    </ul>
-                  </li>
-                  <!-- End Account -->
-
-                  <!-- Company -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesCompany" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesCompany">Company</a>
-
-                    <ul id="navSubmenuPagesCompany" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesCompany" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/about-agency.html">About Agency</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/services-agency.html">Services Agency</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/customers.html">Customers</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/customer-story.html">Customer story</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/careers.html">Careers</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/careers-single.html">Careers Single</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/hire-us.html">Hire Us</a></li>
-                    </ul>
-                  </li>
-                  <!-- Company -->
-
-                  <!-- Portfolio -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesPortfolio" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesPortfolio">Portfolio</a>
-
-                    <ul id="navSubmenuPagesPortfolio" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesPortfolio" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/boxed-classic.html">All layouts</a></li>
-                      <li class="dropdown-divider"></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/case-studies-simple.html">Case Studies Simple</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/case-studies-modern.html">Case Studies Modern</a></li>
-                      <li class="dropdown-divider"></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/single-page-simple.html">Single Page Simple</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/single-page-grid.html">Single Page Grid</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/portfolio/single-page-masonry.html">Single Page Masonry</a></li>
-                    </ul>
-                  </li>
-                  <!-- End Portfolio -->
-
-                  <!-- Login -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesLogin" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesLogin">Login &amp; Signup</a>
-
-                    <ul id="navSubmenuPagesLogin" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesLogin" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/login.html">Login</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/signup.html">Signup</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/recover-account.html">Recover Account</a></li>
-                      <li class="dropdown-divider"></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/login-simple.html">Login Simple</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/signup-simple.html">Signup Simple</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/recover-account-simple.html">Recover Account Simple</a></li>
-                    </ul>
-                  </li>
-                  <!-- Signup -->
-
-                  <!-- Contacts -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkContactsServices" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuContactsServices">Contacts</a>
-
-                    <ul id="navSubmenuContactsServices" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkContactsServices" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/contacts-agency.html">Contacts Agency</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/contacts-start-up.html">Contacts Start-Up</a></li>
-                    </ul>
-                  </li>
-                  <!-- Contacts -->
-
-                  <!-- Utilities -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesUtilities" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesUtilities">Utilities</a>
-
-                    <ul id="navSubmenuPagesUtilities" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesUtilities" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/pricing.html">Pricing</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/faq.html">FAQ</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/terms.html">Terms &amp; Conditions</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/privacy.html">Privacy &amp; Policy</a></li>
-                    </ul>
-                  </li>
-                  <!-- Utilities -->
-
-                  <!-- Specialty -->
-                  <li class="hs-has-sub-menu">
-                    <a id="navLinkPagesSpecialty" class="nav-link u-header__sub-menu-nav-link u-header__sub-menu-nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-controls="navSubmenuPagesSpecialty">Specialty</a>
-
-                    <ul id="navSubmenuPagesSpecialty" class="hs-sub-menu u-header__sub-menu" aria-labelledby="navLinkPagesSpecialty" style="min-width: 230px;">
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/cover-page.html">Cover Page</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/coming-soon.html">Coming Soon</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/maintenance-mode.html">Maintenance Mode</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/status.html">Status</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/invoice.html">Invoice</a></li>
-                      <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/error-404.html">Error 404</a></li>
-                    </ul>
-                  </li>
-                  <!-- Specialty -->
-                </ul>
+            
+                
                 <!-- End Pages - Submenu -->
               </li>
               <!-- End Pages -->
@@ -518,15 +206,10 @@
                   data-event="hover"
                   data-animation-in="slideInUp"
                   data-animation-out="fadeOut">
-                <a id="blogMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Blog</a>
+                <a id="blogMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Blog</a>
 
                 <!-- Blog - Submenu -->
-                <ul id="blogSubMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" aria-labelledby="blogMegaMenu" style="min-width: 230px;">
-                  <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/blog/card-style.html">Card Style</a></li>
-                  <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/blog/listing.html">Listing</a></li>
-                  <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/blog/blog-profile.html">Blog Profile</a></li>
-                  <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/blog/single-article.html">Single Article</a></li>
-                </ul>
+             
                 <!-- End Submenu -->
               </li>
               <!-- End Blog -->
@@ -538,51 +221,10 @@
                   data-animation-out="fadeOut"
                   data-max-width="440px"
                   data-position="right">
-                <a id="shopMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Shop</a>
+                <a id="shopMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Shop</a>
 
                 <!-- Shop - Mega Menu -->
-                <div class="hs-mega-menu u-header__sub-menu u-header__mega-menu-position-right-fix--md" aria-labelledby="shopMegaMenu">
-                  <div class="u-header__mega-menu-wrapper">
-                    <span class="u-header__sub-menu-title">Shop Elements</span>
-
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <ul class="u-header__sub-menu-nav-group">
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/classic.html">Classic</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/categories.html">Categories</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/categories-sidebar.html">Categories Sidebar</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/products-grid.html">Products Grid</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/products-list.html">Products List</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="col-sm-6">
-                        <ul class="u-header__sub-menu-nav-group">
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/single-product.html">Single Product</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/empty-cart.html">Empty Cart</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/cart.html">Cart</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/checkout.html">Checkout</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/order-completed.html">Order Completed</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Mega Menu Banner -->
-                  <div class="u-header__product-banner">
-                    <div class="d-flex align-items-end">
-                      <img class="img-fluid mr-4" src="../../assets/img/mockups/img4.png" alt="Image Description">
-                      <div class="u-header__product-banner-content">
-                        <div class="mb-4">
-                          <span class="u-header__product-banner-title">Win T-shirt</span>
-                          <p class="u-header__product-banner-text">Win one of our Front brand T-shirts.</p>
-                        </div>
-                        <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="https://htmlstream.com/preview/front-v2.9.4/html/shop/classic.html">Learn More <span class="fas fa-angle-right ml-2"></span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Mega Menu Banner -->
-                </div>
+             
                 <!-- End Shop - Mega Menu -->
               </li>
               <!-- End Shop -->
@@ -594,115 +236,11 @@
                   data-animation-out="fadeOut"
                   data-max-width="900px"
                   data-position="right">
-                <a id="demosMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Demos</a>
+                <a id="demosMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Demos</a>
 
                 <!-- Demos - Mega Menu -->
-                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="demosMegaMenu">
-                  <div class="row no-gutters">
-                    <div class="col-lg-8">
-                      <div class="u-header__promo-card-deck">
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/html/app-marketplace/index.html">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-45.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title">App Marketplace <span class="badge badge-success badge-pill ml-1">New</span></span>
-                                <small class="u-header__promo-text">Marketplace app demo</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- End Promo Item -->
+              
 
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/html/house/index.html">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-13.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title">House</span>
-                                <small class="u-header__promo-text">Real estate demo</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- End Promo Item -->
-                      </div>
-
-                      <div class="u-header__promo-card-deck">
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/html/job/index.html">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-19.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title">Job</span>
-                                <small class="u-header__promo-text">Job vacancy demo</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- End Promo Item -->
-
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/html/help-desk/index.html">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-4.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title">Help Desk</span>
-                                <small class="u-header__promo-text">Help desk demo</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- End Promo Item -->
-                      </div>
-
-                      <div class="u-header__promo-card-deck">
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/html/crypto/index.html">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-5.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title">Crypto Landing</span>
-                                <small class="u-header__promo-text">Cryptocurrency demo</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- End Promo Item -->
-
-                        <!-- Promo Item -->
-                        <div class="u-header__promo-card u-header__promo-item">
-                          <div class="u-header__promo-link">
-                            <div class="media align-items-center">
-                              <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-23.svg" alt="SVG">
-                              <div class="media-body">
-                                <span class="u-header__promo-title text-secondary">New demos</span>
-                                <small class="u-header__promo-text">coming soon ...</small>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Promo Item -->
-                      </div>
-                    </div>
-
-                    <!-- Promo -->
-                    <div class="col-lg-4 u-header__promo d-none d-lg-block">
-                      <a class="d-block u-header__promo-inner" href="#">
-                        <div class="position-relative">
-                          <img class="img-fluid rounded mb-3" src="../../assets/img/380x227/img6.jpg" alt="Image Description">
-                        </div>
-                        <span class="text-secondary font-size-1">Front makes you look at things from a different perspectives.</span>
-                      </a>
-                    </div>
-                    <!-- End Promo -->
-                  </div>
-                </div>
                 <!-- End Demos - Mega Menu -->
               </li>
               <!-- End Demos -->
@@ -714,73 +252,17 @@
                   data-animation-out="fadeOut"
                   data-max-width="260px"
                   data-position="right">
-                <a id="docsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Docs</a>
+                <a id="docsMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Docs</a>
 
                 <!-- Docs - Submenu -->
-                <div class="hs-mega-menu u-header__sub-menu" aria-labelledby="docsMegaMenu" style="min-width: 330px;">
-                  <!-- Promo Item -->
-                  <div class="u-header__promo-item">
-                    <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/documentation/index.html">
-                      <div class="media align-items-center">
-                        <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-2.svg" alt="SVG">
-                        <div class="media-body">
-                          <span class="u-header__promo-title">
-                            Documentation
-                            <span class="badge badge-primary badge-pill ml-1">v2.9</span>
-                          </span>
-                          <small class="u-header__promo-text">Development guides</small>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <!-- End Promo Item -->
-
-                  <!-- Promo Item -->
-                  <div class="u-header__promo-item">
-                    <a class="u-header__promo-link" href="https://htmlstream.com/preview/front-v2.9.4/starter/index.html">
-                      <div class="media align-items-center">
-                        <img class="js-svg-injector u-header__promo-icon" src="https://htmlstream.com/preview/front-v2.9.4/assets/svg/icons/icon-1.svg" alt="SVG">
-                        <div class="media-body">
-                          <span class="u-header__promo-title">Get started</span>
-                          <small class="u-header__promo-text">Components and snippets</small>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <!-- End Promo Item -->
-
-                  <div class="u-header__promo-footer">
-                    <!-- List -->
-                    <div class="row no-gutters">
-                      <div class="col-6">
-                        <div class="u-header__promo-footer-item">
-                          <small class="text-muted d-block">Check what's new</small>
-                          <a class="small" href="https://htmlstream.com/preview/front-v2.9.4/documentation/getting-started/changelog.html">
-                            Changelog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-6 u-header__promo-footer-ver-divider">
-                        <div class="u-header__promo-footer-item">
-                          <small class="text-muted d-block">Have a question?</small>
-                          <a class="small" href="http://htmlstream.com/contact-us">
-                            Contact us
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End List -->
-                  </div>
-                </div>
+               
                 <!-- End Docs - Submenu -->
               </li>
               <!-- End Docs -->
 
               <!-- Button -->
               <li class="nav-item u-header__nav-last-item">
-                <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-                  Buy Now
-                </a>
+              
               </li>
               <!-- End Button -->
             </ul>
@@ -1031,7 +513,7 @@
                     <div class="media">
                       <span class="fas fa-envelope list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Email:</span>
+                        <span class="d-block mb-1">Email: {{auth()::player()->username}}</span>
                         <a href="#">natalie.curtis@gmail.com</a>
                       </div>
                     </div>

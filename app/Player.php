@@ -2,6 +2,7 @@
 
 namespace App;
 use App\verifyUser;
+use App\playerProfile;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -44,21 +45,28 @@ class Player extends Authenticatable implements MustVerifyEmail
 
     // protected static function boot(){
     // parent::boot();
-    //     static::created(function($user){
-    //         $user->profile()->create([
-    //             'title'=>$user->username,
-               
+    //     static::created(function($players){
+    //         $players->playerprofile()->create([
+    //             'description'=>$players->username,
     //         ]);
 
     //     });
     // }
 
-    public function profile(){
-        return $this->hasOne(Profile::class);
+   
+    public function playerprofile(){
+        return $this->hasOne('App\PlayerProfile');
+    }
+    public function playerpictures(){
+        return $this->hasOne('App\PlayerPictures');
+    }
+
+    public function playervideos(){
+        return $this->hasOne('App\PlayerVideos');
     }
   
     public function verifyUser()
-{
-  return $this->hasOne('App\VerifyUser');
-}
+    {
+    return $this->hasOne('App\VerifyUser');
+    }
 }

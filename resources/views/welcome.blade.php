@@ -213,18 +213,19 @@
     <!-- Hero v1 Section -->
     <div class="u-hero-v1">
       <!-- Hero Carousel Main -->
-      <div id="heroNav" class="js-slick-carousel u-slick"
-           data-autoplay="true"
-           data-speed="10000"
-           data-adaptive-height="true"
-           data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-           data-arrow-left-classes="fa fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-           data-arrow-right-classes="fa fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-           data-numbered-pagination="#slickPaging"
-           data-nav-for="#heroNavThumb">
-        <div class="js-slide">
+      <div>
+        <div class="js-slideq">
           <!-- Slide #1 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url(../../assets/img/1920x800/fancy.jpg);">
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url(../../assets/img/1920x800/fancy.jpg); position:relative">
+           <div class="overlay" style=" position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .6;
+    width: 100%;
+    background: rgba(139, 169, 235, 0.5);"></div>
             <div class="container space-3 space-top-md-5 space-top-lg-3">
               <div class="row">
                 <div class="col-md-8 col-lg-6 position-relative">
@@ -235,7 +236,7 @@
                   <h5 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
                       data-scs-animation-delay="200">
-                    <span class="font-weight-semi-bold">A soccer recruiting </span> cum social platform.
+                    <span class="font-weight-semi-bold">A soccer recruiting, </span> combined with social platform.
                   </h5>
                 </div>
               </div>
@@ -244,27 +245,7 @@
           <!-- End Slide #1 -->
         </div>
 
-        <div class="js-slide">
-          <!-- Slide #2 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url(../../assets/img/1920x800/newvv.jpg);">
-            <div class="container space-3 space-top-md-5 space-top-lg-3">
-              <div class="row">
-                <div class="col-md-8 col-lg-6">
-                  <span class="d-block h4 text-white font-weight-light mb-2"
-                        data-scs-animation-in="fadeInUp">
-                  Scout54
-                  </span>
-                  <h6 class="text-white display-4 font-size-md-down-5 mb-0"
-                      data-scs-animation-in="fadeInUp"
-                      data-scs-animation-delay="200">
-                    <span class="font-weight-semi-bold">showcase players </span> based on excellence and integrity
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Slide #2 -->
-        </div>
+      
 
       </div>
       <!-- End Hero Carousel Main -->
@@ -382,68 +363,60 @@
   <div class="row mx-n2">
     <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
       <!-- Icon Blocks -->
-      <a class="card h-100 transition-3d-hover" href="#">
+      <a class="card h-75 transition-3d-hover" href="#">
         <div class="card-body">
           <figure class="w-100 max-w-8rem mb-4">
-            <img class="img-fluid" src="../../assets/illustrators/junior.png" alt="SVG">
+            <img class="img-fluid" src="../../assets/illustrators/junior.png" alt="SVG"  style="height:100px">
           </figure>
           <h4>Players</h4>
           <p class="font-size-1 text-body mb-0">Front is an incredibly beautiful, fully responsive, and mobile-first projects on the web.</p>
         </div>
-        <div class="card-footer border-0 pt-0">
-          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-        </div>
+      
       </a>
       <!-- End Icon Blocks -->
     </div>
 
     <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-lg-0">
       <!-- Icon Blocks -->
-      <a class="card h-100 transition-3d-hover" href="#">
+      <a class="card h-75 transition-3d-hover" href="#">
         <div class="card-body">
-          <figure class="w-100 max-w-8rem mb-4">
-            <img class="img-fluid" src="../../assets/illustrators/agent.png" alt="SVG">
+          <figure class="w-75 max-w-4rem mb-1">
+            <img class="img-fluid" src="../../assets/illustrators/agent.png" alt="SVG" style="">
           </figure>
           <h4>Scout & Agents</h4>
           <p class="font-size-1 text-body mb-0">Front template can be easily customized with its cutting-edge components and features.</p>
         </div>
-        <div class="card-footer border-0 pt-0">
-          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-        </div>
+    
       </a>
       <!-- End Icon Blocks -->
     </div>
 
     <div class="col-sm-6 col-lg-3 px-2 mb-3 mb-sm-0">
       <!-- Icon Blocks -->
-      <a class="card h-100 transition-3d-hover" href="#">
+      <a class="card h-75 transition-3d-hover" href="#">
         <div class="card-body">
-          <figure class="w-100 max-w-8rem mb-4">
-            <img class="img-fluid" src="../../assets/illustrators/portfolio.png" alt="SVG">
+          <figure class="w-75 max-w-4rem mb-1">
+            <img class="img-fluid" src="../../assets/illustrators/portfolio.png" alt="SVG" style="">
           </figure>
           <h4>Clubs <span class="badge badge-success badge-pill ml-1">New</span></h4>
           <p class="font-size-1 text-body mb-0">Front is not only for developers but also for designers, and includes a Sketch file.</p>
         </div>
-        <div class="card-footer border-0 pt-0">
-          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-        </div>
+    
       </a>
       <!-- End Icon Blocks -->
     </div>
 
     <div class="col-sm-6 col-lg-3 px-2">
       <!-- Icon Blocks -->
-      <a class="card h-100 transition-3d-hover" href="#">
+      <a class="card h-75 transition-3d-hover" href="#">
         <div class="card-body">
-          <figure class="w-100 max-w-8rem mb-4">
-            <img class="img-fluid" src="../../assets/illustrators/coachie.png" alt="SVG">
+          <figure class="w-75 max-w-4rem mb-1">
+            <img class="img-fluid" src="../../assets/illustrators/coachie.png" alt="SVG" style="">
           </figure>
           <h4>Coaches</h4>
           <p class="font-size-1 text-body mb-0">Every component and plugin is well documented with live examples.</p>
         </div>
-        <div class="card-footer border-0 pt-0">
-          <span class="font-size-1">Learn more <i class="fas fa-angle-right fa-sm ml-1"></i></span>
-        </div>
+   
       </a>
       <!-- End Icon Blocks -->
     </div>
@@ -507,6 +480,10 @@
 <!-- End of players -->
 
 
+<!-- Start test -->
+
+
+<!-- End test -->
 <div class="container" align="center">
   <!-- Title -->
   <div class="w-md-80 w-lg-50 text-center">
@@ -514,10 +491,10 @@
     <h2 class="text-primary"><span class="font-weight-semi-bold">Our Statistics</span></h2>
  
     <div class="row">
-      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Coaches</p></div>
-      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Players</p></div>
-      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Clubs</p></div>
-      <div class="col-md-3 col-sm-6 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Agents</p></div>
+      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Coaches</p></div>
+      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Players</p></div>
+      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Clubs</p></div>
+      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Agents</p></div>
      
     </div>
   </div>
@@ -526,6 +503,32 @@
   
   <!-- End Slick Carousel -->
 </div>
+
+<!--showcase -->
+
+<div class="container space-2 space-lg-3">
+      <div class="bg-light rounded overflow-hidden space-top-2 space-top-lg-1 pl-5 pl-md-8">
+        <div class="row justify-content-lg-between align-items-lg-center no-gutters">
+          <div class="col-lg-4">
+            <div class="mb-4">
+              <h2 class="h1">Try Scou54</h2>
+              <p style="font-family:'Cera Pro New'">Building brands people can't live without is how our clients grow.</p>
+            </div>
+            <a class="btn btn-primary btn-wide transition-3d-hover" href="#">Try for Free</a>
+          </div>
+
+          <div class="col-lg-7 space-top-1 space-top-sm-2 ml-auto">
+            <div data-aos="fade-up">
+              <img class="img-fluid shadow-lg" src="../../assets/img/755x470/myppp.png" alt="Image Description">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- End SHowcase -->
+
+
 
     <!-- Blog Grid Section -->
     <div class="bg-light">

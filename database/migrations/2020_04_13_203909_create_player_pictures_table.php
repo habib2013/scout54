@@ -15,7 +15,13 @@ class CreatePlayerPicturesTable extends Migration
     {
         Schema::create('player_pictures', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('player_id');
+            $table->string('title')->nullable();
+            $table->string('body')->nullable();
+            $table->string('trend_image')->nullable();
             $table->timestamps();
+
+            $table->index('player_id');
         });
     }
 

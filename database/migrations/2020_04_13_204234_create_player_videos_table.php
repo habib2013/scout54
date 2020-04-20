@@ -15,7 +15,13 @@ class CreatePlayerVideosTable extends Migration
     {
         Schema::create('player_videos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('player_id');
+            $table->string('title')->nullable();
+            $table->string('body')->nullable();
+            $table->string('trend_video')->nullable();
             $table->timestamps();
+
+            $table->index('player_id');
         });
     }
 

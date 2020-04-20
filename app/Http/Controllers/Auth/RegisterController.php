@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+
 use App\Player;
+use App\PlayerPictures;
+use App\ProfileProfile;
+use App\PlayerVideos;
 use App\Coach;
 use App\Agent;
 use App\VerifyUser;
@@ -16,6 +20,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
+use DB;
 
 class RegisterController extends Controller
 {
@@ -37,7 +43,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -159,26 +165,40 @@ class RegisterController extends Controller
           
           ]);
     
-          if($validator->passes()){
-            
+          if($validator->passes()){         
               $input = $request->all();
-              $player = $input['email'];
-            
+              $player = $input['email'];        
               $input['password'] = Hash::make($request->password);
             $players =  Player::create($input);
-          
+
             $verifyUser = VerifyUser::create([
                 'player_id' => $players->id,
                 'token' => sha1(time())
               ]);
-              \Mail::to($players->email)->send(new VerifyMail($players));
 
+              DB::table('player_profiles')->insert(
+                array('player_id' => $players->id,
+                      'description' => $players->username)
+            );
+
+            DB::table('player_pictures')->insert(
+              array('player_id' => $players->id,
+                    'title' => $players->username)
+          );
+
+          DB::table('player_videos')->insert(
+            array('player_id' => $players->id,
+                  'title' => $players->username)
+        );
+
+        
+              \Mail::to($players->email)->send(new VerifyMail($players));
             
                return response()->json(['success'=>'done']);
                return $players;
+               
           }
 
-        // return redirect()->intended('login/player');
         return response()->json(['error'=>$validator->errors()->all()]);    
     }
 
@@ -236,6 +256,26 @@ class RegisterController extends Controller
 
     }
 
+    public function verifyUser($token)
+{
+  $verifyUser = VerifyUser::where('token', $token)->first();
+  if(isset($verifyUser) ){
+    $players = $verifyUser->players;
+    if(!$players->verified) {
+      $verifyUser->players->verified = 1;
+      $verifyUser->players->save();
+      $status = "Your e-mail is verified. You can now login.";
+    } else {
+      $status = "Your e-mail is already verified. You can now login.";
+    }
+  } else {
+    return redirect('/login/player')->with('warning', "Sorry your email cannot be identified.");
+  }
+  return redirect('/login/player')->with('status', $status);
+}
 
+public function successemail(){
+    return view('success.email');
+}
 
 }
