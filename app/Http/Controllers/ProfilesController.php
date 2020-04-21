@@ -67,7 +67,7 @@ public function updateuserprofile(Request $request){
   
    $validator = Validator::make($request->all(),[
       'fullname'=>'required',
-        'username'=>'required',
+      
         'birthday'=>'',
         'status'=>'',
         'nationality'=>'',
@@ -77,23 +77,28 @@ public function updateuserprofile(Request $request){
    if($validator->passes()){
 $input = $request->all();
 $fullname = $input['fullname'];
-$username = $input['username'];
+// $username = $input['username'];
 $birthday = $input['birthday'];
 $status = $input['status'];
 $nationality = $input['nationality'];
 $id = $input['user_id'];
 
 if($birthday == ''){
-        $result = DB::update(DB::raw("update players set fullname=:fullname,username=:username,status=:status,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'username'=>$username,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
+        $result = DB::update(DB::raw("update players set fullname=:fullname,status=:status,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
 
 }
-elseif($status == ''){
-        $result = DB::update(DB::raw("update players set fullname=:fullname,username=:username,birthday=:birthday,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'username'=>$username,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
+// elseif($status == ''){
+//         $result = DB::update(DB::raw("update players set fullname=:fullname,birthday=:birthday,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'birthday'=>$birthday,'nationality'=>$nationality));
 
-} 
+// } 
+
+// elseif(($birthday == '') && ($status == '')){
+//         $result = DB::update(DB::raw("update players set fullname=:fullname,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'nationality'=>$nationality));
+
+// }
 
 else{
-
+return "Nothing Here";
 }
 
 return response()->json(['success'=>'done']);

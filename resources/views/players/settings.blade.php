@@ -494,7 +494,7 @@
       <div class="col-xs-12 col-md-6 col-lg-6">
       <label class="form-label">
             Birth date
-            <span class="text-danger">*</span>
+            <span class="text-danger">*(Leave it as it is if you ain't updating it)</span>
           </label>
           <input type="date" name="birthday" id="birthday" class="form-control">
       </div>
@@ -505,7 +505,8 @@
             <span class="text-danger">*</span>
           </label>
           <select name="status" id="status" class="form-control">
-          <option value="">----</option>
+          <option value="{{$players->status}}">{{$players->status}}</option>
+          <hr class="mt-1 mb-7">
 <option value="never had a contract">Never had a contract</option>
   <option value="My last contract has expired">My last contract has expired</option>
 <option value="My current contract has been terminated">My current contract has been terminated</option>
@@ -1007,6 +1008,73 @@
   <script src="../../assets/js/components/hs.go-to.js"></script>
   <script src="../../assets/js/holders.js"></script>
   <script src="../../assets/js/countrySelect.js"></script>
+
+
+  
+
+  <script type="text/javascript">
+  $("body").on("click",".submit_user_profile",function(e){
+  
+    $(this).parents("form").ajaxForm(updates);
+  
+// setTimeout(() => {
+//   $(".btn_send_upload").attr("disabled", "disabled");
+//     $(".btn_send_upload").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+       
+// }, 1000);
+
+  });
+
+  var updates = { 
+    complete: function(response) 
+    {
+    	if($.isEmptyObject(response.responseJSON.error)){
+        swal({
+        title: "User Profile Update Successful",
+        text: "Your user profile has been updated",
+        type: "success",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'SUCCESS ⚽!',
+    }
+    );
+
+    // $(".btn_send_upload").removeAttr("disabled");
+    // $(".btn_send_upload").html('✔');
+        
+
+    	}else{
+    		printErrorMsg(response.responseJSON.error);
+    	}
+    }
+  };
+  function printErrorMsg (msg) {
+    // $(".btn_send_upload").removeAttr("disabled");
+    // $(".btn_send_upload").html('✔');
+        
+
+	$.each( msg, function( key, value ) {
+    swal({
+        title: "Upload Error",
+        text: value,
+        type: "error",
+        dangerMode: true,
+        showCancelButton: false,
+        dangerMode: false,
+     
+        confirmButtonText: 'ERROR!',
+    }
+    );
+
+	});
+  // $(".btn_send_upload").removeAttr("disabled");
+  //   $(".btn_send_upload").html('✔');
+
+
+  }
+</script>
 
 
   <script type="text/javascript">
