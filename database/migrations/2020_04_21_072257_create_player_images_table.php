@@ -15,10 +15,10 @@ class CreatePlayerImagesTable extends Migration
     {
         Schema::create('player_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('album_id')->unsigned();
+            $table->integer('album_id')->unique();
             $table->string('image');
             $table->string('description');
-            // $table->foreign('album_id')->references('id')->on('player_albums')->onDelete('CASCADE')->onUpdate('CASCADE')->unsigned();
+            $table->foreign('album_id')->references('id')->on('player_albums')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

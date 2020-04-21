@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +39,7 @@
                 <p class="text-muted mb-0">Enter your email and password below to proceed.</p>
               </div>
               <span class="clearfix"></span>
-         
+
               <form method="POST" action="{{ route('password.update') }}">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
@@ -80,7 +81,7 @@
                       <span class="input-group-text"><i class="far fa-key"></i></span>
                     </div>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                         
+
 
  </div>
 
@@ -97,15 +98,15 @@
       </div>
     </div>
   </div>
-  
+
   <script src="{{ asset('js/app.js') }}"></script>
         <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
       <script  src="{{asset('js/purpose.core.js')}}"></script>
-      
+
         <script src="{{asset('libs/swiper/dist/js/swiper.min.js')}}"></script>
-      
+
         <script src="{{asset('js/purpose.js')}}"></script>
-       
+
         <script src="{{asset('js/demo.js')}}"></script>
 </body>
 

@@ -14,7 +14,7 @@ class CreatePlayerAlbumsTable extends Migration
     public function up()
     {
         Schema::create('player_albums', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->text('description');
             $table->string('cover_image');

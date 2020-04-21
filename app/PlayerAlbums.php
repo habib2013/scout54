@@ -10,6 +10,6 @@ class PlayerAlbums extends Model
 
 
  public function photos(){
-     return $this->hasMany('App\PlayerImages')
+     return $this->hasMany('App\PlayerImages');
  }
 }
