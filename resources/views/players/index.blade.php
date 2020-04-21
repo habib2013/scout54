@@ -10,6 +10,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   @laravelPWA
+
+
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://htmlstream.com/preview/front-v2.9.4/favicon.ico">
 
@@ -22,6 +25,7 @@
   <link rel="stylesheet" href="../../assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
@@ -390,11 +394,10 @@
                       </ul>
                     </li>
                     <!-- Accessibility -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="billingDropdown" class="nav-link u-header__nav-link" href="/settings/{{$players->username}}" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
+                    <li class="nav-item"
+                       >
+                      <a  class="nav-link u-header__nav-link" href="/settings/{{$players->username}}" onclick="gotoSettings(username)">
+
                         Settings
                       </a>
 
@@ -519,7 +522,7 @@ Connect with me on:
 
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-envelope list-group-icon mr-3"></span>
+                      <span class="fa fa-envelope list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Email:</span>
                         <a href="#">{{$players->email ?? "your email"}}</a>
@@ -528,7 +531,7 @@ Connect with me on:
                   </li>
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-link list-group-icon mr-3"></span>
+                      <span class="fa fa-intersex mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Gender:</span>
                         <a href="#">{{$players->playerprofile->gender ?? "Gender"}}</a>
@@ -537,7 +540,7 @@ Connect with me on:
                   </li>
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-map-marker-alt list-group-icon mr-3"></span>
+                      <span class="fa fa-mobile list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Phone:</span>
                       {{$players->playerprofile->phone ?? "your_phone"}}
@@ -555,7 +558,7 @@ Connect with me on:
 
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-tags list-group-icon mr-3"></span>
+                      <span class="fa fa-user list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Fulll name:</span>
                       {{$players->fullname}}
@@ -565,7 +568,7 @@ Connect with me on:
 
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-building list-group-icon mr-3"></span>
+                      <span class="fa fa-address-card list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Address:</span>
                       {{$players->playerprofile->address ?? "your_address"}}
@@ -574,7 +577,7 @@ Connect with me on:
                   </li>
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-mobile-alt list-group-icon mr-3"></span>
+                      <span class="fa fa-text-height list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Height(Inches):</span>
                         {{$players->playerprofile->height ?? "your_height"}}
@@ -590,7 +593,7 @@ Connect with me on:
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-globe list-group-icon mr-3"></span>
+                      <span class="fa fa-balance-scale list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Weight(KG):</span>
                         <span class="d-block text-muted">{{$players->playerprofile->weight ?? "your_weight"}}</span>
@@ -600,7 +603,7 @@ Connect with me on:
 
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
-                      <span class="fas fa-birthday-cake list-group-icon mr-3"></span>
+                      <span class="fa fa-birthday-cake list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Birthday:</span>
                         <span class="d-block text-muted"> {{date('M j, Y ',strtotime($players->birthday)) ?? "Your birthday"}}</span>
@@ -942,6 +945,13 @@ Connect with me on:
   <script src="../../assets/js/components/hs.go-to.js"></script>
 
   <!-- JS Plugins Init. -->
+<script type="text/javascript">
+function gotoLogin(){
+    window.location.href ="/settings"
+}
+</script>
+
+
   <script>
     $(window).on('load', function () {
       // initialization of HSMegaMenu component
