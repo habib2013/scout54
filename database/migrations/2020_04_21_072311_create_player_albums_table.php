@@ -15,6 +15,9 @@ class CreatePlayerAlbumsTable extends Migration
     {
         Schema::create('player_albums', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('cover_image');
             $table->timestamps();
         });
     }

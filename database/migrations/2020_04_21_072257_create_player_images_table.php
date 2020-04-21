@@ -14,7 +14,11 @@ class CreatePlayerImagesTable extends Migration
     public function up()
     {
         Schema::create('player_images', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('album_id')->unsigned();
+            $table->string('image');
+            $table->string('description');
+            // $table->foreign('album_id')->references('id')->on('player_albums')->onDelete('CASCADE')->onUpdate('CASCADE')->unsigned();
             $table->timestamps();
         });
     }

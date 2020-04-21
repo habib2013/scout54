@@ -66,15 +66,6 @@
           <div id="navBar" class="collapse navbar-collapse">
             <div class="navbar-body header-abs-top-inner">
               <ul class="navbar-nav">
-                <!-- Home -->
-
-                <!-- End Home -->
-
-                <!-- Pages -->
-
-                <!-- End Blog -->
-
-                <!-- Shop -->
                 <li class="hs-has-mega-menu navbar-nav-item"
                     data-hs-mega-menu-item-options='{
                       "desktop": {

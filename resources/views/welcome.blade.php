@@ -25,10 +25,10 @@
   <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="../../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
   CSS Front Template
   <link rel="stylesheet" href="../../assets/css/theme.css">
- 
+
 </head>
 <body >
   <!-- ========== HEADER ========== -->
@@ -38,7 +38,7 @@
     <div class="u-header__section">
       <div id="logoAndNav" class="container">
         <!-- Nav -->
- 
+
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #ffffff">
           <a class="navbar-brand" href="#" style="height: 50px;">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
@@ -48,12 +48,12 @@
               <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
             </svg>
 
-    
+
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-        
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto smallers" >
               <li class="nav-item myactive">
@@ -83,9 +83,9 @@
               <li class="nav-item willows">
                 <a class="nav-link" href="#" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal" >Contact Us</a>
               </li>
-          
-           
-           
+
+
+
             </ul>
 <div class="mt-2"></div>
 <button type="button" class="bt" data-toggle="modal" data-target="#loginModal"> <a
@@ -109,7 +109,7 @@
                       <!-- Modal body -->
                       <div class="modal-body" style="padding-right: 34px;">
                           <div class="pop_iner">
-      
+
                               <ul>
                                   <li><a href="/register/coach">
                                           <div class="imgg"><img
@@ -120,12 +120,12 @@
                                       <li>
                                       <a href="/register/player">
                                         <div class="imgg"><img
-                                              
+
                                                 src="../../assets/illustrators/rener.png"
                                                 class="img-fluid"></div>
                                         <p>Player</p>
                                     </a></li>
-                                  
+
                                   <li><a href="/register/club">
                                           <div class="imgg"><img
                                                   src="../../assets/illustrators/realfc.png"
@@ -142,7 +142,7 @@
                           </div>
                       </div>
 
-         
+
 
                   </div>
               </div>
@@ -171,12 +171,12 @@
 
                                 <li><a href="/login/player">
                                   <div class="imgg"><img
-                                        
+
                                           src="../../assets/illustrators/rener.png"
                                           class="img-fluid"></div>
                                   <p>Player</p>
                               </a></li>
-                            
+
                             <li><a href="/login/club">
                                     <div class="imgg"><img
                                             src="../../assets/illustrators/realfc.png"
@@ -193,7 +193,7 @@
                         </div>
                     </div>
 
-       
+
 
                 </div>
             </div>
@@ -231,7 +231,7 @@
                 <div class="col-md-8 col-lg-6 position-relative">
                   <span class="d-block h4 text-white font-weight-light mb-2"
                         data-scs-animation-in="fadeInUp">
-                    Scout54 is 
+                    Scout54 is
                   </span>
                   <h5 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
@@ -245,7 +245,7 @@
           <!-- End Slide #1 -->
         </div>
 
-      
+
 
       </div>
       <!-- End Hero Carousel Main -->
@@ -264,13 +264,13 @@
            data-nav-for="#heroNav">
         <div class="js-slide">
           <!-- Slide #1 -->
-      
+
           <!-- End Slide #1 -->
         </div>
 
         <div class="js-slide">
           <!-- Slide #2 -->
-       
+
           </div>
           <!-- End Slide #2 -->
         </div>
@@ -311,7 +311,7 @@
           <div class="w-100 h-100 d-none d-lg-inline-block bg-white u-hero-v1__last">
             <div class="u-hero-v1__last-inner">
               <h3 class="h5 text-white">
-                <strong class="u-hero-v1__last-next">Our Mission</strong> 
+                <strong class="u-hero-v1__last-next">Our Mission</strong>
               </h3>
               <p class="text-white-70 mb-0" style="color: #381bbb;">1. Connect you to world class players,scouts,agents,coaches and clubs.</p>
             </div>
@@ -327,8 +327,8 @@
             <div class="row">
               <div class="col-lg-4">
                 <h3 class="h5 text-muted">
-                
-                  <strong class="u-hero-v1__last-next">Our Mission</strong> 
+
+                  <strong class="u-hero-v1__last-next">Our Mission</strong>
                 </h3>
                 <p class="mb-0"  style="color: #381bbb;" >2. To provide platform to showcase the glory of African players globally.</p>
               </div>
@@ -342,7 +342,7 @@
               </h3>
               <p class="mb-0"  style="color: #ffffff;" >3. To see hope in players and help them realise their dreams</p>
               <p class="mb-0"  style="color: #ffffff;" >4. To showcase players based on talent,excellence and integrity</p>
-         
+
             </div>
           </div>
         </div>
@@ -371,7 +371,7 @@
           <h4>Players</h4>
           <p class="font-size-1 text-body mb-0">Front is an incredibly beautiful, fully responsive, and mobile-first projects on the web.</p>
         </div>
-      
+
       </a>
       <!-- End Icon Blocks -->
     </div>
@@ -386,7 +386,7 @@
           <h4>Scout & Agents</h4>
           <p class="font-size-1 text-body mb-0">Front template can be easily customized with its cutting-edge components and features.</p>
         </div>
-    
+
       </a>
       <!-- End Icon Blocks -->
     </div>
@@ -401,7 +401,7 @@
           <h4>Clubs <span class="badge badge-success badge-pill ml-1">New</span></h4>
           <p class="font-size-1 text-body mb-0">Front is not only for developers but also for designers, and includes a Sketch file.</p>
         </div>
-    
+
       </a>
       <!-- End Icon Blocks -->
     </div>
@@ -416,7 +416,7 @@
           <h4>Coaches</h4>
           <p class="font-size-1 text-body mb-0">Every component and plugin is well documented with live examples.</p>
         </div>
-   
+
       </a>
       <!-- End Icon Blocks -->
     </div>
@@ -426,7 +426,7 @@
 <!-- End of for players -->
 
     <!-- Team Section -->
-   
+
     <!-- End Team Section -->
 <!-- How it works section -->
 <div class="container space-top-2 space-top-lg-1 space-bottom-lg-1" >
@@ -473,7 +473,7 @@
 
 <!-- End of how it works -->
 <!-- for players -->
- 
+
         </div>
       </div>
     </div>
@@ -487,20 +487,20 @@
 <div class="container" align="center">
   <!-- Title -->
   <div class="w-md-80 w-lg-50 text-center">
-    
+
     <h2 class="text-primary"><span class="font-weight-semi-bold">Our Statistics</span></h2>
- 
+
     <div class="row">
       <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Coaches</p></div>
       <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Players</p></div>
       <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Clubs</p></div>
       <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Agents</p></div>
-     
+
     </div>
   </div>
 
 
-  
+
   <!-- End Slick Carousel -->
 </div>
 
@@ -519,7 +519,7 @@
 
           <div class="col-lg-7 space-top-1 space-top-sm-2 ml-auto">
             <div data-aos="fade-up">
-              <img class="img-fluid shadow-lg" src="../../assets/img/755x470/myppp.png" alt="Image Description">
+              <img class="img-fluid shadow-lg" src="../../assets/img/755x470/respot.png" alt="Image Description">
             </div>
           </div>
         </div>
@@ -535,7 +535,7 @@
       <div class="container space-2 space-md-2">
         <!-- Title -->
         <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-        
+
           <h2 class="text-primary">Scout54 <span class="font-weight-semi-bold">Market</span></h2>
           <p style="font-family: 'Cera Pro New'; font-weight: 30;font-style: normal; font-size: 16px;">Based on requests from registered clubs,coaches and agents on our platform.</p>
         </div>
@@ -670,7 +670,7 @@
   <!-- ========== FOOTER ========== -->
   <footer class="refoot space-top-2 space-top-md-3" style="background-image: url(../../assets/img/1920x800/ben.jpg);">
   <div class="overlay"></div>
- 
+
   </footer>
   <!-- ========== END FOOTER ========== -->
 
@@ -714,9 +714,9 @@
   <script src="../../assets/js/components/hs.go-to.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
- 
+
   <link rel="stylesheet" href="">
- 
+
   <!-- JS Plugins Init. -->
 <script type="text/javascript">
 
