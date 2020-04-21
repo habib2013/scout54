@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
-use App\PlayerImages;
-use App\PlayerAlbums;
+use App\Image;
+use App\Album;
 use Validator;
 use Illuminate\Support\Str;
 
@@ -13,14 +13,14 @@ class AlbumsController extends Controller
 {
        public function getList()
     {
-        $albums = PlayerAlbums::with('Photos')->get();
+        $albums = Album::with('Photos')->get();
         return view('images.index')->with('player_albums',$albums);
     }
 
     public function getAlbum($id)
     {
-        $album = PlayerAlbums::with('Photos')->find($id);
-        $albums = PlayerAlbums::with('Photos')->get();
+        $album = Album::with('Photos')->find($id);
+        $albums = Album::with('Photos')->get();
         //dd($album);
         return view('images.album', ['album'=>$album, 'albums'=>$albums]);
         //->with('album',$album);
@@ -59,7 +59,7 @@ class AlbumsController extends Controller
         $extension = $file->getClientOriginalExtension();
         $filename=$random_name.'_cover.'.$extension;
         $uploadSuccess = $request->file('cover_image')->move($destinationPath, $filename);
-        $album = PlayerAlbums::create(array(
+        $album = Album::create(array(
           'name' => $request->get('name'),
           'description' => $request->get('description'),
           'cover_image' => $filename,
@@ -70,7 +70,7 @@ class AlbumsController extends Controller
 
     public function getDelete($id)
     {
-        $album = PlayerAlbums::find($id);
+        $album = Album::find($id);
 
         $album->delete();
 

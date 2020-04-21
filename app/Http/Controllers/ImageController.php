@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
-use App\PlayerImages;
-use App\PlayerAlbums;
+use App\Image;
+use App\Album;
 use Validator;
 
 class ImageController extends Controller
 {
     public function getForm($id)
   {
-    $album = PlayerAlbums::find($id);
+    $album = Album::find($id);
     return view('images.addimage')
     ->with('album',$album);
   }
@@ -37,7 +37,7 @@ class ImageController extends Controller
     $extension = $file->getClientOriginalExtension();
     $filename=$random_name.'_album_image.'.$extension;
     $uploadSuccess = $request->file('image')->move($destinationPath, $filename);
-    PlayerImages::create(array(
+    Image::create(array(
       'description' => $request->get('description'),
       'image' => $filename,
       'album_id'=> $request->get('album_id')
@@ -47,7 +47,7 @@ class ImageController extends Controller
   }
   public function getDelete($id)
   {
-    $image = PlayerImages::find($id);
+    $image = Image::find($id);
     $image->delete();
     return redirect()->route('show_album',['id'=>$image->album_id]);
   }
@@ -68,7 +68,7 @@ class ImageController extends Controller
     return redirect()->route('index');
   }
 
-  $image = PlayerImages::find($request->get('photo'));
+  $image = Image::find($request->get('photo'));
   $image->album_id = $request->get('new_album');
   $image->save();
   return redirect()->route('show_album', ['id'=>$request->get('new_album')]);
