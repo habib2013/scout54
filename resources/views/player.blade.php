@@ -25,7 +25,7 @@
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/mytheme.css">
 </head>
-<body style="font-family:'Cera Pro New"> 
+<body style="font-family:'Cera Pro New">
   <!-- ========== HEADER ========== -->
   <header id="header" class="header header-box-shadow-on-scroll header-abs-top-lg header-bg-transparent-lg header-show-hide-lg"
           data-hs-header-options='{
@@ -67,11 +67,11 @@
             <div class="navbar-body header-abs-top-inner">
               <ul class="navbar-nav">
                 <!-- Home -->
-           
+
                 <!-- End Home -->
 
                 <!-- Pages -->
-           
+
                 <!-- End Blog -->
 
                 <!-- Shop -->
@@ -319,7 +319,7 @@
                 <!-- End Docs -->
 
                 <!-- Button -->
-         
+
 
 
                 <li class="navbar-nav-last-item">
@@ -334,8 +334,8 @@
             {{Auth::guard('player')->user()->username ?? 'Nothing Here'}}
                   </a>
 @endif
-        
-                 
+
+
                 </li>
                 <!-- End Button -->
               </ul>
@@ -357,7 +357,7 @@
         <!-- Title -->
         <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
           <h1 class="display-4 mb-3">Scout54 for players</h1>
-  
+
 
 
           <p class="lead">Our most viewed player profiles, Take a look too!!.</p>
@@ -392,26 +392,27 @@
                  }
                }]
              }'>
+          @foreach ($ourplayer as $player)
+
           <div class="js-slide mt-1">
             <!-- Icon Block -->
             <article class="card shadow-sm max-w-27rem transition-3d-hover mx-auto mb-5">
               <div class="card-header bg-primary text-center rounded-top">
-                <img src="../../images/1587173469.jpeg" class="img-fluid" alt="">
+                <img src="{{$player->playerprofile->profileimage()}}" class="img-fluid" alt="">
               </div>
               <div class="card-body">
                 <div class="mb-3">
-                  <h2 class="h4 mb-1">Oladosu Habib</h2>
+                <h2 class="h4 mb-1">{{$player->fullname}}</h2>
                   <small class="d-block text-body">Defender</small>
                 </div>
-                <a class="btn btn-sm btn-block btn-primary" href="#">View Profile</a>
+            <a class="btn btn-sm btn-block btn-primary" href="/{{$player->username}}">View Profile</a>
               </div>
             </article>
             <!-- End Icon Block -->
           </div>
-     
-   
+          @endforeach
           </div>
-         
+
         </div>
         <!-- End Slick Carousel -->
 
@@ -665,7 +666,7 @@
         </div>
 
         <!-- Copyright -->
-  
+
         <!-- End Copyright -->
       </div>
     </div>

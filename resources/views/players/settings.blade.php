@@ -145,7 +145,7 @@
 
     <div class="u-header__section">
       <!-- Topbar -->
-     
+
       <!-- End Topbar -->
 
       <div id="logoAndNav" class="container">
@@ -188,7 +188,7 @@
                 <a  class="nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Home</a>
 
                 <!-- Home - Mega Menu -->
-           
+
                 <!-- End Home - Mega Menu -->
               </li>
               <!-- End Home -->
@@ -201,8 +201,8 @@
                 <a id="pagesMegaMenu" class="nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Pages</a>
 
                 <!-- Pages - Submenu -->
-            
-                
+
+
                 <!-- End Pages - Submenu -->
               </li>
               <!-- End Pages -->
@@ -215,7 +215,7 @@
                 <a id="blogMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Blog</a>
 
                 <!-- Blog - Submenu -->
-             
+
                 <!-- End Submenu -->
               </li>
               <!-- End Blog -->
@@ -230,7 +230,7 @@
                 <a id="shopMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Shop</a>
 
                 <!-- Shop - Mega Menu -->
-             
+
                 <!-- End Shop - Mega Menu -->
               </li>
               <!-- End Shop -->
@@ -245,7 +245,7 @@
                 <a id="demosMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Demos</a>
 
                 <!-- Demos - Mega Menu -->
-              
+
 
                 <!-- End Demos - Mega Menu -->
               </li>
@@ -261,14 +261,14 @@
                 <a id="docsMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Docs</a>
 
                 <!-- Docs - Submenu -->
-               
+
                 <!-- End Docs - Submenu -->
               </li>
               <!-- End Docs -->
 
               <!-- Button -->
               <li class="nav-item u-header__nav-last-item">
-              
+
               </li>
               <!-- End Button -->
             </ul>
@@ -316,8 +316,8 @@
             <div class="media d-block d-sm-flex align-items-sm-center">
               <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
                 <img class="img-fluid rounded-circle" style="height:80px" src="{{$players->playerprofile->profileimage()}}" alt="Image Description">
-            
-           
+
+
               </div>
               <div class="media-body">
                 <h1 class="h3 text-white font-weight-medium mb-1">Hello, {{$players->username}}!</h1>
@@ -343,7 +343,7 @@
                         data-animation-in="slideInUp"
                         data-animation-out="fadeOut">
                       <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
-                        General 
+                        General
                       </a>
 
                     </li>
@@ -361,7 +361,7 @@
                       <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
                         <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Followers</a></li>
                         <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Following</a></li>
-                  
+
                       </ul>
                     </li>
                     <!-- Account Settings -->
@@ -403,7 +403,7 @@
 
                     </li>
                     <!-- Others -->
-                
+
                     <!-- Others -->
                   </ul>
                 </div>
@@ -414,7 +414,7 @@
 
           <div class="ml-lg-auto">
             <!-- Button -->
-          
+
             <!-- End Button -->
           </div>
         </div>
@@ -436,11 +436,11 @@
               Upload New Picture
               <input id="fileAttachmentBtn" name="passport" type="file" class="file-attachment-btn__label">
             </label>
+<input type="hidden" name="player_id" value="{{$players->id}}">
 
-            
             <button type="submit" class="btn_send_upload btn btn-sm btn-soft-secondary transition-3d-hover mb-1 mb-sm-0">✔</button>
-       
-        
+
+
           </div>
         </form>
         <!-- End Update Avatar Form -->
@@ -488,7 +488,7 @@
             <!-- End Input -->
           </div>
 
-         
+
 
           <div class="row pb-5">
       <div class="col-xs-12 col-md-6 col-lg-6">
@@ -523,8 +523,8 @@
           <div class="row">
           <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Country</label>
-              <div class="js-form-message form-group">            
-             
+              <div class="js-form-message form-group">
+
 
               <div>
 				<input id="country_selector" type="text" class="form-control">
@@ -533,7 +533,7 @@
 			<div class="form-item" style="display:none;">
 				<input type="text" id="country_selector_code" class="form-control" name="nationality" data-countrycodeinput="1" readonly />
 			</div>
-		
+
               </div>
               </div>
 
@@ -547,13 +547,14 @@
 <button type="submit" class="btn btn-primary submit_user_profile">Save Changes</button>
 
 
-</form>        
+</form>
 <br>
           <hr class="mt-1 mb-7">
 <h3>Edit Personal Information</h3>
           <!-- Title -->
-          <form action="">
-          <div class="mb-3">
+          <form action="/updatepersonal" method="POST" enctype="multipart/form-data">
+        @csrf
+            <div class="mb-3">
           <div class="row pt-4">
           <div class="col-xs-12 col-md-6 col-lg-6">
           <div class="js-focus-state form-group">
@@ -565,7 +566,7 @@
                 <div id="dribbleProfileLabel" class="input-group-prepend">
                   <span class="input-group-text">KG</span>
                 </div>
-                <input type="text" class="form-control" name="weight" placeholder="Your weight"   aria-describedby="dribbleProfileLabel">
+            <input type="text" class="form-control" name="weight" value="{{$players->playerprofile->weight}}"   aria-describedby="dribbleProfileLabel">
               </div>
             </div>
 </div>
@@ -579,7 +580,7 @@
                 <div id="dribbleProfileLabel" class="input-group-prepend">
                   <span class="input-group-text">Inches</span>
                 </div>
-                <input type="text" class="form-control" name="height" placeholder="Your Height"   aria-describedby="dribbleProfileLabel">
+                <input type="text" class="form-control" name="height" value="{{$players->playerprofile->height}}"   aria-describedby="dribbleProfileLabel">
               </div>
             </div>
 </div>
@@ -588,7 +589,7 @@
          Phone Number
             <span class="text-danger">*</span>
           </label>
-          <input type="text" name="phone" id="phone" placeholder="Phone number " class="form-control">
+          <input type="text" name="phone" id="phone" value="{{$players->playerprofile->phone}}" class="form-control">
 </div>
 
 <div class="col-xs-12 col-md-6 col-lg-6">
@@ -597,7 +598,7 @@
             <span class="text-danger">*</span>
           </label>
          <select name="gender" id="gender" class="form-control">
-      
+
          <option value="male">Male</option>
          <option value="female">Female</option>
          <option value="Rather not say">Rather not say</option>
@@ -610,30 +611,32 @@
          Address
             <span class="text-danger"></span>
           </label>
-          <input type="text" name="address" id="newpassword" placeholder="Address" class="form-control">
+          <input type="text" name="address" id="address" value="{{$players->playerprofile->address}}" class="form-control">
 </div>
           </div>
 
 <div class="pt-3"></div>
             <h2 class="h5 mb-0">About</h2>
-            <p>Tell about yourself in few sentences.</p> <span> <small>Auto generate ⌛ </small> </span>
+            <p>Tell about yourself in few sentences.</p> <span> <small class="auto-gens">Auto generate ⌛ </small> </span>
           </div>
           <!-- End Title -->
 
           <div class="mb-6">
             <label class="form-label">
-              
+
             </label>
 
-<textarea name="description" id="description" cols="15" rows="5" class="form-control">{{$players->description}} </textarea>
+<textarea name="description" id="description" cols="15" rows="5" class="form-control">{{$players->playerprofile->description}} </textarea>
 
           </div>
 
-      
+          <input type="hidden" name="player_id" value="{{$players->id}}">
+
+
 
           <!-- Buttons -->
-          <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">Save Changes</button>
-          <button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover">✂</button>
+          <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1 update_personal">Save Changes</button>
+
           <!-- End Buttons -->
 </form>
           <hr class="my-7">
@@ -644,7 +647,7 @@
         <!-- Title -->
         <div class="mb-5">
           <h3 class="h5 mb-1">Social profiles</h3>
-    
+
         </div>
         <!-- End Title -->
 
@@ -702,7 +705,7 @@
           <!-- End Input Group -->
 
           <!-- Input Group -->
-         
+
           <!-- End Input Group -->
 
           <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">Update Social Profiles</button>
@@ -790,7 +793,7 @@
     <!-- End Lists -->
 
     <!-- Copyright -->
-   
+
     <!-- End Copyright -->
   </footer>
   <!-- ========== END FOOTER ========== -->
@@ -1010,23 +1013,103 @@
   <script src="../../assets/js/countrySelect.js"></script>
 
 
-  
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.auto-gens').on('click',function(e){
+        e.preventDefault();
+        var description = $('#description').val();
+        if(description == ''){
+            $('#description').val("Professional player with league experience, a naturally competitve nature and a high-level of physical conditioning.");
+        }
+        else{
+            alert("Clear the input field to continue");
+        }
+    });
+});
+
+</script>
+
+
+  <script type="text/javascript">
+    $("body").on("click",".update_personal",function(e){
+
+      $(this).parents("form").ajaxForm(update_personal);
+
+  // setTimeout(() => {
+  //   $(".btn_send_upload").attr("disabled", "disabled");
+  //     $(".btn_send_upload").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+
+  // }, 1000);
+
+    });
+
+    var update_personal = {
+      complete: function(response)
+      {
+          if($.isEmptyObject(response.responseJSON.error)){
+          swal({
+          title: "Personal Information Updated Successfully",
+          text: "Your personal profile has been updated",
+          type: "success",
+          dangerMode: true,
+          showCancelButton: false,
+          dangerMode: false,
+
+          confirmButtonText: 'SUCCESS ⚽!',
+      }
+      );
+
+      // $(".btn_send_upload").removeAttr("disabled");
+      // $(".btn_send_upload").html('✔');
+
+
+          }else{
+              printErrorMsg(response.responseJSON.error);
+          }
+      }
+    };
+    function printErrorMsg (msg) {
+      // $(".btn_send_upload").removeAttr("disabled");
+      // $(".btn_send_upload").html('✔');
+
+
+      $.each( msg, function( key, value ) {
+      swal({
+          title: "Upload Error",
+          text: value,
+          type: "error",
+          dangerMode: true,
+          showCancelButton: false,
+          dangerMode: false,
+
+          confirmButtonText: 'ERROR!',
+      }
+      );
+
+      });
+    // $(".btn_send_upload").removeAttr("disabled");
+    //   $(".btn_send_upload").html('✔');
+
+
+    }
+  </script>
+
 
   <script type="text/javascript">
   $("body").on("click",".submit_user_profile",function(e){
-  
+
     $(this).parents("form").ajaxForm(updates);
-  
+
 // setTimeout(() => {
 //   $(".btn_send_upload").attr("disabled", "disabled");
 //     $(".btn_send_upload").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
-       
+
 // }, 1000);
 
   });
 
-  var updates = { 
-    complete: function(response) 
+  var updates = {
+    complete: function(response)
     {
     	if($.isEmptyObject(response.responseJSON.error)){
         swal({
@@ -1036,14 +1119,14 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'SUCCESS ⚽!',
     }
     );
 
     // $(".btn_send_upload").removeAttr("disabled");
     // $(".btn_send_upload").html('✔');
-        
+
 
     	}else{
     		printErrorMsg(response.responseJSON.error);
@@ -1053,7 +1136,7 @@
   function printErrorMsg (msg) {
     // $(".btn_send_upload").removeAttr("disabled");
     // $(".btn_send_upload").html('✔');
-        
+
 
 	$.each( msg, function( key, value ) {
     swal({
@@ -1063,7 +1146,7 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'ERROR!',
     }
     );
@@ -1079,19 +1162,19 @@
 
   <script type="text/javascript">
   $("body").on("click",".btn_send_upload",function(e){
-  
+
     $(this).parents("form").ajaxForm(options);
-  
+
 // setTimeout(() => {
 //   $(".btn_send_upload").attr("disabled", "disabled");
 //     $(".btn_send_upload").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
-       
+
 // }, 1000);
 
   });
 
-  var options = { 
-    complete: function(response) 
+  var options = {
+    complete: function(response)
     {
     	if($.isEmptyObject(response.responseJSON.error)){
         swal({
@@ -1101,14 +1184,14 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'SUCCESS ⚽!',
     }
     );
 
     // $(".btn_send_upload").removeAttr("disabled");
     // $(".btn_send_upload").html('✔');
-        
+
 
     	}else{
     		printErrorMsg(response.responseJSON.error);
@@ -1118,7 +1201,7 @@
   function printErrorMsg (msg) {
     // $(".btn_send_upload").removeAttr("disabled");
     // $(".btn_send_upload").html('✔');
-        
+
 
 	$.each( msg, function( key, value ) {
     swal({
@@ -1128,7 +1211,7 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'ERROR!',
     }
     );

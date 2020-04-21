@@ -7,7 +7,7 @@ use App\User;
 use App\Profile;
 use App\Player;
 use App\Incomplete;
-use Auth;       
+use Auth;
 use Intervention\Image\Facades\Image;
 use Webpatser\Uuid\Uuid;
 use Illuminate\Support\Facades\Validator;
@@ -25,9 +25,9 @@ class ProfilesController extends Controller
                         $this->middleware('guest:player')->except('logout');
                 }
 
-              
 
-        public function user($username){   
+
+        public function user($username){
         $players = Player::where('username','=',$username)->firstorFail();
 
         return view('players.index',compact('players'));
@@ -40,34 +40,36 @@ class ProfilesController extends Controller
 
 public function uploadimage(Request $request){
      $validator = Validator::make($request->all(),[
-             'passport'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+             'passport'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+             'player_id' => ''
      ]);
 
      if($validator->passes()){
-            
+
 $input = $request->all();
+$id = $input['player_id'];
 $passport = $input['passport'];
 $passport = time().'.'.$request->passport->extension();
         $request->passport->move(public_path('images'),$passport);
-  
-        $result = DB::update(DB::raw("update player_profiles set passport=:passport"),array('passport'=>$passport));
+
+        $result = DB::update(DB::raw("update player_profiles set passport=:passport where player_id=:id"),array('passport'=>$passport,'id'=>$id));
 
          return response()->json(['success'=>'done']);
 
               }
               else{
-                return response()->json(['error'=>$validator->errors()->all()]);   
+                return response()->json(['error'=>$validator->errors()->all()]);
               }
 
         // $imgs = $request->passport;
- 
+
 }
 
 public function updateuserprofile(Request $request){
-  
+
    $validator = Validator::make($request->all(),[
       'fullname'=>'required',
-      
+
         'birthday'=>'',
         'status'=>'',
         'nationality'=>'',
@@ -90,7 +92,7 @@ if($birthday == ''){
 // elseif($status == ''){
 //         $result = DB::update(DB::raw("update players set fullname=:fullname,birthday=:birthday,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'birthday'=>$birthday,'nationality'=>$nationality));
 
-// } 
+// }
 
 // elseif(($birthday == '') && ($status == '')){
 //         $result = DB::update(DB::raw("update players set fullname=:fullname,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'nationality'=>$nationality));
@@ -98,17 +100,52 @@ if($birthday == ''){
 // }
 
 else{
-return "Nothing Here";
+    $result = DB::update(DB::raw("update players set fullname=:fullname,status=:status,nationality=:nationality,birthday=:birthday where id=:id"),array('fullname'=>$fullname,'id'=>$id,'status'=>$status,'nationality'=>$nationality,'birthday'=>$birthday));
+
 }
 
 return response()->json(['success'=>'done']);
    }
    else{
-        return response()->json(['error'=>$validator->errors()->all()]);   
+        return response()->json(['error'=>$validator->errors()->all()]);
 
    }
 }
 
+
+
+public function updatepersonal(Request $request){
+$validator = Validator::make($request->all(),[
+    'weight'=>'',
+    'height' => '',
+    'phone' => '',
+    'gender' => '',
+    'address' => '',
+    'description' => '',
+    'player_id' =>''
+
+]);
+if($validator->passes()){
+$input = $request->all();
+$weight = $input['weight'];
+$height = $input['height'];
+$phone = $input['phone'];
+$gender = $input['gender'];
+$address = $input['address'];
+$description = $input['description'];
+$id = $input['player_id'];
+
+$result = DB::update(DB::raw("update player_profiles set weight=:weight,height=:height,phone=:phone,gender=:gender,address=:address,description=:description where id=:id"),array('weight'=>$weight,'id'=>$id,'height'=>$height,'phone'=>$phone,'gender'=>$gender,'address'=>$address,'description'=>$description));
+
+
+return response()->json(['success'=>'done']);
+}
+else{
+    return response()->json(['error'=>$validator->errors()->all()]);
+
+}
+
+}
 
 
         public function download($file){
@@ -119,7 +156,7 @@ $filepath = storage_path('app/'.$file);
 
 
         public function update(User $user){
-              
+
 
                 $data = request()->validate([
                         'birthday'=>'',
@@ -132,10 +169,10 @@ $filepath = storage_path('app/'.$file);
                         'position'=>'',
                         'bio'=>'',
                         'country'=>'',
-                      
+
                         'coverimage'=>'',
-          
-                ]);    
+
+                ]);
 
                 if(request('coverimage')){
                         $imagepath = request('coverimage')->store('profiles','public');
@@ -151,7 +188,7 @@ $filepath = storage_path('app/'.$file);
                         // $cv =  request('cv')->store('cv','public');
                          $cvArray = ['cv'=>$cv];
                      }
-              
+
 
              auth()->user()->profile->update(array_merge(
                 $data,$cvArray ?? [],$imageArray ?? []
@@ -159,5 +196,5 @@ $filepath = storage_path('app/'.$file);
             return redirect('/'.$user->username);
         }
 
-        
+
 }

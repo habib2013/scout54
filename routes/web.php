@@ -1,6 +1,7 @@
 <?php
 use App\User;
 use App\Profile;
+use App\Player;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use App\Mail\HelloThere;
@@ -16,20 +17,20 @@ use App\Mail\HelloThere;
 */
 
 
-// 
+//
 Auth::routes(['verify' => true]);
 
 
  Route::get('/', 'NotSignedInController@welcome');
 
 //  Route::get('/home', 'HomeController@index')->name('home');
- 
+
  $user = \Auth::loginUsingId(1);
- 
+
  Route::get('testemail', function () use ($user)  {
      \Mail::to($user)->send(new HelloThere($user));
  });
- 
+
 
  Auth::routes(['verify' => true]);
 
@@ -40,6 +41,13 @@ Route::view('/player', 'player')->name('player')->middleware('player_auth');
 Route::view('/coach', 'coach');
 Route::view('/agent', 'agent');
 Route::view('/club', 'club');
+
+
+Route::get('/player', function()  {
+$player = new Player();
+$ourplayer = $player->all();
+return view('player',compact('ourplayer'));
+});
 
 Route::get('/login/player', 'Auth\LoginController@showPlayerLoginForm')->name('playerlogin');
 Route::get('/login/coach', 'Auth\LoginController@showCoachLoginForm');
@@ -71,10 +79,8 @@ Route::post('/register/club', 'Auth\RegisterController@createClub');
 Route::get('/success/email', 'Auth\RegisterController@successemail');
 Route::post('/uploadimage','ProfilesController@uploadimage')->name('uploadimage');
 Route::post('/updateuserprofile','ProfilesController@updateuserprofile')->name('updateuserprofile');
-// Route::view('/home', 'home');
+Route::post('/updatepersonal','ProfilesController@updatepersonal')->name('updatepersonal');
 
-
-//End route view
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 

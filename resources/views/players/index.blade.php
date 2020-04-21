@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../../assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
+
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
 </head>
@@ -140,7 +140,7 @@
 
     <div class="u-header__section">
       <!-- Topbar -->
-     
+
       <!-- End Topbar -->
 
       <div id="logoAndNav" class="container">
@@ -183,7 +183,7 @@
                 <a  class="nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Players</a>
 
                 <!-- Home - Mega Menu -->
-           
+
                 <!-- End Home - Mega Menu -->
               </li>
               <!-- End Home -->
@@ -196,8 +196,8 @@
                 <a id="pagesMegaMenu" class="nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Scouts</a>
 
                 <!-- Pages - Submenu -->
-            
-                
+
+
                 <!-- End Pages - Submenu -->
               </li>
               <!-- End Pages -->
@@ -210,7 +210,7 @@
                 <a id="blogMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Coaches</a>
 
                 <!-- Blog - Submenu -->
-             
+
                 <!-- End Submenu -->
               </li>
               <!-- End Blog -->
@@ -225,7 +225,7 @@
                 <a id="shopMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Clubs</a>
 
                 <!-- Shop - Mega Menu -->
-             
+
                 <!-- End Shop - Mega Menu -->
               </li>
               <!-- End Shop -->
@@ -240,7 +240,7 @@
                 <a id="demosMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Market</a>
 
                 <!-- Demos - Mega Menu -->
-              
+
 
                 <!-- End Demos - Mega Menu -->
               </li>
@@ -256,14 +256,14 @@
                 <a id="docsMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Our Blog</a>
 
                 <!-- Docs - Submenu -->
-               
+
                 <!-- End Docs - Submenu -->
               </li>
               <!-- End Docs -->
 
               <!-- Button -->
               <li class="nav-item u-header__nav-last-item">
-              
+
               </li>
               <!-- End Button -->
             </ul>
@@ -311,13 +311,13 @@
             <div class="media d-block d-sm-flex align-items-sm-center">
               <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
               <img class="img-fluid rounded-circle" style="height:80px" src="{{$players->playerprofile->profileimage()}}" alt="Image Description">
-              
+
               </div>
               <div class="media-body">
 
 <h1 class="h3 text-white font-weight-medium mb-1">Hello, {{$players->username}}!  </h1>
-     
-            
+
+
                 <span class="d-block text-white">{{$players->email}}</span>
               </div>
             </div>
@@ -340,7 +340,7 @@
                         data-animation-in="slideInUp"
                         data-animation-out="fadeOut">
                       <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
-                        General 
+                        General
                       </a>
 
                     </li>
@@ -358,7 +358,7 @@
                       <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
                         <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Followers</a></li>
                         <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Following</a></li>
-                  
+
                       </ul>
                     </li>
                     <!-- Account Settings -->
@@ -400,7 +400,7 @@
 
                     </li>
                     <!-- Others -->
-                
+
                     <!-- Others -->
                   </ul>
                 </div>
@@ -411,7 +411,7 @@
 
           <div class="ml-lg-auto">
             <!-- Button -->
-          
+
             <!-- End Button -->
           </div>
         </div>
@@ -428,7 +428,7 @@
             <!-- Profile Card -->
             <div class="card p-1 mb-4">
               <div class="card-body text-center">
-              
+
 
                 <div class="mb-3">
                   <h1 class="h6 font-weight-medium mb-0">{{$players->fullname}}</h1>
@@ -450,11 +450,11 @@
             <!-- End Profile Card -->
 
             <!-- Contacts  -->
-      
+
             <!-- End Contacts  -->
 
             <!-- Social Profiles -->
-         
+
             <!-- End Social Profiles -->
           </div>
 
@@ -468,37 +468,37 @@
 
             <!-- Info -->
             <div class="mb-4">
-           <p>Professional player with league experience, a naturally competitve nature and a high-level of physical conditioning.Self-disciplined and committed to working with team members to achieve club level results and trophies. Demonstrates persistence,determination and the ability to cope with the stress of pro-level competition.Exhibits a burning passion and love of football on a professional level with a genuine interest in the representation of nationwide football events.</p>
+       <p> {{$players->playerprofile->description}} </p>
             </div>
             <!-- End Info -->
 
             <!-- Collections -->
             <ul class="list-inline d-flex align-items-center">
-          
-           
-        
+
+
+
 
 <div class="pl-3"></div>
-Connect with me on: 
+Connect with me on:
 <li class="list-inline-item mb-3 mb-sm-0">
                 <div class="d-flex align-items-center pl-4">
                   <img class="mr-2" src="../../images/logo/fb_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
                   <div class="text-secondary">
-                   
+
                   </div>
                 </div>
               </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
                 <div class="d-flex align-items-center">
                   <img class="mr-2" src="../../images/logo/insta_logo.png"  style="height:25px;width:25px" alt="Image Description" style="width: 40px;">
                   <div class="text-secondary">
-                    
+
                   </div>
                 </div>
               </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
                 <div class="d-flex align-items-center">
                   <img class="mr-2" src="../../images/logo/twitter_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
                   <div class="text-secondary">
-                    
+
                   </div>
                 </div>
               </li>
@@ -511,12 +511,12 @@ Connect with me on:
             <h5>Personal Information</h5>
             <hr>
             <div class="row">
-          
+
               <div class="col-md-6 col-lg-4">
                 <!-- List Group -->
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-            
-                 
+
+
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
                       <span class="fas fa-envelope list-group-icon mr-3"></span>
@@ -551,7 +551,7 @@ Connect with me on:
               <div class="col-md-6 col-lg-4">
                 <!-- List Group -->
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-           
+
 
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
@@ -576,7 +576,7 @@ Connect with me on:
                     <div class="media">
                       <span class="fas fa-mobile-alt list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Height:</span>
+                        <span class="d-block mb-1">Height(Inches):</span>
                         {{$players->playerprofile->height ?? "your_height"}}
                       </div>
                     </div>
@@ -592,21 +592,21 @@ Connect with me on:
                     <div class="media">
                       <span class="fas fa-globe list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Weight:</span>
+                        <span class="d-block mb-1">Weight(KG):</span>
                         <span class="d-block text-muted">{{$players->playerprofile->weight ?? "your_weight"}}</span>
                       </div>
                     </div>
                   </li>
-            
+
                   <li class="list-group-item pt-0 pb-4">
                     <div class="media">
                       <span class="fas fa-birthday-cake list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
                         <span class="d-block mb-1">Birthday:</span>
-                        <span class="d-block text-muted">{{$players->playerprofile->birthday ?? "Your_birthday"}}</span>
+                        <span class="d-block text-muted"> {{date('M j, Y ',strtotime($players->birthday)) ?? "Your birthday"}}</span>
                       </div>
                     </div>
-                  </li>   
+                  </li>
 
 
                 </ul>
@@ -618,26 +618,26 @@ Connect with me on:
             <hr class="my-7">
 
             <!-- Info -->
-         
+
             <!-- End Info -->
 
             <!-- Title -->
-        
+
             <!-- End Title -->
 
             <!-- Reviews -->
             <div>
               <!-- Author -->
-         
+
               <!-- End Author -->
 
               <!-- End Likes/Reply -->
             </div>
             <!-- End Reviews -->
 
-    
+
             <!-- Reviews -->
-          
+
             <!-- End Reviews -->
 
          </div>
@@ -853,7 +853,7 @@ Connect with me on:
                     Payment methods
                   </a>
                 </li>
-            
+
               </ul>
               <!-- End List Links -->
 

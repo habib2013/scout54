@@ -17,7 +17,7 @@ class CreatePlayerProfilesTable extends Migration
              $table->bigIncrements('id');
              $table->integer('player_id');
              $table->string('passport')->nullable();
-             $table->string('description')->nullable();
+             $table->text('description')->nullable();
              $table->string('gender')->nullable();
              $table->string('weight')->nullable();
              $table->string('phone')->nullable();
@@ -29,7 +29,7 @@ class CreatePlayerProfilesTable extends Migration
              $table->string('position')->nullable();
              $table->string('prefered_foot')->nullable();
              $table->string('players_agent')->nullable();
-             
+
             $table->timestamps();
 
 
