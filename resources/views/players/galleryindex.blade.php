@@ -516,11 +516,11 @@ No album here
                         <div id="settingsDropdown9" class="dropdown-menu dropdown-unfold" aria-labelledby="settingsDropdown9Invoker" style="min-width: 160px;">
                           <a class="dropdown-item" href="#">
                             <small class="fa fa-trash dropdown-item-icon"></small>
-                            Delete
+                            Settings
                           </a>
                           <a class="dropdown-item" href="#">
                             <small class="fa fa-code-branch dropdown-item-icon"></small>
-                            Update
+                            Repository
                           </a>
 
                         </div>
@@ -540,7 +540,7 @@ No album here
                         <h5>{{$album->name}}</h5>
                   <p>{{$album->description}}</p> </div>
                     <!-- End Title -->
-                    <a href="{{route('show_album', ['id'=>$album->id])}}" > <img class="img-fluid" title="Show Gallery" style="height:50px" src="../../images/gallery.png" alt=""> </a>
+                    <a href="/album/{{$players->username}}/{{$album->id}}" > <img class="img-fluid" title="Show Gallery" style="height:50px" src="../../images/gallery.png" alt=""> </a>
 
 
                     <!-- End Members List -->

@@ -51,7 +51,7 @@
   src:url(../../fonts/cerapro/CeraPro-Light.eot);
   src:url(../../fonts/cerapro/CeraPro-Bold.eot?#iefix) format("embedded-opentype"),
   url(../../fonts/cerapro/CeraPro-Bold.woff) format("woff"),
- 
+
   url(../../fonts/cerapro/CeraPro-Bold.ttf) format("truetype");
   font-weight:400;font-style:normal}
 
@@ -590,7 +590,7 @@ pre code {
     max-width: 720px;
   }
 
-  
+
 
 }
 
@@ -642,14 +642,14 @@ pre code {
   }
 }
 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
   .modal-body {
     width: 100%;
     background: transparent;
     height: 430px;
     padding: 25px 5px;
     background-color: rgba(200, 200, 200, 0.7);
-    border-radius: 7px;   
+    border-radius: 7px;
   }
 }
 
@@ -6218,7 +6218,7 @@ a.close.disabled {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-/* 
+/*
 .modal-dialog-scrollable .modal-body {
   overflow-y: auto;
 } */
@@ -23650,6 +23650,14 @@ label.btn {
 /*------------------------------------
   File for your custom SCSS style
 ------------------------------------*/
+.upcard {
+    height: 400px;
+    width: auto;
+}
+.downcard {
+    height: 150px;
+}
+
 .myactive {
   color: black;
 font-size: 21px;
@@ -23663,7 +23671,7 @@ font-size: 21px;
 
   /* border-bottom: 1px solid  #ffffff ;  */
 
-  
+
 }
 
 
@@ -23671,7 +23679,7 @@ font-size: 21px;
   color: black;
   margin-left: 5px;
   margin-top: 3px;
-   border-bottom: 1px solid  #ffffff ; 
+   border-bottom: 1px solid  #ffffff ;
 }
 
 .smallers {
@@ -24873,7 +24881,7 @@ font-size: 21px;
 	padding: 25px 13px;
 	width: 100px;
     background: #fff;
-    border-radius: 4px;    
+    border-radius: 4px;
 }
 
 .imgg {
@@ -24949,7 +24957,7 @@ button.bt {
 	height: 300px;
   padding: 15px 5px;
 	background-color: rgba(200, 200, 200, 0.7);
-	border-radius: 7px;   
+	border-radius: 7px;
 }
 
 button:focus {
@@ -24983,14 +24991,14 @@ button:focus {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9;    
+    z-index: 9;
 }
 
 @media (max-width: 768px) {
 
 .viewdisview {
   display: none;
-} 
+}
 }
 @media (min-width: 768px) {
 
@@ -25008,7 +25016,7 @@ button:focus {
 	padding: 25px 13px;
 	width: 140px;
     background: #fff;
-    border-radius: 4px;    
+    border-radius: 4px;
 }
 
 .imgg {
@@ -25084,7 +25092,7 @@ button.bt {
 	height: 250px;
 	padding: 48px 0;
 	background-color: rgba(200, 200, 200, 0.7);
-	border-radius: 7px;   
+	border-radius: 7px;
 }
 
 button:focus {
@@ -25120,7 +25128,7 @@ button:focus {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9;    
+    z-index: 9;
 }
 
 }
