@@ -27,13 +27,20 @@ class AlbumsController extends Controller
     }
 
 
-    public function getAlbum($id)
+    // public function getAlbum($id)
+    // {
+    //     $album = Album::with('Photos')->find($id);
+    //     $albums = Album::with('Photos')->get();
+    //     //dd($album);
+    //     return view('images.album', ['album'=>$album, 'albums'=>$albums]);
+    //     //->with('album',$album);
+    // }
+    public function getmyAlbum($username,$id)
     {
+        $players = Player::where('username','=',$username)->firstorFail();
         $album = Album::with('Photos')->find($id);
         $albums = Album::with('Photos')->get();
-        //dd($album);
-        return view('images.album', ['album'=>$album, 'albums'=>$albums]);
-        //->with('album',$album);
+        return view('players.showalbum', ['album'=>$album, 'albums'=>$albums,'players'=>$players]);
     }
 
     public function getForm()

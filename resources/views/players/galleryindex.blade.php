@@ -515,21 +515,14 @@ No album here
 
                         <div id="settingsDropdown9" class="dropdown-menu dropdown-unfold" aria-labelledby="settingsDropdown9Invoker" style="min-width: 160px;">
                           <a class="dropdown-item" href="#">
-                            <small class="fa fa-cogs dropdown-item-icon"></small>
-                            Settings
+                            <small class="fa fa-trash dropdown-item-icon"></small>
+                            Delete
                           </a>
                           <a class="dropdown-item" href="#">
                             <small class="fa fa-code-branch dropdown-item-icon"></small>
-                            Repository
+                            Update
                           </a>
-                          <a class="dropdown-item" href="#">
-                            <small class="fa fa-cloud-download-alt dropdown-item-icon"></small>
-                            Download
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <small class="fa fa-archive dropdown-item-icon"></small>
-                            Archive
-                          </a>
+
                         </div>
                       </div>
                       <!-- End Settings -->
@@ -539,15 +532,15 @@ No album here
 
                   <div class="text-center">
                     <div class="u-lg-avatar mx-auto mb-3">
-                      <img class="img-fluid rounded-circle" style="height:100px;width:150px" src="/albums/{{$album->cover_image}}" alt="Image Description">
+                      <img class="img-fluid" style="height:100px;width:170px" src="/albums/{{$album->cover_image}}" alt="Image Description">
                     </div>
 
                     <!-- Title -->
                     <div class="mb-4">
-                        <h3>{{$album->name}}</h3>
+                        <h5>{{$album->name}}</h5>
                   <p>{{$album->description}}</p> </div>
                     <!-- End Title -->
-                    <a href="{{route('show_album', ['id'=>$album->id])}}" class="btn btn-small btn-success">Show Gallery</a>
+                    <a href="{{route('show_album', ['id'=>$album->id])}}" > <img class="img-fluid" title="Show Gallery" style="height:50px" src="../../images/gallery.png" alt=""> </a>
 
 
                     <!-- End Members List -->
