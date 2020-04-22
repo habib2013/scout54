@@ -1,17 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:32 GMT -->
+<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:50 GMT -->
 <head>
   <!-- Title -->
-  <title>{{$players->username}}</title>
+  <title>Projects | Front - Responsive Website Template</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  @laravelPWA
-
-
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://htmlstream.com/preview/front-v2.9.4/favicon.ico">
@@ -21,16 +19,19 @@
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/custombox/dist/custombox.min.css">
   <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
   <link rel="stylesheet" href="../../assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../../assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
 </head>
-<body style="font-family:Cera Pro New">
+<body style="font-family:Cera Pro New" class="u-custombox-no-scroll">
   <!-- ========== HEADER ========== -->
   <header id="header" class="u-header">
     <!-- Search -->
@@ -67,23 +68,23 @@
                 <div class="col-6">
                   <div class="list-group list-group-transparent list-group-flush list-group-borderless">
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Search Results List
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Search Results Grid
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       About
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Services
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Invoice
                     </a>
                   </div>
@@ -94,19 +95,19 @@
                 <div class="col-6">
                   <div class="list-group list-group-transparent list-group-flush list-group-borderless">
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Profile
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       User Contacts
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Reviews
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">
-                      <span class="fas fa-angle-right list-group-icon"></span>
+                      <span class="fa fa-angle-right list-group-icon"></span>
                       Settings
                     </a>
                   </div>
@@ -129,7 +130,7 @@
                       <strong class="d-block mb-2">Featured Item</strong>
                       <p>Create astonishing web sites and pages.</p>
                     </div>
-                    <a class="btn btn-xs btn-soft-success transition-3d-hover" href="index.html">Apply Now <span class="fas fa-angle-right ml-2"></span></a>
+                    <a class="btn btn-xs btn-soft-success transition-3d-hover" href="index.html">Apply Now <span class="fa fa-angle-right ml-2"></span></a>
                   </div>
                 </div>
               </div>
@@ -284,371 +285,327 @@
   <main id="content" role="main">
     <!-- Breadcrumb Section -->
     <div class="bg-primary">
-      <div class="container space-top-1 pb-3">
-        <div class="row">
-          <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
-            <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
-              <!-- Breadcrumb -->
-              <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-               </ol>
-              <!-- End Breadcrumb -->
+        <div class="container space-top-1 pb-3">
+          <div class="row">
+            <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
+              <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
+                 </ol>
+                <!-- End Breadcrumb -->
 
-              <!-- Breadcrumb Nav Toggle Button -->
-              <div class="d-lg-none">
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                        aria-label="Toggle navigation"
-                        aria-expanded="false"
-                        aria-controls="breadcrumbNavBar"
-                        data-toggle="collapse"
-                        data-target="#breadcrumbNavBar">
-                  <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
-                    <span class="u-hamburger__inner"></span>
-                  </span>
-                </button>
-              </div>
-              <!-- End Breadcrumb Nav Toggle Button -->
-            </div>
-          </div>
-
-          <div class="col-lg-7 order-lg-1">
-            <!-- User Info -->
-            <div class="media d-block d-sm-flex align-items-sm-center">
-              <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-              <img class="img-fluid rounded-circle" style="height:80px" src="{{$players->playerprofile->profileimage()}}" alt="Image Description">
-
-              </div>
-              <div class="media-body">
-
-<h1 class="h3 text-white font-weight-medium mb-1">Hello, {{$players->username}}!  </h1>
-
-
-                <span class="d-block text-white">{{$players->email}}</span>
-              </div>
-            </div>
-            <!-- End User Info -->
-          </div>
-        </div>
-      </div>
-
-      <div class="container space-bottom-1 space-bottom-lg-0">
-        <div class="d-lg-flex justify-content-lg-between align-items-lg-center">
-          <!-- Navbar -->
-          <div class="u-header u-header-left-aligned-nav u-header--bg-transparent-lg u-header--white-nav-links z-index-4">
-            <div class="u-header__section bg-transparent">
-              <nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar u-header__navbar--no-space">
-                <div id="breadcrumbNavBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                  <ul class="navbar-nav u-header__navbar-nav">
-                    <!-- General -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
-                        General
-                      </a>
-
-                    </li>
-                    <!-- General -->
-
-                    <!-- Account Settings -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="accountSettingsDropdown" class="nav-link u-header__nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
-                      My Connections
-                      </a>
-
-                      <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Followers</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Following</a></li>
-
-                      </ul>
-                    </li>
-                    <!-- Account Settings -->
-
-                    <!-- Billing -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="billingDropdown" class="nav-link u-header__nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
-                        Career Information
-                      </a>
-
-                    </li>
-                    <!-- Billing -->
-
-                    <!-- Accessibility -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="accessibilityDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accessibilityDropdownMenu">
-                        My Galllery
-                      </a>
-
-                      <ul id="accessibilityDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accessibilityDropdown">
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">Videos</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="api-token.html">Images</a></li>
-                      </ul>
-                    </li>
-                    <!-- Accessibility -->
-                    <li class="nav-item"
-                       >
-                      <a  class="nav-link u-header__nav-link" href="/settings/{{$players->username}}" onclick="gotoSettings(username)">
-
-                        Settings
-                      </a>
-
-                    </li>
-                    <!-- Others -->
-
-                    <!-- Others -->
-                  </ul>
+                <!-- Breadcrumb Nav Toggle Button -->
+                <div class="d-lg-none">
+                  <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
+                          aria-label="Toggle navigation"
+                          aria-expanded="false"
+                          aria-controls="breadcrumbNavBar"
+                          data-toggle="collapse"
+                          data-target="#breadcrumbNavBar">
+                    <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
+                      <span class="u-hamburger__inner"></span>
+                    </span>
+                  </button>
                 </div>
-              </nav>
+                <!-- End Breadcrumb Nav Toggle Button -->
+              </div>
+            </div>
+
+            <div class="col-lg-7 order-lg-1">
+              <!-- User Info -->
+              <div class="media d-block d-sm-flex align-items-sm-center">
+                <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
+                <img class="img-fluid rounded-circle" style="height:80px" src="{{$players->playerprofile->profileimage()}}" alt="Image Description">
+
+                </div>
+                <div class="media-body">
+
+  <h1 class="h3 text-white font-weight-medium mb-1">Hello, {{$players->username}}!  </h1>
+
+
+                  <span class="d-block text-white">{{$players->email}}</span>
+                </div>
+              </div>
+              <!-- End User Info -->
             </div>
           </div>
-          <!-- End Navbar -->
+        </div>
 
-          <div class="ml-lg-auto">
-            <!-- Button -->
+        <div class="container space-bottom-1 space-bottom-lg-0">
+          <div class="d-lg-flex justify-content-lg-between align-items-lg-center">
+            <!-- Navbar -->
+            <div class="u-header u-header-left-aligned-nav u-header--bg-transparent-lg u-header--white-nav-links z-index-4">
+              <div class="u-header__section bg-transparent">
+                <nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar u-header__navbar--no-space">
+                  <div id="breadcrumbNavBar" class="collapse navbar-collapse u-header__navbar-collapse">
+                    <ul class="navbar-nav u-header__navbar-nav">
+                      <!-- General -->
+                      <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                          data-event="hover"
+                          data-animation-in="slideInUp"
+                          data-animation-out="fadeOut">
+                        <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+                          General
+                        </a>
 
-            <!-- End Button -->
+                      </li>
+                      <!-- General -->
+
+                      <!-- Account Settings -->
+                      <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                          data-event="hover"
+                          data-animation-in="slideInUp"
+                          data-animation-out="fadeOut">
+                        <a id="accountSettingsDropdown" class="nav-link u-header__nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
+                        My Connections
+                        </a>
+
+                        <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Followers</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Following</a></li>
+
+                        </ul>
+                      </li>
+                      <!-- Account Settings -->
+
+                      <!-- Billing -->
+                      <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                          data-event="hover"
+                          data-animation-in="slideInUp"
+                          data-animation-out="fadeOut">
+                        <a id="billingDropdown" class="nav-link u-header__nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
+                          Career Information
+                        </a>
+
+                      </li>
+                      <!-- Billing -->
+
+                      <!-- Accessibility -->
+                      <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                          data-event="hover"
+                          data-animation-in="slideInUp"
+                          data-animation-out="fadeOut">
+                        <a id="accessibilityDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accessibilityDropdownMenu">
+                          My Galllery
+                        </a>
+
+                        <ul id="accessibilityDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accessibilityDropdown">
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">Videos</a></li>
+                          <li><a class="nav-link u-header__sub-menu-nav-link" href="api-token.html">Images</a></li>
+                        </ul>
+                      </li>
+                      <!-- Accessibility -->
+                      <li class="nav-item"
+                         >
+                        <a  class="nav-link u-header__nav-link" href="/settings/{{$players->username}}" onclick="gotoSettings(username)">
+
+                          Settings
+                        </a>
+
+                      </li>
+                      <!-- Others -->
+
+                      <!-- Others -->
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <!-- End Navbar -->
+
+
+            <div class="ml-lg-auto">
+                <!-- Button -->
+                <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover"
+                   data-modal-target="#addProjectModal">
+                  <span class="fa fa-plus small mr-2"></span>
+                  Create Album
+                </a>
+                <!-- End Button -->
+              </div>
+
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Breadcrumb Section -->
     <!-- End Breadcrumb Section -->
 
     <!-- Content Section -->
     <div class="bg-light">
-      <div class="container space-2">
-        <div class="row">
-          <div class="col-lg-3 mb-7 mb-lg-0">
-            <!-- Profile Card -->
-            <div class="card p-1 mb-4">
-              <div class="card-body text-center">
-
-
-                <div class="mb-3">
-                  <h1 class="h6 font-weight-medium mb-0">{{$players->fullname}}</h1>
-                  <small class="d-block text-muted">Defender</small>
-                </div>
-
-                <div class="mb-2">
-                  <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                    <span class="fa fa-envelope mr-2"></span>
-                    Send a Message
-                  </a>
-                </div>
-
-                <a class="text-secondary small" href="#">
-                  <i class="fa fa-flag mr-1"></i> Report this user
-                </a>
-              </div>
-            </div>
-            <!-- End Profile Card -->
-
-            <!-- Contacts  -->
-
-            <!-- End Contacts  -->
-
-            <!-- Social Profiles -->
-
-            <!-- End Social Profiles -->
-          </div>
-
-          <div class="col-lg-9">
-            <!-- User Details -->
-            <div class="mb-4">
-              <h2 class="h4">Hey, I am {{$players->username}} <span class="badge  ml-1"> <img src="../../images/approval.png" class="img-fluid mb-2" style="height:25px;width:25px" alt=""> </span></h2>
-              <h4 class="h6 text-secondary mb-0">From, <span class="text-uppercase">{{$players->nationality}}</span>  <small>- Joined on {{date('M j, Y',strtotime($players->created_at)) ?? 'N/A'}}</small></h4>
-            </div>
-            <!-- End User Details -->
-
-            <!-- Info -->
-            <div class="mb-4">
-       <p> {{$players->playerprofile->description}} </p>
-            </div>
-            <!-- End Info -->
-
-            <!-- Collections -->
-            <ul class="list-inline d-flex align-items-center">
-
-
-
-
-<div class="pl-3"></div>
-Connect with me on:
-<li class="list-inline-item mb-3 mb-sm-0">
-                <div class="d-flex align-items-center pl-4">
-                  <img class="mr-2" src="../../images/logo/fb_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
-                 {{-- <i class="fa fa-facebook"></i> --}}
-
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
-                <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../images/logo/insta_logo.png"  style="height:25px;width:25px" alt="Image Description" style="width: 40px;">
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
-                <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../images/logo/twitter_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <!-- End Collections -->
-
-            <hr class="my-7">
-
-            <!-- Icon Blocks -->
-            <h5>Personal Information</h5>
-            <hr>
-            <div class="row">
-
-              <div class="col-md-6 col-lg-4">
-                <!-- List Group -->
-                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-
-
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-envelope list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Email:</span>
-                        <a href="#">{{$players->email ?? "your email"}}</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-intersex mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Gender:</span>
-                        <a href="#">{{$players->playerprofile->gender ?? "Gender"}}</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-mobile list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Phone:</span>
-                      {{$players->playerprofile->phone ?? "your_phone"}}
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <!-- End List Group -->
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <!-- List Group -->
-                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-
-
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-user list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Fulll name:</span>
-                      {{$players->fullname}}
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-address-card list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Address:</span>
-                      {{$players->playerprofile->address ?? "your_address"}}
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-text-height list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Height(Inches):</span>
-                        {{$players->playerprofile->height ?? "your_height"}}
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <!-- End List Group -->
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <!-- List Group -->
-                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-balance-scale list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Weight(KG):</span>
-                        <span class="d-block text-muted">{{$players->playerprofile->weight ?? "your_weight"}}</span>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="list-group-item pt-0 pb-4">
-                    <div class="media">
-                      <span class="fa fa-birthday-cake list-group-icon mr-3"></span>
-                      <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Birthday:</span>
-                        <span class="d-block text-muted"> {{date('M j, Y ',strtotime($players->birthday)) ?? "Your birthday"}}</span>
-                      </div>
-                    </div>
-                  </li>
-
-
-                </ul>
-                <!-- End List Group -->
-              </div>
-            </div>
-            <!-- End Icon Blocks -->
-
-            <hr class="my-7">
-
-            <!-- Info -->
-
-            <!-- End Info -->
-
+        <div class="container space-2">
+          <div class="row justify-content-between align-items-center mb-4">
             <!-- Title -->
-
+            <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
+              <h2 class="h6 mb-0">{{count($albums) ?? "0"}} Album found</h2>
+            </div>
             <!-- End Title -->
 
-            <!-- Reviews -->
-            <div>
-              <!-- Author -->
+            <!-- Filter -->
+            <div class="col-sm-8 col-md-6 text-sm-right">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <!-- Select -->
+                  <select class="js-select selectpicker dropdown-select"
+                          data-width="fit"
+                          data-style="btn-soft-primary btn-sm">
+                    <option value="bydateFilterSelect1" selected>Latest</option>
+                    <option value="bydateFilterSelect2">Popular</option>
+                    <option value="bydateFilterSelect3">Low price</option>
+                    <option value="bydateFilterSelect4">High price</option>
+                  </select>
+                  <!-- End Select -->
+                </li>
+                <li class="list-inline-item">
+                  <!-- Select -->
+                  <select class="js-select selectpicker dropdown-select"
+                          data-width="fit"
+                          data-style="btn-soft-primary btn-sm">
+                    <option value="alphabeticalOrderSelect1" selected>A-to-Z</option>
+                    <option value="alphabeticalOrderSelect2">Z-to-A</option>
+                  </select>
+                  <!-- End Select -->
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-sm btn-soft-primary active" href="projects.html">
+                    <span class="fa fa-th-large"></span>
+                  </a>
+                </li>
 
-              <!-- End Author -->
-
-              <!-- End Likes/Reply -->
+              </ul>
             </div>
-            <!-- End Reviews -->
+            <!-- End Filter -->
+          </div>
+
+          <div class="mb-7">
+<div class="row">
+
+@foreach($albums as $album)
+@if($album == null)
+No album here
+@else
+
+            <div class="col-xs-12 col-lg-4 col-md-4 card-deck d-block d-md-flex">
+
+              <div class="card mb-5">
+                <div class="card-body p-4">
+                  <!-- List of Icons -->
+                  <div class="row justify-content-between align-items-center mb-4">
+                    <div class="col-6">
+                      <a class="small text-secondary" href="#">
+                        <span class="fa fa-bookmark text-primary mr-1"></span>
+                    {{$album -> id}}
+                      </a>
+                    </div>
+                    <div class="col-6 text-right">
+                      <!-- Settings -->
+                      <div class="position-relative">
+                        <a id="settingsDropdown9Invoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent rounded" href="javascript:;" role="button"
+                           aria-controls="settingsDropdown9"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                           data-unfold-event="click"
+                           data-unfold-target="#settingsDropdown9"
+                           data-unfold-type="css-animation"
+                           data-unfold-duration="300"
+                           data-unfold-delay="300"
+                           data-unfold-hide-on-scroll="true"
+                           data-unfold-animation-in="slideInUp"
+                           data-unfold-animation-out="fadeOut">
+                          <span class="fa fa-ellipsis-h btn-icon__inner"></span>
+                        </a>
+
+                        <div id="settingsDropdown9" class="dropdown-menu dropdown-unfold" aria-labelledby="settingsDropdown9Invoker" style="min-width: 160px;">
+                          <a class="dropdown-item" href="#">
+                            <small class="fa fa-cogs dropdown-item-icon"></small>
+                            Settings
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <small class="fa fa-code-branch dropdown-item-icon"></small>
+                            Repository
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <small class="fa fa-cloud-download-alt dropdown-item-icon"></small>
+                            Download
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <small class="fa fa-archive dropdown-item-icon"></small>
+                            Archive
+                          </a>
+                        </div>
+                      </div>
+                      <!-- End Settings -->
+                    </div>
+                  </div>
+                  <!-- End List of Icons -->
+
+                  <div class="text-center">
+                    <div class="u-lg-avatar mx-auto mb-3">
+                      <img class="img-fluid rounded-circle" style="height:100px;width:150px" src="/albums/{{$album->cover_image}}" alt="Image Description">
+                    </div>
+
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <h3>{{$album->name}}</h3>
+                  <p>{{$album->description}}</p> </div>
+                    <!-- End Title -->
+                    <a href="{{route('show_album', ['id'=>$album->id])}}" class="btn btn-small btn-success">Show Gallery</a>
 
 
-            <!-- Reviews -->
+                    <!-- End Members List -->
+                  </div>
+                </div>
 
-            <!-- End Reviews -->
+                <div class="card-footer text-center">
+                  <!-- Budget & Priority -->
+                  <div class="row align-items-center">
+                    <div class="col-6 u-ver-divider">
+                      <h5 class="small font-weight-normal text-secondary mb-0">Photos</h5>
+                      <span class="text-dark">{{count($album->Photos)}}</span>
+                    </div>
+                    <div class="col-6">
+                      <h5 class="small font-weight-normal text-secondary mb-0">Created date</h5>
+                      <span class="fa fa-date text-danger small"></span>
+                      <span class="text-dark">{{ date("d F Y",strtotime($album->created_at)) }}</span>
+                    </div>
+                  </div>
+                  <!-- End Budget & Priority -->
+                </div>
+              </div>
+              <!-- End Projects -->
+            </div>
 
-         </div>
+            @endif
+@endforeach
+        </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="d-flex justify-content-between align-items-center">
+            <nav aria-label="Page navigation">
+              <ul class="pagination mb-0">
+                <li class="page-item ml-0">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <small class="d-none d-sm-inline-block text-secondary">Showing 9 out of 52</small>
+          </div>
+          <!-- End Pagination -->
         </div>
       </div>
-    </div>
     <!-- End Content Section -->
   </main>
   <!-- ========== END MAIN ========== -->
@@ -799,7 +756,7 @@ Connect with me on:
                         data-unfold-delay="300"
                         data-unfold-animation-in="slideInUp"
                         data-unfold-animation-out="fadeOut">
-                  <span class="fas fa-ellipsis-v btn-icon__inner"></span>
+                  <span class="fa fa-ellipsis-v btn-icon__inner"></span>
                 </a>
 
                 <div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
@@ -818,47 +775,52 @@ Connect with me on:
               <ul class="list-unstyled u-sidebar--account__list">
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="dashboard.html">
-                    <span class="fas fa-home u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-home u-sidebar--account__list-icon mr-2"></span>
                     Dashboard
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="profile.html">
-                    <span class="fas fa-user-circle u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-user-circle u-sidebar--account__list-icon mr-2"></span>
                     Profile
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="my-tasks.html">
-                    <span class="fas fa-tasks u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-tasks u-sidebar--account__list-icon mr-2"></span>
                     My tasks
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="projects.html">
-                    <span class="fas fa-layer-group u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-layer-group u-sidebar--account__list-icon mr-2"></span>
                     Projects <span class="badge badge-danger float-right mt-1">3</span>
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="members.html">
-                    <span class="fas fa-users u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-users u-sidebar--account__list-icon mr-2"></span>
                     Members
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="activity.html">
-                    <span class="fas fa-exchange-alt u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-exchange-alt u-sidebar--account__list-icon mr-2"></span>
                     Activity
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="payment-methods.html">
-                    <span class="fas fa-wallet u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-wallet u-sidebar--account__list-icon mr-2"></span>
                     Payment methods
                   </a>
                 </li>
-
+                <li class="u-sidebar--account__list-item">
+                  <a class="u-sidebar--account__list-link" href="plans.html">
+                    <span class="fa fa-cubes u-sidebar--account__list-icon mr-2"></span>
+                    Plans
+                  </a>
+                </li>
               </ul>
               <!-- End List Links -->
 
@@ -868,13 +830,13 @@ Connect with me on:
               <ul class="list-unstyled u-sidebar--account__list">
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="invite-friends.html">
-                    <span class="fas fa-user-plus u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-user-plus u-sidebar--account__list-icon mr-2"></span>
                     Invite friends
                   </a>
                 </li>
                 <li class="u-sidebar--account__list-item">
                   <a class="u-sidebar--account__list-link" href="api-token.html">
-                    <span class="fas fa-key u-sidebar--account__list-icon mr-2"></span>
+                    <span class="fa fa-key u-sidebar--account__list-icon mr-2"></span>
                     API Token
                   </a>
                 </li>
@@ -895,7 +857,7 @@ Connect with me on:
             </li>
             <li class="list-inline-item">
               <a class="u-sidebar__footer--account__text" href="https://htmlstream.com/preview/front-v2.9.4/html/pages/help.html">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa fa-info-circle"></i>
               </a>
             </li>
           </ul>
@@ -912,6 +874,98 @@ Connect with me on:
     </div>
   </aside>
   <!-- End Account Sidebar Navigation -->
+
+  <!-- Create Project Modal Window -->
+  <div id="addProjectModal" class="js-modal-window u-modal-window" style="width: 680px;">
+    <form class="card mb-9">
+      <!-- Header -->
+      <header class="card-header bg-light py-3 px-5">
+        <div class="row justify-content-between align-items-center no-gutters">
+        <div class="col-3">
+          <a class="small text-secondary" href="#">
+            <span class="fa fa-bookmark text-primary mr-1"></span>
+            FR-53
+          </a>
+        </div>
+
+        <div class="col-9 text-right">
+          <!-- Icons -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-0">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Give feedback">
+                <span class="fa fa-bullhorn btn-icon__inner"></span>
+              </a>
+            </li>
+            <li class="list-inline-item mr-0">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Unwatch">
+                <span class="fa fa-eye-slash btn-icon__inner"></span>
+              </a>
+            </li>
+            <li class="list-inline-item mr-0">
+              <!-- Settings Dropdown -->
+              <div class="position-relative">
+                <a id="createProjectSettingsDropdown1Invoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
+                   aria-controls="createProjectSettingsDropdown1"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   data-unfold-event="click"
+                   data-unfold-target="#createProjectSettingsDropdown1"
+                   data-unfold-type="css-animation"
+                   data-unfold-duration="300"
+                   data-unfold-delay="300"
+                   data-unfold-hide-on-scroll="true"
+                   data-unfold-animation-in="slideInUp"
+                   data-unfold-animation-out="fadeOut">
+                  <span class="fa fa-ellipsis-h btn-icon__inner"></span>
+                </a>
+
+                <div id="createProjectSettingsDropdown1" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="createProjectSettingsDropdown1Invoker" style="min-width: 160px;">
+                  <a class="dropdown-item" href="#">Log time</a>
+                  <a class="dropdown-item" href="#">Add flag</a>
+                  <a class="dropdown-item" href="#">Move</a>
+                  <a class="dropdown-item" href="#">Clone</a>
+                </div>
+              </div>
+              <!-- End Settings Dropdown -->
+            </li>
+            <li class="list-inline-item mr-0">
+              <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" onclick="Custombox.modal.close();">
+                <span class="fa fa-times btn-icon__inner"></span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Icons -->
+        </div>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <div class="card-body pt-3 pb-5 px-5">
+        <!-- Project Title -->
+        <div class="d-sm-flex justify-content-sm-between align-items-sm-center no-gutters mb-3">
+          <div class="mb-1 mb-sm-0 mr-3">
+            <div class="input-group input-group-borderless">
+              <input class="form-control pl-0" type="text" placeholder="Enter project title" aria-label="Enter project title">
+            </div>
+          </div>
+
+        </div>
+
+
+        <hr class="my-4">
+
+
+
+
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">Save</button>
+          <button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover" onclick="Custombox.modal.close();">Cancel</button>
+        </div>
+        <!-- End Buttons -->
+      </div>
+    </form>
+  </div>
+  <!-- End Create Project Modal Window -->
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
   <!-- Go to Top -->
@@ -922,7 +976,7 @@ Connect with me on:
     data-compensation="#header"
     data-show-effect="slideInUp"
     data-hide-effect="slideOutDown">
-    <span class="fas fa-arrow-up u-go-to__inner"></span>
+    <span class="fa fa-arrow-up u-go-to__inner"></span>
   </a>
   <!-- End Go to Top -->
 
@@ -936,6 +990,11 @@ Connect with me on:
   <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
   <script src="../../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
   <script src="../../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../../assets/vendor/custombox/dist/custombox.min.js"></script>
+  <script src="../../assets/vendor/custombox/dist/custombox.legacy.min.js"></script>
+  <script src="../../assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="../../assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+  <script src="../../assets/vendor/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
 
   <!-- JS Front -->
   <script src="../../assets/js/hs.core.js"></script>
@@ -943,17 +1002,13 @@ Connect with me on:
   <script src="../../assets/js/components/hs.unfold.js"></script>
   <script src="../../assets/js/components/hs.malihu-scrollbar.js"></script>
   <script src="../../assets/js/components/hs.focus-state.js"></script>
+  <script src="../../assets/js/components/hs.modal-window.js"></script>
+  <script src="../../assets/js/components/hs.selectpicker.js"></script>
+  <script src="../../assets/js/components/hs.range-datepicker.js"></script>
   <script src="../../assets/js/components/hs.svg-injector.js"></script>
   <script src="../../assets/js/components/hs.go-to.js"></script>
 
   <!-- JS Plugins Init. -->
-<script type="text/javascript">
-function gotoLogin(){
-    window.location.href ="/settings"
-}
-</script>
-
-
   <script>
     $(window).on('load', function () {
       // initialization of HSMegaMenu component
@@ -993,11 +1048,22 @@ function gotoLogin(){
       // initialization of forms
       $.HSCore.components.HSFocusState.init();
 
+      // initialization of autonomous popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-modal-window', {
+        autonomous: true
+      });
+
+      // initialization of select picker
+      $.HSCore.components.HSSelectPicker.init('.js-select');
+
+      // initialization of range datepicker
+      $.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
     });
   </script>
 </body>
 
-<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:39 GMT -->
+<!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:53 GMT -->
 </html>
