@@ -6,16 +6,26 @@ use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use App\Image;
 use App\Album;
+use App\Player;
 use Validator;
 use Illuminate\Support\Str;
 
 class AlbumsController extends Controller
 {
-       public function getList()
+    //    public function getList()
+    // {
+
+    //     $albums = Album::with('Photos')->get();
+    //     return view('images.index',compact('albums'));
+    // }
+
+    public function galleryindex($username)
     {
+        $players = Player::where('username','=',$username)->firstorFail();
         $albums = Album::with('Photos')->get();
-        return view('images.index')->with('player_albums',$albums);
+        return view('players.galleryindex',compact('albums','players'));
     }
+
 
     public function getAlbum($id)
     {

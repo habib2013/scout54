@@ -440,13 +440,13 @@
 
                 <div class="mb-2">
                   <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
-                    <span class="far fa-envelope mr-2"></span>
+                    <span class="fa fa-envelope mr-2"></span>
                     Send a Message
                   </a>
                 </div>
 
                 <a class="text-secondary small" href="#">
-                  <i class="far fa-flag mr-1"></i> Report this user
+                  <i class="fa fa-flag mr-1"></i> Report this user
                 </a>
               </div>
             </div>
@@ -486,6 +486,8 @@ Connect with me on:
 <li class="list-inline-item mb-3 mb-sm-0">
                 <div class="d-flex align-items-center pl-4">
                   <img class="mr-2" src="../../images/logo/fb_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
+                 {{-- <i class="fa fa-facebook"></i> --}}
+
                   <div class="text-secondary">
 
                   </div>

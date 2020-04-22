@@ -40,7 +40,7 @@
         <div class="starter-template">
 
         <div class="row">
-          @foreach($player_albums as $album)
+          @foreach($albums as $album)
             <div class="col-lg-3">
               <div class="thumbnail" style="min-height: 514px;">
                 <img alt="{{$album->name}}" src="/albums/{{$album->cover_image}}">
