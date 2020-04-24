@@ -870,8 +870,9 @@ No album here
 
   <!-- Create Project Modal Window -->
   <div id="addProjectModal" class="js-modal-window u-modal-window" style="width: 680px;">
-    <form class="card mb-9">
-      <!-- Header -->
+    <form class="card mb-9" name="createnewalbum" method="POST"action="{{route('create_album')}}" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <!-- Header -->
       <header class="card-header bg-light py-3 px-5">
         <div class="row justify-content-between align-items-center no-gutters">
         <div class="col-3">
@@ -937,9 +938,22 @@ No album here
         <!-- Project Title -->
         <div class="d-sm-flex justify-content-sm-between align-items-sm-center no-gutters mb-3">
           <div class="mb-1 mb-sm-0 mr-3">
-            <div class="input-group input-group-borderless">
-              <input class="form-control pl-0" type="text" placeholder="Enter project title" aria-label="Enter project title">
-            </div>
+            <fieldset>
+                <legend>Create an Album</legend>
+                <div class="form-group">
+                  <label for="name">Album Name</label>
+                  <input name="name" type="text" class="form-control"placeholder="Album Name" value="{{old('name')}}">
+                </div>
+                <div class="form-group">
+                  <label for="description">Album Description</label>
+                  <textarea name="description" type="text"class="form-control" placeholder="Albumdescription">{{old('descrption')}}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="cover_image">Select a Cover Image</label>
+                  {{Form::file('cover_image')}}
+                </div>
+                <button type="submit" class="btnbtn-default">Create!</button>
+              </fieldset>
           </div>
 
         </div>

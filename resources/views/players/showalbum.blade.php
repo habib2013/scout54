@@ -562,12 +562,13 @@
               <!-- End Projects -->
             </div>
 
+            <div class="container">
 <div class="row">
     @foreach($album->Photos as $photo)
 <div  class="col-xs-6 col-sm-6 col-lg-4 col-md-4 col-xl-4 ">
     <div class="card">
         <div class="card-body">
-        <img class="img-fluid" src="/albums/{{$photo->image}}" alt="">
+        <img class="img-fluid" style="max-height:270px;min-height:270px;max-width:325px;min-width:325px" src="/albums/{{$photo->image}}" alt="">
         <div class="caption">
             <p style="color:#000000" align="center">{{$photo->description}}</p>
 <div class="row">
@@ -607,6 +608,7 @@
 @endforeach
 </div>
 
+</div>
 
 
         </div>
