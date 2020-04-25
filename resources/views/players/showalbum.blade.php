@@ -5,7 +5,7 @@
 <!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:50 GMT -->
 <head>
   <!-- Title -->
-  <title>Projects | Front - Responsive Website Template</title>
+<title>{{$players->username}}'s pics in {{$album->name}}</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -605,7 +605,7 @@
 <div class="row">
 
     @foreach($album->Photos as $photo)
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 ml-5 mr-3 mt-3"">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 ml-2 mr-3 mt-3"">
     <div class="card contwe"  style="width: 20rem;">
     <div class="overlay">{{$photo->description}}</div>
         <img class="image card-img-top"  style="max-height:200px;min-height:200px" src="/albums/{{$photo->image}}" alt="Card image cap">

@@ -5,7 +5,7 @@
 <!-- Mirrored from htmlstream.com/preview/front-v2.9.4/html/account/projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:41:50 GMT -->
 <head>
   <!-- Title -->
-  <title>Projects | Front - Responsive Website Template</title>
+<title>{{$players->username}}'s Album</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
