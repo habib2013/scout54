@@ -30,6 +30,44 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/theme.css">
+
+<style>
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.contwe {
+  position: relative;
+
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 65%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.contwe:hover .overlay {
+  opacity: 1;
+}
+</style>
+
 </head>
 <body style="font-family:Cera Pro New" class="u-custombox-no-scroll">
   <!-- ========== HEADER ========== -->
@@ -386,13 +424,14 @@
                           data-animation-in="slideInUp"
                           data-animation-out="fadeOut">
                         <a id="accessibilityDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accessibilityDropdownMenu">
-                          My Galllery
+                          My Gallery
                         </a>
 
                         <ul id="accessibilityDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accessibilityDropdown">
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">Videos</a></li>
-                          <li><a class="nav-link u-header__sub-menu-nav-link" href="api-token.html">Images</a></li>
-                        </ul>
+                            <li><a class="nav-link u-header__sub-menu-nav-link" href="/gallery/{{$players->username}}">Image Gallery</a></li>
+
+                            <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">My Videos</a></li>
+                          </ul>
                       </li>
                       <!-- Accessibility -->
                       <li class="nav-item"
@@ -564,28 +603,22 @@
 
             <div class="container">
 <div class="row">
+
     @foreach($album->Photos as $photo)
-<div  class="col-xs-6 col-sm-6 col-lg-4 col-md-4 col-xl-4 ">
-    <div class="card">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 ml-5 mr-3 mt-3"">
+    <div class="card contwe"  style="width: 20rem;">
+    <div class="overlay">{{$photo->description}}</div>
+        <img class="image card-img-top"  style="max-height:200px;min-height:200px" src="/albums/{{$photo->image}}" alt="Card image cap">
+@if((Auth::guard('player')->user()->username) != $players->username)
+
+@else
         <div class="card-body">
-        <img class="img-fluid" style="max-height:270px;min-height:270px;max-width:325px;min-width:325px" src="/albums/{{$photo->image}}" alt="">
-        <div class="caption">
-            <p style="color:#000000" align="center">{{$photo->description}}</p>
-<div class="row">
-    <div class="col-6">
-        <p style="color:#000000" align="center"> {{ date("d F Y",strtotime($photo->created_at)) }}</p>
-    </div>
-    <div class="col-6">
-        <a align="right" href="{{URL::route('delete_image',array('id'=>$photo->id))}}" onclick="returnconfirm('Are you sure?')"><button type="button"class="btn btn-danger"> <i class="fa fa-trash"></i> Delete</button></a>
 
-    </div>
-        </div>
-        <div class="col-6">
-            <p style="color:#000000" align="center">Move image to another Album :</p>
-
-        </div>
-
-
+            <a class="text-danger" align="right" href="{{URL::route('delete_image',array('id'=>$photo->id))}}" onclick="returnconfirm('Are you sure?')"><i class="fa fa-trash text-danger"></i> Delete Image</a>
+          </div>
+          <hr>
+          <div class="card-body" style="padding-top:2px">
+            <p style="color:#000000;font-size:13px" align="center">Move image to another Album :</p>
             <form name="movephoto" method="POST"action="{{URL::route('move_image')}}">
                 {{ csrf_field() }}
               <select name="new_album">
@@ -595,17 +628,17 @@
               </select>
 
                 <input type="hidden" name="photo"value="{{$photo->id}}" />
-                <button type="submit" class="btn btn-small btn-info" onclick="return confirm('Are you sure?')"> <i class="fa fa-angle-double-right"></i> </button>
+                <button type="submit"  onclick="return confirm('Are you sure?')"> <i class="fa fa-angle-double-right"></i> </button>
 
            </form>
 
-
           </div>
-    </div>
-    </div>
+@endif
 
-</div>
+         </div>
+    </div>
 @endforeach
+
 </div>
 
 </div>

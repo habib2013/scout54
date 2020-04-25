@@ -384,7 +384,7 @@
                         data-animation-in="slideInUp"
                         data-animation-out="fadeOut">
                       <a id="accessibilityDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accessibilityDropdownMenu">
-                        My Galllery
+                        My Gallery
                       </a>
 
                       <ul id="accessibilityDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accessibilityDropdown">
