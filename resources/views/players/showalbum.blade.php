@@ -344,7 +344,7 @@
                           data-event="hover"
                           data-animation-in="slideInUp"
                           data-animation-out="fadeOut">
-                        <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+                    <a id="generalDropdown" class="nav-link u-header__nav-link " href="/{{$players->usernmae}}" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
                           General
                         </a>
 

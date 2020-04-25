@@ -342,9 +342,9 @@
                         data-event="hover"
                         data-animation-in="slideInUp"
                         data-animation-out="fadeOut">
-                      <a id="generalDropdown" class="nav-link u-header__nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
-                        General
-                      </a>
+                        <a id="generalDropdown" class="nav-link u-header__nav-link " href="/{{$players->username}}" aria-haspopup="true" aria-expanded="false" aria-labelledby="generalDropdownMenu">
+                            General
+                          </a>
 
                     </li>
                     <!-- General -->
@@ -388,8 +388,9 @@
                       </a>
 
                       <ul id="accessibilityDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accessibilityDropdown">
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">Videos</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="api-token.html">Images</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="/gallery/{{$players->username}}">Image Gallery</a></li>
+
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="invite-friends.html">My Videos</a></li>
                       </ul>
                     </li>
                     <!-- Accessibility -->
