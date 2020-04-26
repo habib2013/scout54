@@ -42,14 +42,14 @@
       <div class="col-lg-5 col-xl-4  d-none d-lg-flex align-items-center bg-navy vh-lg-100 px-0 relogin" style="background-image: url(../../assets/img/1920x800/02.jpg);background-size: 100% 100%;">
          <div class="overlay"></div>
          <div class="w-100 p-5" style="position: absolute;">
-     
+
          <div class="cont_here" style="position: relative;color: #ffffff;">
-     
+
        <br>
      <h2>Join scout54' {{ isset($url) ? ucwords($url) : ""}}</h2>
-    
 
-       
+
+
             </div>
 
         </div>
@@ -66,31 +66,31 @@
                    <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"/>
                    <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
                  </svg>
-     
-         
+
+
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
                </button>
-             
+
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav mr-auto smallers" >
                    <li class="nav-item myactive">
                      <a class="nav-link" href="/" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
                    </li>
-               
-                
-                
+
+
+
                  </ul>
      <div class="mt-2"></div>
      <button type="button" class="bt" data-toggle="modal" data-target="#loginModal"> <a
        class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
        href="#">Login</a></button>
-     
+
                  <button type="button" class="bt" data-toggle="modal" data-target="#registerModal"> <a
                    class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
                    href="#">Register</a></button>
-     
+
                    <div class="modal fade" id="registerModal">
               <div class="modal-dialog">
                   <div class="modal-content">
@@ -104,7 +104,7 @@
                       <!-- Modal body -->
                       <div class="modal-body" style="padding-right: 34px;">
                           <div class="pop_iner">
-      
+
                               <ul>
                                   <li><a href="/register/coach">
                                           <div class="imgg"><img
@@ -115,12 +115,12 @@
                                       <li>
                                       <a href="/register/player">
                                         <div class="imgg"><img
-                                              
+
                                                 src="../../assets/illustrators/rener.png"
                                                 class="img-fluid"></div>
                                         <p>Player</p>
                                     </a></li>
-                                  
+
                                   <li><a href="/register/club">
                                           <div class="imgg"><img
                                                   src="../../assets/illustrators/realfc.png"
@@ -137,7 +137,7 @@
                           </div>
                       </div>
 
-         
+
 
                   </div>
               </div>
@@ -166,12 +166,12 @@
 
                                 <li><a href="/login/player">
                                   <div class="imgg"><img
-                                        
+
                                           src="../../assets/illustrators/rener.png"
                                           class="img-fluid"></div>
                                   <p>Player</p>
                               </a></li>
-                            
+
                             <li><a href="/login/club">
                                     <div class="imgg"><img
                                             src="../../assets/illustrators/realfc.png"
@@ -188,14 +188,14 @@
                         </div>
                     </div>
 
-       
+
 
                 </div>
             </div>
         </div>
                </div>
              </nav>
-        
+
              @isset($url)
                     <form  method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
                     @else
@@ -203,25 +203,25 @@
                     @endisset
                         @csrf
 
-          
+
               <!-- Title -->
               <div class="mb-5 mb-md-5" >
               </div>
               <div class="mb-3 mb-md-3" >
            </div>
               <!-- End Title -->
-       
+
 
               <!-- Form Group -->
               <div class="row">
 
-              
+
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Username</label>
                 <input type="text"  id="username" tabindex="1" aria-label="Username"
                        data-msg="Please enter a valid Username." class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-            
+
                        @error('username')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
@@ -236,26 +236,26 @@
 
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Club Name</label>
-    <input type="text"  id="clubname" tabindex="1"  aria-label="Full name" 
+    <input type="text"  id="clubname" tabindex="1"  aria-label="Full name"
            data-msg="Please enter a valid Club name." class="form-control @error('clubname') is-invalid @enderror" name="clubname" value="{{ old('clubname') }}" required autocomplete="clubname" autofocus>
            @error('username')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
 @enderror
- 
+
   </div>
 @else
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Full Name</label>
-    <input type="text"  id="fullname" tabindex="1"  aria-label="Full name" 
+    <input type="text"  id="fullname" tabindex="1"  aria-label="Full name"
            data-msg="Please enter a valid Full name." class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
            @error('username')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
 @enderror
- 
+
   </div>
 
 @endif
@@ -266,20 +266,20 @@
 
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <label class="input-label" for="signinSrEmail">Email Address</label>
-    <input type="email"  id="email" tabindex="1"  aria-label="Email address" 
+    <input type="email"  id="email" tabindex="1"  aria-label="Email address"
            data-msg="Please enter a valid email." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" >
            @error('email')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
 @enderror
- 
+
   </div>
- 
+
   @if(isset($url) && $url == 'club')
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Date Of Establishment </label>
-              <div class="js-form-message form-group">            
+              <div class="js-form-message form-group">
                 <input type="date"   id="date" tabindex="1" required
                        data-msg="Please enter a valid date." class="form-control @error('date') is-invalid @enderror" name="date_est" value="<?php echo date("Y-m-d"); ?>" required autocomplete="date">
                        @error('phone')
@@ -288,13 +288,13 @@
 </span>
 @enderror
           </div>
-              </div>  
+              </div>
 
 @else
 
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Status as professional</label>
-  
+
 <select name="status" id="status" class="form-control">
 
 <option value="never had a contract">Never had a contract</option>
@@ -311,10 +311,10 @@
 </div>
 
 @endif
-              
+
               </div>
 
-  
+
 
             <div class="row">
 
@@ -322,8 +322,8 @@
 
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Country</label>
-              <div class="js-form-message form-group">            
-             
+              <div class="js-form-message form-group">
+
 
               <div>
 				<input id="country_selector" type="text" class="form-control">
@@ -332,7 +332,7 @@
 			<div class="form-item" style="display:none;">
 				<input type="text" id="country_selector_code" class="form-control" name="nationality" data-countrycodeinput="1" readonly />
 			</div>
-		
+
               </div>
               </div>
 
@@ -340,7 +340,7 @@
 
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Date Of Birth</label>
-              <div class="js-form-message form-group">            
+              <div class="js-form-message form-group">
                 <input type="date"   id="date" tabindex="1" required
                        data-msg="Please enter a valid date." class="form-control @error('phone') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday">
                        @error('phone')
@@ -349,14 +349,14 @@
 </span>
 @enderror
           </div>
-              </div>     
+              </div>
 
 @else
 
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
               <label class="input-label">Phone number</label>
-              <div class="js-form-message form-group">            
-                <input type="tel"   id="phone" tabindex="1" 
+              <div class="js-form-message form-group">
+                <input type="tel"   id="phone" tabindex="1"
                        data-msg="Please enter a valid Phone number." class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}"  autocomplete="phone">
                        @error('phone')
 <span class="invalid-feedback" role="alert">
@@ -364,14 +364,14 @@
 </span>
 @enderror
           </div>
-              </div> 
+              </div>
 
-     @endif 
+     @endif
 
             </div>
 
-            
-            
+
+
               <!-- End Form Group -->
 
               <!-- Form Group -->
@@ -384,7 +384,7 @@
            password
             </span>
       </label>
-      <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  id="signinSrPassword" tabindex="2"  aria-label="********" 
+      <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  id="signinSrPassword" tabindex="2"  aria-label="********"
              data-msg="Your password is invalid. Please try again." value="password">
              @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -401,16 +401,16 @@
           Confirm password
         </span>
       </label>
-    
+
       <input value="password"  id="input-password-confirm" placeholder="confirm password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-     
+
        </div>
   </div>
 </div>
 
 
 <!-- <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                           
+
                             <div class="col-md-6">
                                 {!! app('captcha')->display() !!}
                                 @if ($errors->has('g-recaptcha-response'))
@@ -512,31 +512,31 @@
 
 
 
-    
+
 <script type="text/javascript">
   $("body").on("click",".register_button",function(e){
    var date = $('#date').val();
-  
+
    if(date == ''){
      alert('Date cannot be empty');
      $(".register_button").removeAttr("disabled");
     $(".register_button").html('GET STARTED');
 
    }
-    
+
 
     $(this).parents("form").ajaxForm(options);
-  
-// setTimeout(() => {
-//   $(".register_button").attr("disabled", "disabled");
-//     $(".register_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
-       
-// }, 1000);
+
+setTimeout(() => {
+  $(".register_button").attr("disabled", "disabled");
+    $(".register_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+
+}, 1000);
 
   });
 
-  var options = { 
-    complete: function(response) 
+  var options = {
+    complete: function(response)
     {
     	if($.isEmptyObject(response.responseJSON.error)){
         swal({
@@ -546,7 +546,7 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'SUCCESS ⚽!',
     }
     );
@@ -554,7 +554,7 @@
     $(".register_button").removeAttr("disabled");
     $(".register_button").html('GET STARTED');
 
-       window.location.href = '/success/email';           
+       window.location.href = '/success/email';
 
     	}else{
     		printErrorMsg(response.responseJSON.error);
@@ -570,7 +570,7 @@
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'ERROR!',
     }
     );
@@ -586,7 +586,7 @@
   <!-- JS Plugins Init. -->
 
 
-  
+
   <script>
     $(document).on('ready', function () {
       // initialization of slick carousel
@@ -595,7 +595,7 @@
         var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
       });
 
-    
+
       // initialization of form validation
       $('.js-validate').each(function () {
         var validation = $.HSCore.components.HSValidation.init($(this));
