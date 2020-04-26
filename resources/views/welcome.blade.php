@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-  CSS Front Template
+
   <link rel="stylesheet" href="../../assets/css/theme.css">
 
 </head>
@@ -223,7 +223,7 @@
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .6;
+    opacity: .2;
     width: 100%;
     background: rgba(139, 169, 235, 0.5);"></div>
             <div class="container space-3 space-top-md-5 space-top-lg-3">

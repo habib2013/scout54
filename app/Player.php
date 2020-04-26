@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Player extends Authenticatable implements MustVerifyEmail
 {
-  
+
     use Notifiable;
 
     protected $guard = 'player';
@@ -53,7 +53,7 @@ class Player extends Authenticatable implements MustVerifyEmail
     //     });
     // }
 
-   
+
     public function playerprofile(){
         return $this->hasOne('App\PlayerProfile');
     }
@@ -64,9 +64,13 @@ class Player extends Authenticatable implements MustVerifyEmail
     public function playervideos(){
         return $this->hasOne('App\PlayerVideos');
     }
-  
+
     public function verifyUser()
     {
     return $this->hasOne('App\VerifyUser');
+    }
+
+    public function albums(){
+        return $this->hasMany('App\Album');
     }
 }

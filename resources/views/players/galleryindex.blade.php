@@ -496,38 +496,7 @@ No album here
                     {{$album -> id}}
                       </a>
                     </div>
-                    <div class="col-6 text-right">
-                      <!-- Settings -->
-                      <div class="position-relative">
-                        <a id="settingsDropdown9Invoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent rounded" href="javascript:;" role="button"
-                           aria-controls="settingsDropdown9"
-                           aria-haspopup="true"
-                           aria-expanded="false"
-                           data-unfold-event="click"
-                           data-unfold-target="#settingsDropdown9"
-                           data-unfold-type="css-animation"
-                           data-unfold-duration="300"
-                           data-unfold-delay="300"
-                           data-unfold-hide-on-scroll="true"
-                           data-unfold-animation-in="slideInUp"
-                           data-unfold-animation-out="fadeOut">
-                          <span class="fa fa-ellipsis-h btn-icon__inner"></span>
-                        </a>
-
-                        <div id="settingsDropdown9" class="dropdown-menu dropdown-unfold" aria-labelledby="settingsDropdown9Invoker" style="min-width: 160px;">
-                          <a class="dropdown-item" href="#">
-                            <small class="fa fa-trash dropdown-item-icon"></small>
-                            Settings
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <small class="fa fa-code-branch dropdown-item-icon"></small>
-                            Repository
-                          </a>
-
-                        </div>
-                      </div>
-                      <!-- End Settings -->
-                    </div>
+                  
                   </div>
                   <!-- End List of Icons -->
 

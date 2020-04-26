@@ -9,6 +9,7 @@ use App\Album;
 use App\Player;
 use Validator;
 use Illuminate\Support\Str;
+use Auth;
 
 class AlbumsController extends Controller
 {
@@ -21,20 +22,33 @@ class AlbumsController extends Controller
 
     public function galleryindex($username)
     {
-        $players = Player::where('username','=',$username)->firstorFail();
-        $albums = Album::with('Photos')->get();
-        return view('players.galleryindex',compact('albums','players'));
+         $players = Player::where('username','=',$username)->firstorFail();
+        //   $player_id =  Auth::guard('player')->user()->id;
+        //   dd($player_id);
+if(empty(Auth::guard('player')->user()->id)){
+    $players = Player::where('username','=',$username)->firstorFail();
+    $albums = Album::with('Photos')->get();
+    return view('players.emptyalbum',compact('players'));
+}
+else{
+    $players = Player::where('username','=',$username)->firstorFail();
+    // $player_id =  Auth::guard('player')->user()->id;
+$player_id = $players->id;
+
+    $albums = Album::where("player_id","=",$player_id)->with('Photos')->get();
+    return view('players.galleryindex',compact('albums','players'));
+}
     }
 
 
-    // public function getAlbum($id)
-    // {
-    //     $album = Album::with('Photos')->find($id);
-    //     $albums = Album::with('Photos')->get();
-    //     //dd($album);
-    //     return view('images.album', ['album'=>$album, 'albums'=>$albums]);
-    //     //->with('album',$album);
-    // }
+    public function getAlbum($id)
+    {
+        $album = Album::with('Photos')->find($id);
+        $albums = Album::with('Photos')->get();
+        //dd($album);
+        return view('images.album', ['album'=>$album, 'albums'=>$albums]);
+        //->with('album',$album);
+    }
     public function getmyAlbum($username,$id)
     {
         $players = Player::where('username','=',$username)->firstorFail();
@@ -80,6 +94,7 @@ class AlbumsController extends Controller
           'name' => $request->get('name'),
           'description' => $request->get('description'),
           'cover_image' => $filename,
+          'player_id' => Auth::guard('player')->user()->id
         ));
 
         return redirect()->route('show_album',['id'=>$album->id]);

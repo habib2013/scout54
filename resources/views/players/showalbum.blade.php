@@ -510,103 +510,14 @@
             <!-- End Filter -->
           </div>
 
-          <div class="mb-7">
-<div class="row">
 
-
-
-            <div class="col-xs-12 col-lg-4 col-md-4 card-deck d-block d-md-flex">
-
-              <div class="card mb-5">
-                <div class="card-body p-4">
-                  <!-- List of Icons -->
-                  <div class="row justify-content-between align-items-center mb-4">
-                    <div class="col-6">
-                      <a class="small text-secondary" href="#">
-                        <span class="fa fa-bookmark text-primary mr-1"></span>
-                    {{$album -> id}}
-                      </a>
-                    </div>
-                    <div class="col-6 text-right">
-                      <!-- Settings -->
-                      <div class="position-relative">
-                        <a id="settingsDropdown9Invoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent rounded" href="javascript:;" role="button"
-                           aria-controls="settingsDropdown9"
-                           aria-haspopup="true"
-                           aria-expanded="false"
-                           data-unfold-event="click"
-                           data-unfold-target="#settingsDropdown9"
-                           data-unfold-type="css-animation"
-                           data-unfold-duration="300"
-                           data-unfold-delay="300"
-                           data-unfold-hide-on-scroll="true"
-                           data-unfold-animation-in="slideInUp"
-                           data-unfold-animation-out="fadeOut">
-                          <span class="fa fa-ellipsis-h btn-icon__inner"></span>
-                        </a>
-
-                        <div id="settingsDropdown9" class="dropdown-menu dropdown-unfold" aria-labelledby="settingsDropdown9Invoker" style="min-width: 160px;">
-                          <a class="dropdown-item" href="{{route('add_image',array('id'=>$album->id))}}">
-                            <small class="fa fa-plus dropdown-item-icon"></small>
-                            Create new Image
-                          </a>
-                          <a class="dropdown-item" href="{{route('delete_album',array('id'=>$album->id))}}">
-                            <small class="fa fa-trash dropdown-item-icon"></small>
-                            Delete Album
-                          </a>
-
-                        </div>
-                      </div>
-                      <!-- End Settings -->
-                    </div>
-                  </div>
-                  <!-- End List of Icons -->
-
-                  <div class="text-center">
-                    <div class="u-lg-avatar mx-auto mb-3">
-                      <img class="img-fluid" style="height:100px;width:170px" src="/albums/{{$album->cover_image}}" alt="Image Description">
-                    </div>
-
-                    <!-- Title -->
-                    <div class="mb-4">
-                        <h5>{{$album->name}}</h5>
-                  <p>{{$album->description}}</p>
-
-
-
-                </div>
-
-                    <!-- End Title -->
-
-                    <!-- End Members List -->
-                  </div>
-                </div>
-
-                <div class="card-footer text-center">
-                  <!-- Budget & Priority -->
-                  <div class="row align-items-center">
-                    <div class="col-6 u-ver-divider">
-                      <h5 class="small font-weight-normal text-secondary mb-0">Photos</h5>
-                      <span class="text-dark">{{count($album->Photos)}}</span>
-                    </div>
-                    <div class="col-6">
-                      <h5 class="small font-weight-normal text-secondary mb-0">Created date</h5>
-                      <span class="fa fa-date text-danger small"></span>
-                      <span class="text-dark">{{ date("d F Y",strtotime($album->created_at)) }}</span>
-                    </div>
-                  </div>
-                  <!-- End Budget & Priority -->
-                </div>
-              </div>
-              <!-- End Projects -->
-            </div>
 
             <div class="container">
 <div class="row">
 
     @foreach($album->Photos as $photo)
-    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 ml-2 mr-3 mt-3"">
-    <div class="card contwe"  style="width: 20rem;">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 ml-1 mr-3 mt-3"">
+    <div class="card contwe"  style="width: 18rem;">
     <div class="overlay">{{$photo->description}}</div>
         <img class="image card-img-top"  style="max-height:200px;min-height:200px" src="/albums/{{$photo->image}}" alt="Card image cap">
 @if((Auth::guard('player')->user()->username) != $players->username)
