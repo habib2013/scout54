@@ -77,7 +77,7 @@ class RegisterController extends Controller
         'phone' => ['required','min:11','max:11'],
         'nationality' => 'required',
         'password' => ['required', 'string', 'min:8', 'confirmed'],
-      
+
       ]);
 
       if($validator->passes()){
@@ -88,7 +88,7 @@ class RegisterController extends Controller
       }
 
     // return redirect()->intended('login/player');
-    return response()->json(['error'=>$validator->errors()->all()]);  
+    return response()->json(['error'=>$validator->errors()->all()]);
 
 
     }
@@ -122,12 +122,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             // 'g-recaptcha-response' => 'required|captcha',
         ]);
-  
-      
+
+
         session()->flash('message', '<b>Hi there!</b> Thanks for signing up!');
         session()->flash('type', 'success');
         \Mail::to($user)->send(new HelloThere($user));
-        
+
         return $user;
     }
 
@@ -162,12 +162,12 @@ class RegisterController extends Controller
             'birthday' => 'required',
             'nationality' => 'required',
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-          
+
           ]);
-    
-          if($validator->passes()){         
+
+          if($validator->passes()){
               $input = $request->all();
-              $player = $input['email'];        
+              $player = $input['email'];
               $input['password'] = Hash::make($request->password);
             $players =  Player::create($input);
 
@@ -181,25 +181,14 @@ class RegisterController extends Controller
                       'description' => $players->username)
             );
 
-            DB::table('player_pictures')->insert(
-              array('player_id' => $players->id,
-                    'title' => $players->username)
-          );
-
-          DB::table('player_videos')->insert(
-            array('player_id' => $players->id,
-                  'title' => $players->username)
-        );
-
-        
               \Mail::to($players->email)->send(new VerifyMail($players));
-            
+
                return response()->json(['success'=>'done']);
                return $players;
-               
+
           }
 
-        return response()->json(['error'=>$validator->errors()->all()]);    
+        return response()->json(['error'=>$validator->errors()->all()]);
     }
 
 
@@ -215,9 +204,9 @@ class RegisterController extends Controller
             'phone' => ['required','min:11','max:11','unique:agents'],
             'nationality' => 'required',
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-          
+
           ]);
-    
+
           if($validator->passes()){
               $input = $request->all();
               $input['password'] = Hash::make($request->password);
@@ -226,22 +215,22 @@ class RegisterController extends Controller
           }
 
         // return redirect()->intended('login/player');
-        return response()->json(['error'=>$validator->errors()->all()]);  
+        return response()->json(['error'=>$validator->errors()->all()]);
     }
 
     protected function createClub(Request $request)
     {
- 
+
     $validator = Validator::make($request->all(), [
         'username' => ['required','string','unique:agents'] ,
         'clubname' => 'required',
         'email' => ['required','string', 'email', 'max:255', 'unique:agents'],
-       
+
         'date_est' => 'required',
         'phone' => ['required','min:11','max:11','unique:agents'],
         'nationality' => 'required',
         'password' => ['required', 'string', 'min:8', 'confirmed'],
-      
+
       ]);
 
       if($validator->passes()){
@@ -252,7 +241,7 @@ class RegisterController extends Controller
       }
 
     // return redirect()->intended('login/player');
-    return response()->json(['error'=>$validator->errors()->all()]);  
+    return response()->json(['error'=>$validator->errors()->all()]);
 
     }
 

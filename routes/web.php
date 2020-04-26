@@ -5,6 +5,7 @@ use App\Player;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use App\Mail\HelloThere;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,11 @@ Auth::routes(['verify' => true]);
      \Mail::to($user)->send(new HelloThere($user));
  });
 
+Route::post('logout',function(){
+    Auth::logout();
+    Session::flush();
+    return Redirect::to('/');
+})->name('logout');
 
  Auth::routes(['verify' => true]);
 
@@ -80,6 +86,7 @@ Route::get('/success/email', 'Auth\RegisterController@successemail');
 Route::post('/uploadimage','ProfilesController@uploadimage')->name('uploadimage');
 Route::post('/updateuserprofile','ProfilesController@updateuserprofile')->name('updateuserprofile');
 Route::post('/updatepersonal','ProfilesController@updatepersonal')->name('updatepersonal');
+Route::post('/updatecareer','ProfilesController@updatecareer')->name('updatecareer');
 
 Route::get('/gallery/{username}', array('as' => 'galleryindex','uses' => 'AlbumsController@galleryindex'));
 

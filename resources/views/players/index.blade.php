@@ -477,38 +477,7 @@
             <!-- End Info -->
 
             <!-- Collections -->
-            <ul class="list-inline d-flex align-items-center">
 
-
-
-
-<div class="pl-3"></div>
-Connect with me on:
-<li class="list-inline-item mb-3 mb-sm-0">
-                <div class="d-flex align-items-center pl-4">
-                  <img class="mr-2" src="../../images/logo/fb_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
-                 {{-- <i class="fa fa-facebook"></i> --}}
-
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
-                <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../images/logo/insta_logo.png"  style="height:25px;width:25px" alt="Image Description" style="width: 40px;">
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>  <li class="list-inline-item mb-3 mb-sm-0 pl-4">
-                <div class="d-flex align-items-center">
-                  <img class="mr-2" src="../../images/logo/twitter_logo.png" style="height:25px;width:25px"  alt="Image Description" style="width: 40px;">
-                  <div class="text-secondary">
-
-                  </div>
-                </div>
-              </li>
-            </ul>
             <!-- End Collections -->
 
             <hr class="my-7">
@@ -622,6 +591,85 @@ Connect with me on:
             <!-- End Icon Blocks -->
 
             <hr class="my-7">
+
+            <h3>Career Information</h3>
+            <hr>
+            <div class="row">
+
+              <div class="col-md-6 col-lg-6">
+                <!-- List Group -->
+                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+
+
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span class="">⚽</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Current Tournament:</span>
+                        {{$players->playerprofile->currnt_tournamnt ?? 'No tournament'}}
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span>⛺</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Current club:</span>
+                        {{$players->playerprofile->current_club ?? "No Club"}}
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span>🆔</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Squad Number:</span>
+                        {{$players->playerprofile->squad_number ?? '3'}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- End List Group -->
+              </div>
+
+              <div class="col-md-6 col-lg-6">
+                <!-- List Group -->
+                <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
+
+
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span>🚏</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Position:</span>
+                        {{$players->playerprofile->position ?? 'Defender'}}
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span>🐾</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Prefered Foot:</span>
+                        {{$players->playerprofile->prefered_foot ?? ''}}
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item pt-0 pb-4">
+                    <div class="media">
+                      <span>👨🏼‍✈️</span>
+                      <div class="media-body text-lh-sm">
+                        <span class="d-block mb-1">Player's Aggent:</span>
+                        {{$players->playerprofile->players_agent ?? 'No Agent'}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- End List Group -->
+              </div>
+
+            </div>
 
             <!-- Info -->
 

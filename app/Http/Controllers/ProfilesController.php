@@ -89,16 +89,6 @@ if($birthday == ''){
         $result = DB::update(DB::raw("update players set fullname=:fullname,status=:status,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'status'=>$status,'nationality'=>$nationality));
 
 }
-// elseif($status == ''){
-//         $result = DB::update(DB::raw("update players set fullname=:fullname,birthday=:birthday,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'birthday'=>$birthday,'nationality'=>$nationality));
-
-// }
-
-// elseif(($birthday == '') && ($status == '')){
-//         $result = DB::update(DB::raw("update players set fullname=:fullname,nationality=:nationality where id=:id"),array('fullname'=>$fullname,'id'=>$id,'nationality'=>$nationality));
-
-// }
-
 else{
     $result = DB::update(DB::raw("update players set fullname=:fullname,status=:status,nationality=:nationality,birthday=:birthday where id=:id"),array('fullname'=>$fullname,'id'=>$id,'status'=>$status,'nationality'=>$nationality,'birthday'=>$birthday));
 
@@ -146,6 +136,37 @@ else{
 }
 
 }
+
+public function updatecareer(Request $request){
+    $validator = Validator::make($request->all(),[
+        'currnt_tournamnt'=>'',
+        'current_club' => '',
+        'squad_number' => '',
+        'position' => '',
+        'prefered_foot' => '',
+        'players_agent' => '',
+    ]);
+    if($validator->passes()){
+    $input = $request->all();
+    $currnt_tournamnt = $input['currnt_tournamnt'];
+    $current_club = $input['current_club'];
+    $squad_number = $input['squad_number'];
+    $position = $input['position'];
+    $prefered_foot = $input['prefered_foot'];
+    $players_agent = $input['players_agent'];
+    $id = Auth::guard('player')->user()->id;
+
+    $result = DB::update(DB::raw("update player_profiles set currnt_tournamnt=:currnt_tournamnt,current_club=:current_club,squad_number=:squad_number,position=:position,prefered_foot=:prefered_foot,players_agent=:players_agent where id=:id"),array('currnt_tournamnt'=>$currnt_tournamnt,'id'=>$id,'current_club'=>$current_club,'squad_number'=>$squad_number,'position'=>$position,'prefered_foot'=>$prefered_foot,'players_agent'=>$players_agent));
+
+
+    return response()->json(['success'=>'done']);
+    }
+    else{
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+    }
+
+    }
 
 
         public function download($file){

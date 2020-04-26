@@ -647,72 +647,121 @@
 
         <!-- Title -->
         <div class="mb-5">
-          <h3 class="h5 mb-1">Social profiles</h3>
 
         </div>
         <!-- End Title -->
 
-        <!-- Social Profiles Form -->
-        <form class="js-validate">
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state form-group">
-              <div class="input-group">
-                <div id="dribbleProfileLabel" class="input-group-prepend">
-                  <span class="input-group-text">https://facebook.com/</span>
+        <h3>Edit Career Information</h3>
+        <form method="POST" action="/updatecareer" enctype="multipart/form-data">
+            @csrf
+              <div class="row">
+                <!-- Input -->
+                <div class="col-sm-6 mb-6">
+                  <div class="js-form-message">
+                    <label id="nameLabel" class="form-label">
+                   Current Tournament
+                      <span class="text-danger">*</span>
+                    </label>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="currnt_tournamnt" value="{{$players->playerprofile->currnt_tournamnt ?? 'No tournament'}}" placeholder="Enter your name" aria-label="Enter your name" required aria-describedby="nameLabel"
+                             data-msg="Please enter your name."
+                             data-error-class="u-has-error"
+                             data-success-class="u-has-success">
+                       </div>
+                  </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Facebook name" aria-label="facebook name" required aria-describedby="dribbleProfileLabel"
-                       data-msg="Please enter a valid URL address."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <small class="form-text text-muted">Add your Facebook profile name (e.g. Keem_of_africa)</small>
-            </div>
-          </div>
-          <!-- End Input Group -->
+                <!-- End Input -->
 
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state form-group">
-              <div class="input-group">
-                <div id="twitterProfileLabel" class="input-group-prepend">
-                  <span class="input-group-text">http://twitter.com/</span>
+                <!-- Input -->
+                <div class="col-sm-6 mb-6">
+                  <div class="js-form-message">
+                    <label id="usernameLabel" class="form-label">
+                      Current Club
+                      <span class="text-danger"></span>
+                    </label>
+
+                    <div class="form-group">
+                      <input  type="text" class="form-control" name="current_club" value="{{$players->playerprofile->current_club ?? "No Club"}}" placeholder="Enter your username" aria-label="Enter your username" required aria-describedby="usernameLabel"
+                             data-msg="Please enter your username."
+                             data-error-class="u-has-error"
+                             data-success-class="u-has-success">
+                    </div>
+                  </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Twitter name" aria-label="Twitter profile" required aria-describedby="twitterProfileLabel"
-                       data-msg="Please enter a valid URL address."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
+                <!-- End Input -->
               </div>
-              <small class="form-text text-muted">Add your Twitter username (e.g. Keem_of_africa)</small>
-            </div>
-          </div>
-          <!-- End Input Group -->
 
-          <!-- Input Group -->
-          <div class="mb-6">
-            <div class="js-focus-state form-group">
-              <div class="input-group">
-                <div id="facebookProfileLabel" class="input-group-prepend">
-                  <span class="input-group-text">http://www.instagram.com/</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Instagram name" aria-label="Facebook profile" required aria-describedby="facebookProfileLabel"
-                       data-msg="Please enter a valid URL address."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
+
+
+              <div class="row pb-5">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+            <label class="form-label">
+             Squad Number
+                <span class="text-danger">*</span>
+              </label>
+              <input type="number" name="squad_number" value="{{$players->playerprofile->squad_number ?? '3'}}" id="squad_number" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-6">
+            <label class="form-label">
+               Position
+                <span class="text-danger">*</span>
+              </label>
+              <select name="position" id="position" class="form-control">
+              <option value="{{$players->playerprofile->position ?? 'Defender'}}">{{$players->playerprofile->position ?? 'Defender'}}</option>
+              <hr class="mt-1 mb-7">
+            <option value="Mid-fielder">Mid-fielder</option>
+            <option value="Goal Keeper">Goal Keeper</option>
+            <option value="Attacker">Attacker</option>
+            <option value="Striker">Striker</option>
+
+
+            </select>
+            </div>
+
+
               </div>
-              <small class="form-text text-muted">Input your Facebook username (e.g. Keem_of_africa)</small>
-            </div>
-          </div>
-          <!-- End Input Group -->
 
-          <!-- Input Group -->
 
-          <!-- End Input Group -->
+              <div class="row">
+              <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                  <label class="input-label">Prefered Foot</label>
+                  <div class="js-form-message form-group">
 
-          <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">Update Social Profiles</button>
-          <button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover">Cancel</button>
-        </form>
-        <!-- End Social Profiles Form -->
+<select name="prefered_foot" id="prefered_foot" class="form-control">
+<option value="{{$players->playerprofile->prefered_foot}}">{{$players->playerprofile->prefered_foot}}</option>
+
+<option value="Right">Right</option>
+<option value="Both Legs">Both Legs</option>
+<option value="Left">Left</option>
+</select>
+
+                  </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <label class="input-label">Player's Agent</label>
+                    <div class="js-form-message form-group">
+
+                    <input type="text" id="players_agent" class="form-control" name="players_agent" value="{{$players->playerprofile->players_agent}}"  />
+
+                    </div>
+                    </div>
+
+
+
+
+              </div>
+
+            <input type="hidden" name="user_id" id="user_id" value="{{$players->id}}">
+              <br>
+            <button type="submit" class="btn btn-primary submit_career_profile">Save Changes</button>
+
+
+            </form>
+            <br>
+
       </div>
     </div>
     <!-- End Content Section -->
@@ -1029,6 +1078,70 @@ $(document).ready(function(){
 });
 
 </script>
+
+<script type="text/javascript">
+    $("body").on("click",".submit_career_profile",function(e){
+
+      $(this).parents("form").ajaxForm(update_career);
+
+  // setTimeout(() => {
+  //   $(".btn_send_upload").attr("disabled", "disabled");
+  //     $(".btn_send_upload").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
+
+  // }, 1000);
+
+    });
+
+    var update_career = {
+      complete: function(response)
+      {
+          if($.isEmptyObject(response.responseJSON.error)){
+          swal({
+          title: "Career Information Updated Successfully",
+          text: "Your career profile has been updated",
+          type: "success",
+          dangerMode: true,
+          showCancelButton: false,
+          dangerMode: false,
+
+          confirmButtonText: 'SUCCESS ⚽!',
+      }
+      );
+
+      // $(".btn_send_upload").removeAttr("disabled");
+      // $(".btn_send_upload").html('✔');
+
+
+          }else{
+              printErrorMsg(response.responseJSON.error);
+          }
+      }
+    };
+    function printErrorMsg (msg) {
+      // $(".btn_send_upload").removeAttr("disabled");
+      // $(".btn_send_upload").html('✔');
+
+
+      $.each( msg, function( key, value ) {
+      swal({
+          title: "Upload Error",
+          text: value,
+          type: "error",
+          dangerMode: true,
+          showCancelButton: false,
+          dangerMode: false,
+
+          confirmButtonText: 'ERROR!',
+      }
+      );
+
+      });
+    // $(".btn_send_upload").removeAttr("disabled");
+    //   $(".btn_send_upload").html('✔');
+
+
+    }
+  </script>
 
 
   <script type="text/javascript">

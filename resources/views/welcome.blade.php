@@ -88,12 +88,12 @@
 
             </ul>
 <div class="mt-2"></div>
-<button type="button" class="bt" data-toggle="modal" data-target="#loginModal"> <a
-  class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
-  href="#">Login</a></button>
+<button style="border:1px solid #ffffff;border-radius:5px" type="button" class="mr-3" data-toggle="modal" data-target="#loginModal"> <a
+  class="pop_up_btn nav-link text-whiterounded"
+  href="#" style="color:blue">Login</a></button>
 
-            <button type="button" class="bt" data-toggle="modal" data-target="#registerModal"> <a
-              class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
+            <button style="border:1px solid #ffffff;border-radius:5px" type="button" class="bt" data-toggle="modal" data-target="#registerModal"> <a
+              class="pop_up_btn nav-link text-white"
               href="#">Register</a></button>
 
             <div class="modal fade" id="registerModal">
@@ -313,7 +313,7 @@
               <h3 class="h5 text-white">
                 <strong class="u-hero-v1__last-next">Our Mission</strong>
               </h3>
-              <p class="text-white-70 mb-0" style="color: #381bbb;">1. Connect you to world class players,scouts,agents,coaches and clubs.</p>
+              <p class="text-white-70 mb-0" style="color: #381bbb;">Connect you to world class players,scouts,agents,coaches and clubs.</p>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@
 
                   <strong class="u-hero-v1__last-next">Our Mission</strong>
                 </h3>
-                <p class="mb-0"  style="color: #381bbb;" >2. To provide platform to showcase the glory of African players globally.</p>
+                <p class="mb-0"  style="color: #381bbb;" > To provide platform to showcase the glory of African players globally.</p>
               </div>
             </div>
           </div>
@@ -340,8 +340,8 @@
               <h3 class="h5 text-white">
                 <strong class="u-hero-v1__last-prev" style="color: #ffffff;">Our Mision:</strong>
               </h3>
-              <p class="mb-0"  style="color: #ffffff;" >3. To see hope in players and help them realise their dreams</p>
-              <p class="mb-0"  style="color: #ffffff;" >4. To showcase players based on talent,excellence and integrity</p>
+              <p class="mb-0"  style="color: #ffffff;" > To see hope in players and help them realise their dreams</p>
+              <p class="mb-0"  style="color: #ffffff;" > To showcase players based on talent,excellence and integrity</p>
 
             </div>
           </div>
