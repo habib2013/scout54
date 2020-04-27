@@ -139,7 +139,7 @@
 
     <div class="u-header__section">
       <!-- Topbar -->
-     
+
       <!-- End Topbar -->
 
       <div id="logoAndNav" class="container">
@@ -182,7 +182,7 @@
                 <a  class="nav-link " href="javascript:;" aria-haspopup="true" aria-expanded="false">Home</a>
 
                 <!-- Home - Mega Menu -->
-           
+
                 <!-- End Home - Mega Menu -->
               </li>
               <!-- End Home -->
@@ -195,8 +195,8 @@
                 <a id="pagesMegaMenu" class="nav-link" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Pages</a>
 
                 <!-- Pages - Submenu -->
-            
-                
+
+
                 <!-- End Pages - Submenu -->
               </li>
               <!-- End Pages -->
@@ -209,7 +209,7 @@
                 <a id="blogMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Blog</a>
 
                 <!-- Blog - Submenu -->
-             
+
                 <!-- End Submenu -->
               </li>
               <!-- End Blog -->
@@ -224,7 +224,7 @@
                 <a id="shopMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Shop</a>
 
                 <!-- Shop - Mega Menu -->
-             
+
                 <!-- End Shop - Mega Menu -->
               </li>
               <!-- End Shop -->
@@ -239,7 +239,7 @@
                 <a id="demosMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Demos</a>
 
                 <!-- Demos - Mega Menu -->
-              
+
 
                 <!-- End Demos - Mega Menu -->
               </li>
@@ -255,14 +255,14 @@
                 <a id="docsMegaMenu" class="nav-link u-header__nav-link   " href="javascript:;" aria-haspopup="true" aria-expanded="false">Docs</a>
 
                 <!-- Docs - Submenu -->
-               
+
                 <!-- End Docs - Submenu -->
               </li>
               <!-- End Docs -->
 
               <!-- Button -->
               <li class="nav-item u-header__nav-last-item">
-              
+
               </li>
               <!-- End Button -->
             </ul>
@@ -513,8 +513,22 @@
                     <div class="media">
                       <span class="fas fa-envelope list-group-icon mr-3"></span>
                       <div class="media-body text-lh-sm">
-                        <span class="d-block mb-1">Email: {{auth()::player()->username}}</span>
+                        <span class="d-block mb-1">Email: {{auth()->user()->username}}</span>
                         <a href="#">natalie.curtis@gmail.com</a>
+
+                        <div >
+                            <a href="/logout"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                          Logout
+                            </a>
+
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+
                       </div>
                     </div>
                   </li>

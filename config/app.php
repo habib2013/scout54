@@ -164,10 +164,11 @@ return [
         Brian2694\Toastr\ToastrServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
-
+        \Chatify\ChatifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -231,6 +232,8 @@ return [
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Chatify' => Chatify\Facades\ChatifyMessenger::class,
+
     ],
 
 ];
