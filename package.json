@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "intl-tel-input": "^16.0.15"
+        "intl-tel-input": "^16.0.15",
+        "laravel-echo": "^1.7.0",
+        "pusher-js": "^6.0.0"
     }
 }

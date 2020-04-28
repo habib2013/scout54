@@ -27,18 +27,18 @@
                 <span class="activeStatus"></span>
             @endif
         <div class="avatar av-m"
-        style="background-image: url('{{ asset('/storage/'.config('chatify.user_avatar.folder').'/'.$user->avatar) }}');">
+        style="background-image: url('{{ asset($user->playerprofile->profileimage()) }}');">
         </div>
         </td>
         {{-- center side --}}
         <td>
         <p data-id="{{ $type.'_'.$user->id }}">
-            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }}
+            {{ strlen($user->username) > 12 ? trim(substr($user->username,0,12)).'..' : $user->username }}
             <span>{{ $lastMessage->created_at->diffForHumans() }}</span></p>
         <span>
             {{-- Last Message user indicator --}}
             {!!
-                $lastMessage->from_id == Auth::user()->id
+                $lastMessage->from_id == Auth::guard('player')->user()->id
                 ? '<span class="lastMessageIndicator">You :</span>'
                 : ''
             !!}
@@ -68,13 +68,13 @@
         {{-- Avatar side --}}
         <td>
         <div class="avatar av-m"
-        style="background-image: url('{{ asset('/storage/'.config('chatify.user_avatar.folder').'/'.$user->avatar) }}');">
+        style="background-image: url('{{ asset($user->playerprofile->profileimage()) }}');">
         </div>
         </td>
         {{-- center side --}}
         <td>
         <p data-id="{{ $type.'_'.$user->id }}">
-            {{ strlen($user->name) > 12 ? trim(substr($user->name,0,12)).'..' : $user->name }}
+            {{ strlen($user->username) > 12 ? trim(substr($user->username,0,12)).'..' : $user->username }}
         </td>
 
     </tr>
