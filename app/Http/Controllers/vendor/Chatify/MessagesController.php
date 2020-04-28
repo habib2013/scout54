@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Response;
 use Chatify\Http\Models\Message;
 use Chatify\Http\Models\Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
-use App\User;
+use App\Player;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+
 
 
 class MessagesController extends Controller
@@ -25,19 +26,19 @@ class MessagesController extends Controller
     {
         // Auth data
         $authData = json_encode([
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::guard('player')->user()->id,
             'user_info' => [
-                'name' => Auth::user()->name
+                'name' => Auth::guard('player')->user()->username
             ]
         ]);
         // check if user authorized
-        if (Auth::check()) {
-            return Chatify::pusherAuth(
-                $request['channel_name'],
-                $request['socket_id'],
-                $authData
-            );
-        }
+        // if (Auth::check()) {
+            // return Chatify::pusherAuth(
+            //     $request['channel_name'],
+            //     $request['socket_id'],
+            //     $authData
+            // );
+        // }
         // if not authorized
         return new Response('Unauthorized', 401);
     }
@@ -59,8 +60,8 @@ class MessagesController extends Controller
         return view('Chatify::pages.app', [
             'id' => ($id == null) ? 0 : $route . '_' . $id,
             'route' => $route,
-            'messengerColor' => Auth::user()->messenger_color,
-            'dark_mode' => Auth::user()->dark_mode < 1 ? 'light' : 'dark',
+            'messengerColor' => Auth::guard('player')->user()->username,
+            'dark_mode' => Auth::guard('player')->user()->dark_mode < 1 ? 'light' : 'dark',
         ]);
     }
 
@@ -147,7 +148,7 @@ class MessagesController extends Controller
             Chatify::newMessage([
                 'id' => $messageID,
                 'type' => $request['type'],
-                'from_id' => Auth::user()->id,
+                'from_id' => Auth::guard('player')->user()->id,
                 'to_id' => $request['id'],
                 'body' => trim(htmlentities($request['message'])),
                 'attachment' => ($attachment) ? $attachment . ',' . $attachment_title : null,
@@ -158,7 +159,7 @@ class MessagesController extends Controller
 
             // send to user using pusher
             Chatify::push('private-chatify', 'messaging', [
-                'from_id' => Auth::user()->id,
+                'from_id' =>Auth::guard('player')->user()->id,
                 'to_id' => $request['id'],
                 'message' => Chatify::messageCard($messageData, 'default')
             ]);
@@ -238,8 +239,8 @@ class MessagesController extends Controller
             $join->on('messages.from_id', '=', 'users.id')
                 ->orOn('messages.to_id', '=', 'users.id');
         })
-            ->where('messages.from_id', Auth::user()->id)
-            ->orWhere('messages.to_id', Auth::user()->id)
+            ->where('messages.from_id', Auth::guard('player')->user()->id)
+            ->orWhere('messages.to_id', Auth::guard('player')->user()->id)
             ->orderBy('messages.created_at', 'desc')
             ->get()
             ->unique('id');
@@ -248,7 +249,7 @@ class MessagesController extends Controller
             // fetch contacts
             $contacts = null;
             foreach ($users as $user) {
-                if ($user->id != Auth::user()->id) {
+                if ($user->id != Auth::guard('player')->user()->id) {
                     // Get user data
                     $userCollection = User::where('id', $user->id)->first();
                     $contacts .= Chatify::getContactItem($request['messenger_id'], $userCollection);
@@ -314,7 +315,7 @@ class MessagesController extends Controller
     public function getFavorites(Request $request)
     {
         $favoritesList = null;
-        $favorites = Favorite::where('user_id', Auth::user()->id);
+        $favorites = Favorite::where('user_id', Auth::guard('player')->user()->id);
         foreach ($favorites->get() as $favorite) {
             // get user data
             $user = User::where('id', $favorite->favorite_id)->first();
@@ -406,8 +407,8 @@ class MessagesController extends Controller
         // dark mode
         if ($request['dark_mode']) {
             $request['dark_mode'] == "dark"
-                ? User::where('id', Auth::user()->id)->update(['dark_mode' => 1])  // Make Dark
-                : User::where('id', Auth::user()->id)->update(['dark_mode' => 0]); // Make Light
+                ? User::where('id', Auth::guard('player')->user()->id)->update(['dark_mode' => 1])  // Make Dark
+                : User::where('id', Auth::guard('player')->user()->id)->update(['dark_mode' => 0]); // Make Light
         }
 
         // If messenger color selected
@@ -415,7 +416,7 @@ class MessagesController extends Controller
 
             $messenger_color = explode('-', trim(filter_var($request['messengerColor'], FILTER_SANITIZE_STRING)));
             $messenger_color = Chatify::getMessengerColors()[$messenger_color[1]];
-            User::where('id', Auth::user()->id)
+            User::where('id', Auth::guard('player')->user()->id)
                 ->update(['messenger_color' => $messenger_color]);
         }
         // if there is a [file]
@@ -428,15 +429,15 @@ class MessagesController extends Controller
             if ($file->getSize() < 150000000) {
                 if (in_array($file->getClientOriginalExtension(), $allowed_images)) {
                     // delete the older one
-                    if (Auth::user()->avatar != config('chatify.user_avatar.default')) {
-                        $path = storage_path('app/public/' . config('chatify.user_avatar.folder') . '/' . Auth::user()->avatar);
+                    if (Auth::guard('player')->user()->avatar != config('chatify.user_avatar.default')) {
+                        $path = storage_path('app/public/' . config('chatify.user_avatar.folder') . '/' . Auth::guard('player')->user()->avatar);
                         if (file_exists($path)) {
                             @unlink($path);
                         }
                     }
                     // upload
                     $avatar = Str::uuid() . "." . $file->getClientOriginalExtension();
-                    $update = User::where('id', Auth::user()->id)->update(['avatar' => $avatar]);
+                    $update = User::where('id', Auth::guard('player')->user()->id)->update(['avatar' => $avatar]);
                     $file->storeAs("public/" . config('chatify.user_avatar.folder'), $avatar);
                     $success = $update ? 1 : 0;
                 } else {

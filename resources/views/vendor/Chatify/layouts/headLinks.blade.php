@@ -2,8 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="route" content="{{ $route }}">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="url" content="{{ url('').'/'.config('chatify.path') }}" data-user="{{ Auth::user()->id }}">
-
+<meta name="url" content="{{ url('').'/'.config('chatify.path') }}" data-user="{{ Auth::guard('player')->user()->id }}">
 {{-- scripts --}}
 <script src="{{ asset('js/chatify/font.awesome.min.js') }}"></script>
 <script src="{{ asset('js/chatify/autosize.js') }}"></script>
