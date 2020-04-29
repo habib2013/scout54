@@ -442,7 +442,7 @@
                 <div class="mb-2">
                   <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
                     <span class="fa fa-envelope mr-2"></span>
-                    Send a Message
+                    Start a chat
                   </a>
                 </div>
 
@@ -956,6 +956,9 @@
           </div>
           <!-- End SVG Background Shape -->
         </footer>
+
+
+
         <!-- End Footer -->
       </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Broadcast;
+use App\Player;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels

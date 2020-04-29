@@ -42,6 +42,10 @@ Route::post('logout',function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::view('/chats', 'players.chats');
+
+
+
 
 Route::view('/player', 'player')->name('player')->middleware('player_auth');
 Route::view('/coach', 'coach');
