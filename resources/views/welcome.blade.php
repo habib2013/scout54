@@ -491,10 +491,13 @@
     <h2 class="text-primary"><span class="font-weight-semi-bold">Our Statistics</span></h2>
 
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Coaches</p></div>
-      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Players</p></div>
-      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Clubs</p></div>
-      <div class="col-md-3 col-sm-3 col-lg-3" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><p class="text-primary" style="margin-top: -20px;font-size: 20px;">Agents</p></div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p> <img  src="../../assets/illustrators/rener.png" alt="" style="height:40px" class="img-fluid"> </div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p> <img src="../../assets/illustrators/newcoach.png" style="height:40px" class="img-fluid" alt=""> </div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p> <img src="../../assets/illustrators/realfc.png" alt="" style="height:40px" class="img-fluid"> </div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><img src="../../assets/illustrators/newagent.png" alt="" style="height:40px" class="img-fluid"></div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><img src="../../assets/illustrators/mystack.png" alt="" style="height:40px" class="img-fluid"></div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">191</p><img src="../../assets/illustrators/photos.png" alt="" style="height:40px" class="img-fluid"></div>
+
 
     </div>
   </div>

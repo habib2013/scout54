@@ -440,10 +440,13 @@
                 </div>
 
                 <div class="mb-2">
-                  <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
+@if(Auth::guard('player')->user()->id == $players->id)
+
+                  <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="{{URL::to('/message/'.$players->id)}}">
                     <span class="fa fa-envelope mr-2"></span>
-                    Start a chat
+                    Chat with {{$players->username}}
                   </a>
+@endif
                 </div>
 
                 <a class="text-secondary small" href="#">
