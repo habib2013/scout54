@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
+use App\Coach;
 use App\Player;
 use App\Incomplete;
 use Auth;
@@ -25,13 +26,14 @@ class ProfilesController extends Controller
                         $this->middleware('guest:player')->except('logout');
                 }
 
-
-
         public function user($username){
         $players = Player::where('username','=',$username)->firstorFail();
-
         return view('players.index',compact('players'));
         }
+        public function coach($username){
+            $coachs = Coach::where('username','=',$username)->firstorFail();
+            return view('coachs.index',compact('coachs'));
+            }
 
         public function settings($username){
         $players = Player::where('username','=',$username)->firstorFail();

@@ -18,9 +18,13 @@ class CreateCoachesTable extends Migration
             $table->string('username')->unique();
             $table->text('fullname');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable(); 
-            $table->boolean('is_coach')->default(false);    
+            $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('is_coach')->default(false);
             $table->string('phone');
+
+            $table->boolean('is_verified')->default(false);
+            $table->boolean('active_status')->default(0);
+            
             $table->string('nationality');
             $table->string('status');
             $table->string('password');

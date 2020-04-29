@@ -51,30 +51,23 @@
             <div class="pl-lg-4">
               <!-- Title -->
               <div class="mb-4">
-              <h3>Thanks for joining <b>Scout54</b>,to complete your registeration kindly </h3>
-                <h3>{{ __('Verify Your Email Address') }}</h3>
-              
-                @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
+              <h3>Thanks for joining <b>Scout54</b> </h3>
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
+                        <div class="alert alert-success" role="alert">
+                       If you have registered as a player, please proceed to login <a href="/login/player" class="btn btn-success">Login</a>
+                        </div>
+                        But if you registered as a Coach,Club and agent please wait for approval from the adminstrator before you proceed to your dashboard
+
                  </div>
+
               <!-- End Title -->
 
               <!-- Countdown -->
-         
+
               <!-- End Countdown -->
 
               <!-- Input -->
-        
+
               <!-- End Input -->
             </div>
           </div>
@@ -94,7 +87,7 @@
         <!-- End Copyright -->
 
         <!-- Social Networks -->
- 
+
         <!-- End Social Networks -->
       </div>
     </div>

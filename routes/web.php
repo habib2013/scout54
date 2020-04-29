@@ -114,5 +114,7 @@ Route::post('/moveimage', array('as' => 'move_image', 'uses' => 'ImageController
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
-Route::get('/{username}',['as'=>'profile.single','uses'=>'ProfilesController@user'])->where('username','[\w\d\-\_]+');
+Route::get('/player/{username}',['as'=>'profile.single','uses'=>'ProfilesController@user'])->where('username','[\w\d\-\_]+');
+Route::get('/coach/{username}',['as'=>'profile.single','uses'=>'ProfilesController@coach'])->where('username','[\w\d\-\_]+');
+
 Route::get('/settings/{username}',['as'=>'profile.single','uses'=>'ProfilesController@settings'])->where('username','[\w\d\-\_]+');

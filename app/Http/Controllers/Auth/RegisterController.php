@@ -8,6 +8,7 @@ use App\User;
 use App\Player;
 use App\PlayerPictures;
 use App\ProfileProfile;
+use App\CoachProfile;
 use App\PlayerVideos;
 use App\Coach;
 use App\Agent;
@@ -83,7 +84,13 @@ class RegisterController extends Controller
       if($validator->passes()){
           $input = $request->all();
           $input['password'] = Hash::make($request->password);
-          Coach::create($input);
+         $coachs =  Coach::create($input);
+
+          DB::table('coach_profiles')->insert(
+            array('coach_id' => $coachs->id,
+                  'description' => $coachs->username)
+        );
+
           return response()->json(['success'=>'done']);
       }
 
@@ -171,10 +178,10 @@ class RegisterController extends Controller
               $input['password'] = Hash::make($request->password);
             $players =  Player::create($input);
 
-            $verifyUser = VerifyUser::create([
-                'player_id' => $players->id,
-                'token' => sha1(time())
-              ]);
+            // $verifyUser = VerifyUser::create([
+            //     'player_id' => $players->id,
+            //     'token' => sha1(time())
+            //   ]);
 
               DB::table('player_profiles')->insert(
                 array('player_id' => $players->id,

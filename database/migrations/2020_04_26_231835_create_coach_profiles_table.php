@@ -15,6 +15,14 @@ class CreateCoachProfilesTable extends Migration
     {
         Schema::create('coach_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('coach_id');
+            $table->string('passport')->nullable();
+            $table->text('description')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('address')->nullable();
+            $table->string('currnt_tournamnt')->nullable();
+            $table->string('current_club')->nullable();
+            $table->string('squad_number')->nullable();
             $table->timestamps();
         });
     }

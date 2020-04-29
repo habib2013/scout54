@@ -86,16 +86,16 @@ return response()->json($msg);
                         }
         }
     }
-    
+
     public function ClubLogin(Request $request)
     {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
+
         if (Auth::guard('club')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             $msg = array(
@@ -103,7 +103,7 @@ return response()->json($msg);
 				'message' => 'Login Successful'
 			);
 			return response()->json($msg);
-            
+
         }else{
        $msg = array(
 				'status'  => 'error',
@@ -115,27 +115,29 @@ return response()->json($msg);
 
 
 
-  
+
     public function playerLogin(Request $request)
     {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
+
         if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            $collected = $request->email;
-        
-            $username = DB::select( DB::raw("SELECT username FROM players WHERE email = '$collected'") );
+            $email = $request->email;
+            $username = DB::select( DB::raw("SELECT username FROM players WHERE email = :email"), array(
+                'email' => $email,
+              ));
 
-
+            $username  = $username[0]->username;
 
             $msg = array(
 				'status'  => 'success',
                 'message' => 'Login Successful',
+                'username' => $username,
             );
 
 
@@ -151,22 +153,22 @@ return response()->json($msg);
 			);
 			return response()->json($msg );
             }
-          
-    }
-    
 
- 
+    }
+
+
+
 
 
     public function AgentLogin(Request $request)
     {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
+
         if (Auth::guard('agent')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             $msg = array(
@@ -174,7 +176,7 @@ return response()->json($msg);
 				'message' => 'Login Successful'
 			);
 			return response()->json($msg);
-            
+
         }else{
        $msg = array(
 				'status'  => 'error',
@@ -187,43 +189,72 @@ return response()->json($msg);
 
 
 
-  
+
     public function CoachLogin(Request $request)
     {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
-        if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        $email = $request->email;
+
+        $isverified = DB::select( DB::raw("SELECT is_verified FROM coaches WHERE email = :email"), array(
+            'email' => $email,
+          ));
+
+
+          if(($isverified[0]->is_verified) === 0){
 
             $msg = array(
-				'status'  => 'success',
-				'message' => 'Login Successful'
-			);
-			return response()->json($msg);
-            
-        }else{
-       $msg = array(
-				'status'  => 'error',
-				'message' => 'Invalid login requests, check your credentials and try again !'
-			);
-			return response()->json($msg );
+                'status'  => 'Account suspended',
+                'message' => 'Please wait for approval'
+            );
+
+            return response()->json($msg);
+        }
+        else{
+            if (Auth::guard('coach')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember')))
+            {
+                $email = $request->email;
+                $username = DB::select( DB::raw("SELECT username FROM coaches WHERE email = :email"), array(
+                    'email' => $email,
+                  ));
+
+                $username  = $username[0]->username;
+
+                $msg = array(
+                    'status'  => 'success',
+                    'message' => 'Login Successful',
+                    'username' => $username,
+                );
+                return response()->json($msg);
+
             }
+            else
+            {
+           $msg = array(
+                    'status'  => 'error',
+                    'message' => 'Invalid login requests, check your credentials and try again !'
+                );
+                return response()->json($msg );
+                }
+
+
+        }
 
     }
 
     public function login(Request $request)
-    {   
+    {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
+
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
 
@@ -232,7 +263,7 @@ return response()->json($msg);
 				'message' => 'Login Successful'
 			);
 			return response()->json($msg);
-            
+
         }else{
        $msg = array(
 				'status'  => 'error',
@@ -240,7 +271,7 @@ return response()->json($msg);
 			);
 			return response()->json($msg );
             }
-          
+
     }
 
 

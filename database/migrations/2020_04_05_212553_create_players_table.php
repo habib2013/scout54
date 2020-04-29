@@ -22,11 +22,8 @@ class CreatePlayersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_player')->default(false);
 
-            $table->string('avatar')->default(config('chatify.user_avatar.default'));
-            $table->string('messenger_color')->default('#2180f3');
-            $table->boolean('dark_mode')->default(0);
             $table->boolean('active_status')->default(0);
-            
+
             $table->string('status');
             $table->string('birthday');
             $table->string('nationality');

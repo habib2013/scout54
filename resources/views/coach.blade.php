@@ -518,6 +518,20 @@
           <div class="mb-9">
             <h1 class="display-4 mb-4">The leading scouting website in Africa</h1>
             <p class="lead">Sign  contract with a player today!!</p>
+
+          <div>
+            <a  href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
+
           </div>
 
           <div class="w-lg-75 mx-lg-auto">

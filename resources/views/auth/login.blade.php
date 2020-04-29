@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
-  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
-  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body style="font-family: 'Cera Pro New';">
@@ -42,16 +42,16 @@
       <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-navy vh-lg-100 px-0 relogin"  style="background-image: url(../../assets/img/1920x800/01.jpg);background-size: 100% 100%;">
          <div class="overlay"></div>
          <div class="w-100 p-5" style="position: absolute;">
-     
+
          <div class="cont_here" style="position: relative;color: #ffffff;">
-     
+
        <br>
        <br>  <br>
 
        <h1> Scout54 {{ isset($url) ? ucwords($url) : "Admin"}}</h1>
-       
+
        <br>
-  
+
             </div>
 
         </div>
@@ -68,31 +68,31 @@
                    <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"/>
                    <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
                  </svg>
-     
-         
+
+
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
                </button>
-             
+
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav mr-auto smallers" >
                    <li class="nav-item myactive">
                      <a class="nav-link" href="/" style="color: #ffffff;font-family: 'Cera Pro New';font-style: normal">Home </a>
                    </li>
-               
-                
-                
+
+
+
                  </ul>
      <div class="mt-2"></div>
      <button type="button" class="bt" data-toggle="modal" data-target="#loginModal"> <a
        class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
        href="#">Login</a></button>
-     
+
                  <button type="button" class="bt" data-toggle="modal" data-target="#registerModal"> <a
                    class="pop_up_btn nav-link text-white px-4 mx-2 rounded"
                    href="#">Register</a></button>
-     
+
                    <div class="modal fade" id="registerModal">
               <div class="modal-dialog">
                   <div class="modal-content">
@@ -106,7 +106,7 @@
                       <!-- Modal body -->
                       <div class="modal-body" style="padding-right: 34px;">
                           <div class="pop_iner">
-      
+
                               <ul>
                                   <li><a href="/register/coach">
                                           <div class="imgg"><img
@@ -117,12 +117,12 @@
                                       <li>
                                       <a href="/register/player">
                                         <div class="imgg"><img
-                                              
+
                                                 src="../../assets/illustrators/rener.png"
                                                 class="img-fluid"></div>
                                         <p>Player</p>
                                     </a></li>
-                                  
+
                                   <li><a href="/register/club">
                                           <div class="imgg"><img
                                                   src="../../assets/illustrators/realfc.png"
@@ -139,7 +139,7 @@
                           </div>
                       </div>
 
-         
+
 
                   </div>
               </div>
@@ -168,12 +168,12 @@
 
                                 <li><a href="/login/player">
                                   <div class="imgg"><img
-                                        
+
                                           src="../../assets/illustrators/rener.png"
                                           class="img-fluid"></div>
                                   <p>Player</p>
                               </a></li>
-                            
+
                             <li><a href="/login/club">
                                     <div class="imgg"><img
                                             src="../../assets/illustrators/realfc.png"
@@ -190,14 +190,14 @@
                         </div>
                     </div>
 
-       
+
 
                 </div>
             </div>
         </div>
                </div>
              </nav>
-        
+
 
              @isset($url)
                     <form  method="POST"  onsubmit="return LoginOtherUser()"  aria-label="{{ __('Login') }}">
@@ -205,14 +205,14 @@
                     <!-- <form class="js-validate" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}" onsubmit="return LoginUser()">
                     -->
                     <form id="login-form" method="post" onsubmit="return LoginUser()" role="form" style="display: block;">
-                                    
+
                     @endisset
                         @csrf
-        
-        
+
+
               <!-- Title -->
               <div class="mb-5 mb-md-7" >
-                
+
     @if(isset($url))
     <input type="hidden" id="txt_url" name="txt_url" value="{{$url}}"/>
     @endif
@@ -225,10 +225,10 @@
               <!-- Form Group -->
               <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Email address</label>
-                <input type="email" name="email" id="login_email" tabindex="1" placeholder="Email address" aria-label="Email address" 
+                <input type="email" name="email" id="login_email" tabindex="1" placeholder="Email address" aria-label="Email address"
                        data-msg="Please enter a valid email address." class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="tayo.oladosu@yahoo.com" required autofocus >
-          
-          
+
+
                 @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('email') }}</strong>
@@ -245,9 +245,9 @@
                     <a class="link-underline text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a>
                   </span>
                 </label>
-                <input type="password" value="password"  name="password" id="password" tabindex="2" placeholder="********" aria-label="********" 
+                <input type="password" value="password"  name="password" id="password" tabindex="2" placeholder="********" aria-label="********"
                        data-msg="Your password field is invalid. Please try again."  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-             
+
                        @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -349,7 +349,7 @@ $(document).ready(function(){
                 email:email,
                 password:password
             };
-            // Ajax Post 
+            // Ajax Post
             $.ajax({
                 type: "post",
                 url: "/login",
@@ -358,9 +358,9 @@ $(document).ready(function(){
                 beforeSend:function(){
                   $("#login_button").attr("disabled", "disabled");
                         $("#login_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
-                  
+
                 },
-      
+
                 success: function (data)
                 {
                     console.log('login request sent !');
@@ -371,14 +371,14 @@ if(data.status == 'success'){
         type: "success",
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'OK!',
     }
-    
+
     );
 }
 else {
- 
+
   swal({
         title: data.status,
         text: data.message,
@@ -386,23 +386,23 @@ else {
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'ERROR!',
     }
     );
-  
+
 }
 
                     $("#login_button").removeAttr("disabled");
                         $("#login_button").html('LOGIN');
-                   
+
                 },
 
                 error: function (data){
                   console.log('Fail to run Login..');
                     // alert("Fail to run Login..");
 
-              
+
                 }
             });
             return false;
@@ -431,30 +431,29 @@ else {
                 beforeSend:function(){
                   $("#login_button").attr("disabled", "disabled");
                         $("#login_button").html('Proccessing . . <i class="fas fa-spinner fa-spin text-white"></i>')
-                  
+
                 },
-      
+
                 success: function (data)
                 {
                     console.log('login request sent !');
 if(data.status == 'success'){
-
- window.location.href = '/'+txt_url;
-
+var username = data.username;
+ window.location.href = '/'+txt_url+'/'+username;
   swal({
         title: "Login Successful",
         text: "You will be redirected to your dahsboard!",
         type: "success",
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'OK!',
     }
-    
+
     );
 }
 else {
- 
+
   swal({
         title: data.status,
         text: data.message,
@@ -462,23 +461,23 @@ else {
         dangerMode: true,
         showCancelButton: false,
         dangerMode: false,
-     
+
         confirmButtonText: 'ERROR!',
     }
     );
-  
+
 }
 
                     $("#login_button").removeAttr("disabled");
                         $("#login_button").html('LOGIN');
-                   
+
                 },
 
                 error: function (data){
                   console.log('Fail to run Login..');
                     // alert("Fail to run Login..");
 
-              
+
                 }
             });
 
