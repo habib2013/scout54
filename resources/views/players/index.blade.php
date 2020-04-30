@@ -436,17 +436,20 @@
 
                 <div class="mb-3">
                   <h1 class="h6 font-weight-medium mb-0">{{$players->fullname}}</h1>
-                  <small class="d-block text-muted">Defender</small>
+                <small class="d-block text-muted">{{$players->playerprofile->position}}</small>
                 </div>
 
                 <div class="mb-2">
-@if(Auth::guard('player')->user()->id == $players->id)
+
+
+
 
                   <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="{{URL::to('/message/'.$players->id)}}">
                     <span class="fa fa-envelope mr-2"></span>
                     Chat with {{$players->username}}
                   </a>
-@endif
+
+
                 </div>
 
                 <a class="text-secondary small" href="#">

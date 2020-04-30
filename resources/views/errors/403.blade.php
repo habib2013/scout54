@@ -4,7 +4,7 @@
 <!-- Mirrored from htmlstream.com/front/html/pages/error-404.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Mar 2020 03:16:26 GMT -->
 <head>
   <!-- Title -->
-  <title>Error 404</title>
+  <title>Error 403</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">

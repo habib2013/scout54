@@ -28,15 +28,24 @@ class ProfilesController extends Controller
 
         public function user($username){
         $players = Player::where('username','=',$username)->firstorFail();
-        return view('players.index',compact('players'));
+        $guard = 'player';
+        return view('players.index',compact('players','guard'));
         }
         public function coach($username){
             $coachs = Coach::where('username','=',$username)->firstorFail();
-            return view('coachs.index',compact('coachs'));
+            $guard = 'coach';
+            return view('coachs.index',compact('coachs','guard'));
             }
 
         public function settings($username){
+
         $players = Player::where('username','=',$username)->firstorFail();
+
+        if(((Auth::guard('player')->user()->id)!= $players->id) )
+        {
+            return view('errors.403');
+        }
+
         return view('players.settings',compact('players'));
         }
 

@@ -442,7 +442,7 @@
                 <div class="mb-2">
                   <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">
                     <span class="fa fa-envelope mr-2"></span>
-                    Start a chat
+                    Start a {{$coachs->username}}
                   </a>
                 </div>
 

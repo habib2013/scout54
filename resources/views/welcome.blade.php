@@ -462,7 +462,7 @@
       <div class="step-content-wrapper">
         <span class="step-icon step-icon-soft-primary">3</span>
         <div class="step-content">
-          <h3 style="font-family: 'Cera Pro New';font-style:normal;">Explore unending opportunies</h3>
+          <h3 style="font-family: 'Cera Pro New';font-style:normal;">Explore Opportunies</h3>
           <p style="font-family: 'Cera Pro New';font-style:normal;">We help power millions of businesses to built and run smoothly.</p>
         </div>
       </div>
@@ -491,7 +491,7 @@
     <h2 class="text-primary"><span class="font-weight-semi-bold">Our Statistics</span></h2>
 
     <div class="row">
-      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">250</p> <img  src="../../assets/illustrators/rener.png" alt="" style="height:40px" class="img-fluid"> </div>
+      <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Poppins'; font-weight: 30;font-style: normal;"><p class="count">250</p> <img  src="../../assets/illustrators/rener.png" alt="" style="height:40px" class="img-fluid"> </div>
       <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">122</p> <img src="../../assets/illustrators/newcoach.png" style="height:40px" class="img-fluid" alt=""> </div>
       <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">120</p> <img src="../../assets/illustrators/realfc.png" alt="" style="height:40px" class="img-fluid"> </div>
       <div class="col-md-2 col-sm-3 col-lg-2" style="font-size: 45px;font-family: 'Cera Pro New'; font-weight: 30;font-style: normal;"><p class="count">150</p><img src="../../assets/illustrators/newagent.png" alt="" style="height:40px" class="img-fluid"></div>
